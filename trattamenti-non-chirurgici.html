@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-t="t1">Trattamenti non chirurgici — Roberto Uccellini, Medicina Estetica</title>
+<meta name="description" data-t="t2" data-tp="content" content="Medicina estetica non chirurgica: filler dermici, labbra, PRP, tossina botulinica, trattamento dell'iperidrosi, lipofilling, fili di sospensione, ridefinizione dei volumi del viso." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F6F2EC; --ink:#15120E; --brass:#A8884F; --brass-text:#8C6F3B;
+  --green:#1E3A34; --green-soft:#2A4C44;
+  --ink-60:rgba(21,18,14,.62); --ink-45:rgba(21,18,14,.45);
+  --line:rgba(21,18,14,.14); --paper:#FBF8F3;
+  --shadow-sm:0 1px 3px rgba(21,18,14,.05),0 8px 24px rgba(21,18,14,.06);
+  --shadow-md:0 2px 6px rgba(21,18,14,.06),0 24px 60px rgba(21,18,14,.10);
+  --maxw:1240px; --gutter:clamp(20px,5vw,72px);
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"Spectral",Georgia,serif;
+  --f-sans:"Roboto","Helvetica Neue",Arial,system-ui,sans-serif;
+  /* accento: identico alla pagina principale */
+  --cat:var(--brass); --cat-deep:var(--brass-text); --cat-tint:rgba(168,136,79,.13);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-weight:400;
+  font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.72;letter-spacing:.002em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none;}
+h1,h2,h3,h4,p{margin:0;}
+::selection{background:var(--brass);color:#fff;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.045;mix-blend-mode:multiply;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+.section{position:relative;z-index:2;padding-block:clamp(64px,9vw,132px);scroll-margin-top:84px;}
+.col{max-width:760px;}
+.col.center{margin-inline:auto;}
+
+.eyebrow{font-family:var(--f-body);font-size:.78rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--brass-text);margin:0 0 1.4rem;display:flex;align-items:center;gap:.85em;}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--cat);display:inline-block;flex:none;}
+.eyebrow.center{justify-content:center;}
+h2.title{font-family:var(--f-display);font-optical-sizing:auto;font-weight:450;
+  font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.08;letter-spacing:-.012em;text-wrap:balance;}
+.prose p{margin-bottom:1.25em;max-width:64ch;color:rgba(21,18,14,.82);}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{font-weight:600;color:var(--ink);}
+.prose h4{font-family:var(--f-display);font-weight:500;font-style:italic;
+  font-size:1.16rem;line-height:1.3;color:var(--ink);margin:2em 0 .8em;letter-spacing:-.005em;}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+.reveal.is-visible{opacity:1;transform:none;}
+
+/* ---------- HEADER ---------- */
+.header{position:sticky;top:0;z-index:50;background:rgba(246,242,236,.72);
+  backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .4s ease,background .4s ease;}
+.header.scrolled{border-bottom-color:var(--line);background:rgba(246,242,236,.9);}
+.header__inner{max-width:var(--maxw);margin:0 auto;padding:14px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand img{height:46px;width:auto;}
+.brand .brand__sub{font-family:var(--f-body);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-45);line-height:1.4;border-left:1px solid var(--line);padding-left:12px;max-width:140px;}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,28px);}
+.nav a{font-size:.82rem;letter-spacing:.04em;color:var(--ink-60);position:relative;padding-block:6px;
+  white-space:nowrap;transition:color .3s ease;}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--cat);
+  transition:right .35s cubic-bezier(.2,.7,.2,1);}
+.nav a:hover{color:var(--ink);}
+.nav a:hover::after{right:0;}
+.nav a[aria-current="page"]{color:var(--ink);}
+.nav a[aria-current="page"]::after{right:0;}
+.nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex:none;}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";display:block;width:24px;height:1.5px;
+  background:var(--ink);position:relative;transition:transform .35s ease,opacity .25s ease;}
+.nav-toggle span::before{position:absolute;top:-7px;left:0;}
+.nav-toggle span::after{position:absolute;top:7px;left:0;}
+.nav-open .nav-toggle span{background:transparent;}
+.nav-open .nav-toggle span::before{transform:translateY(7px) rotate(45deg);}
+.nav-open .nav-toggle span::after{transform:translateY(-7px) rotate(-45deg);}
+.lang-switch{display:flex;align-items:center;gap:6px;flex:none;margin-left:14px;}
+.lang-btn{width:30px;height:21px;padding:0;border-radius:3px;overflow:hidden;border:1px solid var(--line);
+  opacity:.5;transition:opacity .25s ease,box-shadow .25s ease,transform .25s ease;
+  display:flex;align-items:center;justify-content:center;background:#fff;}
+.lang-btn svg{width:100%;height:100%;display:block;}
+.lang-btn:hover{opacity:.9;transform:translateY(-1px);}
+.lang-btn.is-active{opacity:1;box-shadow:0 0 0 2px var(--cat);}
+@media (max-width:980px){.lang-switch{order:2;margin-left:auto;margin-right:8px;}.nav-toggle{order:3;}}
+
+/* ---------- PAGE HERO ---------- */
+.phero{position:relative;z-index:2;padding-block:clamp(26px,3.6vw,52px) clamp(34px,5vw,64px);overflow:hidden;}
+.phero::before{content:"";position:absolute;z-index:0;left:50%;top:-42%;transform:translateX(-50%);
+  width:min(140%,1500px);aspect-ratio:2/1;border-radius:50%;
+  background:radial-gradient(60% 60% at 50% 60%,var(--cat-tint),transparent 70%);pointer-events:none;}
+.phero__inner{position:relative;z-index:1;}
+.phero__num{font-family:var(--f-body);font-size:.74rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--brass-text);display:flex;align-items:center;gap:.85em;margin-bottom:1.2rem;}
+.phero__num::before{content:"";width:34px;height:1px;background:var(--cat);flex:none;}
+.phero__t{font-family:var(--f-display);font-optical-sizing:auto;font-weight:400;line-height:.98;
+  letter-spacing:-.02em;font-size:clamp(2.4rem,5.6vw,4.5rem);max-width:14ch;text-wrap:balance;}
+.phero__lead{font-family:var(--f-display);font-weight:340;font-style:italic;
+  font-size:clamp(1.15rem,2.3vw,1.65rem);line-height:1.34;color:var(--ink-60);margin-top:1.1rem;max-width:34ch;}
+.phero__grid{display:grid;grid-template-columns:1.14fr .86fr;gap:clamp(28px,4.5vw,60px);align-items:center;}
+.phero__copy{max-width:46ch;}
+.phero__media{margin:0;position:relative;}
+.phero__media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;
+  box-shadow:var(--shadow-md);display:block;}
+@media (max-width:840px){
+  .phero__grid{grid-template-columns:1fr;gap:clamp(22px,4vw,30px);}
+  .phero__copy{max-width:none;}
+  .phero__media img{aspect-ratio:16/9;}
+}
+
+/* ---------- INTRO ---------- */
+.intro-sec{background:var(--paper);border-block:1px solid var(--line);}
+.split{display:grid;grid-template-columns:minmax(240px,.72fr) 1.28fr;gap:clamp(26px,5vw,80px);align-items:start;}
+.split__head{position:sticky;top:104px;}
+
+/* ---------- ACCORDION ---------- */
+.acc-hint{font-size:.92rem;color:var(--ink-60);font-style:italic;margin-top:1rem;}
+.acc-list{margin-top:clamp(34px,5vw,54px);border-top:1px solid var(--line);}
+.acc{border-bottom:1px solid var(--line);}
+.acc__head{display:flex;align-items:center;gap:clamp(.7em,1.6vw,1.2em);width:100%;text-align:left;
+  padding:clamp(20px,2.6vw,28px) 0;transition:padding-left .4s cubic-bezier(.2,.7,.2,1);}
+.acc__head:hover{padding-left:8px;}
+.acc__num{font-family:var(--f-body);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  color:var(--brass-text);flex:none;width:2.2em;align-self:center;}
+.acc__t{font-family:var(--f-display);font-weight:450;font-size:clamp(1.18rem,2.3vw,1.62rem);
+  line-height:1.2;letter-spacing:-.01em;flex:1;text-wrap:balance;}
+.acc__ico{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--cat);position:relative;
+  align-self:center;transition:background .35s ease,transform .45s cubic-bezier(.2,.7,.2,1);}
+.acc__ico::before,.acc__ico::after{content:"";position:absolute;left:50%;top:50%;background:var(--cat);
+  transition:opacity .3s ease,background .35s ease;}
+.acc__ico::before{width:11px;height:1.5px;transform:translate(-50%,-50%);}
+.acc__ico::after{width:1.5px;height:11px;transform:translate(-50%,-50%);}
+.acc.is-open .acc__ico{background:var(--cat);transform:rotate(180deg);}
+.acc.is-open .acc__ico::before{background:#fff;}
+.acc.is-open .acc__ico::after{opacity:0;}
+.acc__panel{height:0;overflow:hidden;transition:height .55s cubic-bezier(.2,.7,.2,1);}
+.acc__inner{padding:0 0 clamp(34px,4.5vw,52px);}
+@media (min-width:781px){.acc__inner{padding-left:calc(2.2em + clamp(.7em,1.6vw,1.2em));}}
+
+/* ---------- GALLERY ---------- */
+.gallery{margin-top:clamp(26px,3.6vw,40px);max-width:min(100%,430px);}
+.gallery__vp{position:relative;overflow:hidden;border-radius:8px;box-shadow:var(--shadow-md);
+  background:#ECE6DC;touch-action:pan-y;}
+.gallery__track{display:flex;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+.gallery__track.no-anim{transition:none;}
+.gslide{flex:0 0 100%;margin:0;position:relative;}
+.gslide img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;
+  background:rgba(251,248,243,.88);color:var(--ink);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(21,18,14,.16);opacity:0;transition:opacity .35s ease,background .3s ease;z-index:2;}
+.gallery__vp:hover .gal-arrow,.gal-arrow:focus-visible{opacity:1;}
+.gal-arrow:hover{background:#fff;}
+.gal-arrow.prev{left:12px;}
+.gal-arrow.next{right:12px;}
+.gal-arrow svg{width:15px;height:15px;}
+@media (hover:none){.gal-arrow{opacity:.92;}}
+.gal-foot{display:flex;align-items:center;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.gal-dots{display:flex;gap:7px;}
+.gal-dot{width:7px;height:7px;border-radius:50%;background:rgba(21,18,14,.2);padding:0;
+  transition:background .3s ease,transform .3s ease;}
+.gal-dot.is-active{background:var(--cat);transform:scale(1.35);}
+.gal-note{font-size:.74rem;max-width:64ch;letter-spacing:.02em;color:var(--ink-45);font-style:italic;
+  display:flex;align-items:center;gap:.6em;}
+.gal-note::before{content:"";width:20px;height:1px;background:var(--cat);flex:none;}
+
+/* ---------- ALTRE AREE ---------- */
+.aree-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.6vw,34px);
+  margin-top:clamp(30px,4vw,46px);}
+.area-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;display:block;}
+.area-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.area-card__img{width:100%;height:clamp(180px,20vw,240px);overflow:hidden;background:#efeae1;}
+.area-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+.area-card:hover .area-card__img img{transform:scale(1.05);}
+.area-card__cap{padding:20px 24px 24px;display:flex;align-items:baseline;gap:.7em;}
+.area-card__num{font-family:var(--f-body);font-size:.72rem;letter-spacing:.18em;font-weight:600;flex:none;color:var(--brass-text);}
+.area-card__t{font-family:var(--f-display);font-weight:450;font-size:1.28rem;line-height:1.15;letter-spacing:-.01em;}
+@media (max-width:640px){.aree-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}}
+
+/* ---------- CONTATTI / FOOTER ---------- */
+.contatti{background:var(--green);color:#EFEBE2;position:relative;z-index:2;}
+.contatti .eyebrow{color:#C9A86A;}
+.contatti .eyebrow::before{background:#C9A86A;}
+.contatti h2.title{color:#FBF8F3;}
+.contatti__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,90px);align-items:start;margin-top:clamp(36px,5vw,56px);}
+.contatti__intro{font-size:1.15rem;line-height:1.6;color:rgba(239,235,226,.88);font-family:var(--f-display);font-weight:340;max-width:48ch;}
+.contact-block{border-top:1px solid rgba(201,168,106,.3);padding-top:22px;margin-top:26px;}
+.contact-block .k{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#C9A86A;margin-bottom:8px;}
+.contact-block .v{font-size:1.02rem;color:#FBF8F3;line-height:1.5;}
+.contact-block .v .ph{color:rgba(239,235,226,.5);font-style:italic;}
+.footer{background:var(--green);color:#EFEBE2;position:relative;z-index:2;border-top:1px solid rgba(201,168,106,.22);}
+.footer__inner{max-width:var(--maxw);margin:0 auto;padding:48px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer__brand img{height:54px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.footer__meta{font-size:.78rem;color:rgba(239,235,226,.6);letter-spacing:.04em;line-height:1.7;text-align:right;}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .nav{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);padding:8px var(--gutter) 24px;
+    transform:translateY(-12px);opacity:0;pointer-events:none;
+    transition:transform .35s ease,opacity .35s ease;max-height:calc(100vh - 64px);overflow:auto;}
+  .nav a{width:100%;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;}
+  .nav a::after{display:none;}
+  .nav-open .nav{transform:none;opacity:1;pointer-events:auto;}
+  .nav-toggle{display:flex;}
+  .brand .brand__sub{display:none;}
+}
+@media (max-width:840px){
+  .split{grid-template-columns:1fr;gap:18px;}
+  .split__head{position:static;}
+  .contatti__grid{grid-template-columns:1fr;}
+  .footer__inner{flex-direction:column;align-items:flex-start;}
+  .footer__meta{text-align:left;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+.acc__inner > .gallery:first-child{margin-top:0;margin-bottom:clamp(26px,3.6vw,40px);}
+.acc__inner .prose h4{margin-top:1.6em;}
+</style>
+</head>
+<body>
+<header class="header" id="top">
+  <div class="header__inner">
+    <a class="brand" href="index.html" aria-label="Roberto Uccellini — home">
+      <img src="assets/logo-ru.png" data-t="t5" data-tp="alt" alt="Logo Roberto Uccellini" />
+      <span class="brand__sub" data-t="t4">Chirurgia Plastica<br>Ricostruttiva ed Estetica</span>
+    </a>
+    <nav class="nav" id="nav" data-t="t3" data-tp="aria-label" aria-label="Navigazione principale">
+      <a href="index.html" data-t="t7">Home</a>
+      <a href="viso-e-occhi.html" data-t="t8">Viso e Occhi</a>
+      <a href="corpo-e-seno.html" data-t="t9">Corpo e Seno</a>
+      <a href="trattamenti-non-chirurgici.html" aria-current="page" data-t="t10">Non chirurgici</a>
+      <a href="#contatti" data-t="t11">Contatti</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Lingua / Language">
+      <button type="button" class="lang-btn is-active" data-lang="it" aria-label="Italiano" title="Italiano"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#CE2B37"/></svg></button>
+      <button type="button" class="lang-btn" data-lang="en" aria-label="English" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" data-t="t6" data-tp="aria-label" aria-label="Apri menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+<main>
+  <section class="phero wrap">
+    <div class="phero__inner phero__grid">
+      <div class="phero__copy">
+        <p class="phero__num" data-t="t12">Area 03</p>
+        <h1 class="phero__t" data-t="t13">Trattamenti non chirurgici</h1>
+        <p class="phero__lead" data-t="t14">Senza incisioni, con poco o nessun recupero</p>
+      </div>
+      <figure class="phero__media">
+        <img src="assets/area-non-chirurgiche.jpg" fetchpriority="high" decoding="async" data-t="t15" data-tp="alt" alt="Trattamenti non chirurgici del viso e del corpo" style="object-position:50% 30%;" />
+      </figure>
+    </div>
+  </section>
+  <section class="section intro-sec" id="introduzione">
+    <div class="wrap split">
+      <div class="split__head reveal">
+        <p class="eyebrow" data-t="t21">Introduzione</p>
+        <h2 class="title" data-t="t20">La misura, prima della tecnica</h2>
+      </div>
+      <div class="prose reveal" data-t="n1"><p>Non tutto richiede un intervento, e buona parte di ciò che porta le persone da noi non lo richiede affatto. Nelle sue fasi iniziali l'invecchiamento si manifesta in piccole cose: un po' meno volume nello zigomo, una piega che ha cominciato a restare anche a viso rilassato, una pelle che ha perso parte della sua luce. Sono aspetti che rispondono bene a trattamenti senza incisioni e con un recupero minimo o nullo.</p><p>Le possibilità comprendono il plasma ricco di piastrine, i filler dermici, la tossina botulinica e i fili di sospensione, da soli o in combinazione. Ciascuno agisce su qualcosa di molto preciso — volume, movimento, sostegno, qualità della pelle — e l'abilità sta meno nei trattamenti in sé che nello scegliere quale, dove e quanto poco.</p><p>Non riguardano soltanto pazienti di una certa età. Chi è più giovane arriva spesso per ridefinire le labbra, riequilibrare un tratto da sempre leggermente asimmetrico o poco sviluppato, o semplicemente per mantenere più a lungo ciò che ha.</p><p>La misura è tutto. Un lavoro eccessivo si riconosce a colpo d'occhio; un lavoro ben calibrato non si riconosce affatto — il viso conserva il suo carattere, la sua espressione e il suo modo di invecchiare. E quando un trattamento non chirurgico non potrà darLe ciò che spera, glielo diremo, spiegandoLe che cosa invece lo potrebbe.</p></div>
+    </div>
+  </section>
+  <section class="section" id="trattamenti">
+    <div class="wrap">
+      <div class="col reveal">
+        <p class="eyebrow" data-t="t22">I trattamenti</p>
+        <h2 class="title" data-t="t23">Scelga il trattamento che desidera approfondire</h2>
+        <p class="acc-hint" data-t="t24">Tocchi un trattamento per aprirlo. Le fotografie dei casi, quando disponibili, sono in apertura della scheda.</p>
+      </div>
+      <div class="acc-list">
+        <article class="acc reveal" id="filler">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-filler">
+            <span class="acc__num">01</span>
+            <h3 class="acc__t" data-t="t27">Filler dermici</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-filler" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t32" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/non-chirurgici/filler-1.jpg" loading="lazy" decoding="async" data-t="t34" data-tp="alt" alt="Filler dermici — caso clinico 1 di 2, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/non-chirurgici/filler-2.jpg" loading="lazy" decoding="async" data-t="t35" data-tp="alt" alt="Filler dermici — caso clinico 2 di 2, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t25" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t26" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button></div><p class="gal-note" data-t="t33">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n2"><p>Usiamo il filler per uno scopo specifico: restituire volume. Vale la pena essere chiari, perché il volume è ciò che le prime fasi dell’invecchiamento tendono realmente a sottrarre. Quando il sostegno sotto la pelle si assottiglia, compare un incavo sotto gli occhi, lo zigomo si appiattisce, una linea che prima compariva solo con il movimento comincia a rimanere visibile anche a riposo. Quando il filler viene collocato correttamente, restituisce ciò che è venuto a mancare al di sotto della pelle e la superficie si assesta di conseguenza.</p><p>Lavoriamo secondo lo stesso principio anche nelle aree in cui il volume è sempre stato naturalmente ridotto: un mento leggermente arretrato, zigomi poco definiti, labbra assottigliate o da sempre sottili. Il trattamento è rapido, il fastidio generalmente contenuto e il recupero minimo o assente: la maggior parte delle nostre pazienti riprende le normali attività subito dopo.</p><p>I filler hanno anche dei limiti, ed è importante conoscerli prima del trattamento. Non tendono la pelle rilassata e non possono correggere un invecchiamento strutturale avanzato. Utilizzati con questo intento, possono aggiungere peso a un viso che sta già perdendo sostegno; è proprio per questo che eccessi e sovraccarichi possono conferire un aspetto appesantito anziché ringiovanito.</p><p>Quando il problema principale è il rilassamento dei tessuti, il Dr. Uccellini glielo dirà con chiarezza e le suggerirà piuttosto altre alternative quali una blefaroplastica o un lifting, lasciando al filler ciò che sa fare meglio: rifinire il risultato.</p><p>Cosa è più adatto nel Suo caso - o quale combinazione di procedure - dipende dai cambiamenti che il Suo viso ha subito e dove. È questo che il Dr. Uccellini stabilirà insieme a Lei prima di procedere con qualsiasi trattamento.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="labbra">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-labbra">
+            <span class="acc__num">02</span>
+            <h3 class="acc__t" data-t="t36">Labbra</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-labbra" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t40" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/non-chirurgici/labbra-1.jpg" loading="lazy" decoding="async" data-t="t42" data-tp="alt" alt="Labbra — caso clinico 1 di 2, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/non-chirurgici/labbra-2.jpg" loading="lazy" decoding="async" data-t="t43" data-tp="alt" alt="Labbra — caso clinico 2 di 2, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t25" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t26" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button></div><p class="gal-note" data-t="t41">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n3"><p>La maggior parte delle persone che richiedono un aumento delle labbra dicono per prima cosa la stessa frase: «niente di eccessivamente evidente».</p><p>È una preoccupazione legittima. Le labbra sovrariempite sono infatti uno dei risultati più riconoscibili della medicina estetica, ma sono anche un esito che può essere evitato lavorando con raffinatezza, utilizzando piccole quantità di prodotto e fermandosi al momento giusto.</p><p>Per la maggior parte dei trattamenti utilizziamo filler specifici a base di acido ialuronico, che consentono di ridefinire il bordo del labbro, riequilibrare una differenza tra labbro superiore e inferiore oppure restituire la pienezza che gli anni hanno progressivamente sottratto.</p><p>Per pazienti selezionate, il grasso prelevato dal proprio corpo rappresenta un’alternativa, con un volume più morbido e potenzialmente più duraturo.</p><p>La misura di un buon risultato è la proporzione, non la dimensione.</p><p>Le Sue labbra devono sembrare appartenere naturalmente al resto del viso; non deve risultare evidente che siano state trattate.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="prp">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-prp">
+            <span class="acc__num">03</span>
+            <h3 class="acc__t" data-t="t66">PRP — Plasma ricco di piastrine</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-prp" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="prose" data-t="n4"><p>Il PRP è un trattamento rigenerativo che utilizza il proprio sangue per migliorare la qualità e la vitalità della pelle.</p><p>Viene prelevata una piccola quantità di sangue, che viene poi processata per concentrare le piastrine e i relativi fattori di crescita. La preparazione ottenuta viene quindi delicatamente infiltrata nelle aree da trattare.</p><p>A differenza dei filler dermici sintetici, il PRP non aggiunge volume artificiale né modifica i contorni del viso. Il suo obiettivo è diverso: sostenere i naturali processi rigenerativi della pelle e migliorarne la texture, l’elasticità e la qualità complessiva.</p><p>Può essere particolarmente indicato quando la pelle è diventata più sottile, meno elastica o irregolare nella sua consistenza, ad esempio sul viso, nella delicata area perioculare e sul collo.</p><p>Uno dei principali vantaggi del PRP è che il materiale utilizzato proviene interamente dal proprio organismo. Non viene introdotto alcun materiale di riempimento sintetico né una sostanza estranea per ottenere l’effetto desiderato.</p><p>Come per qualsiasi trattamento iniettivo, possono tuttavia comparire temporaneamente gonfiore, arrossamento o piccoli lividi.</p><p>Il PRP produce inoltre un risultato diverso da quello di un filler. Un filler agisce fornendo un effetto strutturale immediato, attraverso l’aggiunta di volume o la definizione dei contorni; il PRP agisce invece progressivamente, favorendo cambiamenti nella qualità dei tessuti trattati anziché limitarsi a riempire un’area svuotata.</p><p>Il miglioramento si sviluppa quindi gradualmente e tende a essere naturale e discreto.</p><p>Per i pazienti che iniziano a notare una perdita di qualità della pelle, ma non necessitano di un aumento di volume, il PRP può rappresentare un’opzione interessante. Può comunque essere associato ad altri trattamenti, come filler, lipofilling o chirurgia, quando sia necessario intervenire su diversi aspetti dell’invecchiamento del viso.</p><p>Il PRP non sostituisce un filler quando è necessario ripristinare un volume perduto, né può correggere una significativa lassità cutanea. Il suo punto di forza è un altro: lavorare con le risorse biologiche del proprio organismo per migliorare la qualità della pelle stessa.</p><p>Generalmente viene consigliato un ciclo di trattamenti, il cui numero e la cui frequenza vengono stabiliti in base alle condizioni della pelle e al risultato desiderato. Il miglioramento è graduale e continua a svilupparsi nelle settimane e nei mesi successivi al trattamento.</p><p>Il principio è semplice: anziché aggiungere qualcosa al viso, il PRP utilizza le risorse biologiche del proprio organismo per favorire una pelle dall’aspetto più sano e vitale.</p><p><em>«La rigenerazione dermica tramite fattori di crescita piastrinici (PRP) equivale a una vera e propria “cura ristrutturante” per la cute e questa tecnica rappresenterà nei prossimi decenni il punto di riferimento nella Medicina e Chirurgia Estetica.»</em></p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="botulino">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-botulino">
+            <span class="acc__num">04</span>
+            <h3 class="acc__t" data-t="t44">Tossina botulinica (Botox®) · Iperidrosi</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-botulino" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="prose" data-t="n5"><p>Le rughe che questo trattamento affronta sono quelle prodotte dall’eccessiva contrazione dei muscoli del viso: sulla fronte, tra le sopracciglia e all’angolo esterno degli occhi.</p><p>All’inizio compaiono soltanto con il movimento. Con gli anni, la piega può rimanere visibile anche quando l’espressione è terminata e, da quel momento, tende ad approfondirsi.</p><p>L’effetto «congelato» che tutti temono nasce dall’utilizzo di una quantità eccessiva di prodotto o dal suo impiego scorretto su troppi muscoli. Noi lavoriamo al contrario: con piccole dosi, collocate in muscoli precisi, lasciando intatti quelli che contribuiscono a mantenere naturale l’espressività del volto.</p><p>Deve poter ancora aggrottare la fronte, sembrare sorpresa ed essere letta correttamente da chi Le sta davanti. Il punto è apparire meno stanchi, non meno espressivi.</p><p>La seduta dura pochi minuti e non richiede un periodo di recupero. L’effetto compare gradualmente nei giorni successivi, si mantiene per alcuni mesi e può poi essere ripetuto. Per questo la tossina botulinica può essere utilizzata sia per attenuare le rughe già presenti sia per prevenirne la progressiva accentuazione.</p><h4>Non solo un trattamento estetico</h4><p>La tossina botulinica purificata ha una lunga storia in medicina e molti si sorprendono di quanto sia ampio il suo impiego.</p><p>La utilizziamo, ad esempio, nel trattamento dell’eccessiva sudorazione di ascelle, mani e piedi, un’indicazione consolidata. In altre specialità viene impiegata anche per l’emicrania cronica, gli spasmi muscolari e alcune condizioni oculari, tra cui lo strabismo.</p><h4>Eccessiva sudorazione — Iperidrosi</h4><p>La tossina botulinica può ridurre efficacemente l’eccessiva sudorazione in aree quali ascelle, mani e piedi.</p><p>Piccole iniezioni bloccano temporaneamente i segnali nervosi che stimolano le ghiandole sudoripare, riducendo significativamente la sudorazione nella zona trattata.</p><p>Il trattamento è relativamente rapido e richiede poco o nessun periodo di recupero. L’effetto si manifesta nei giorni successivi e dura generalmente diversi mesi, dopodiché il trattamento può essere ripetuto, se necessario.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="lipofilling">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-lipofilling">
+            <span class="acc__num">05</span>
+            <h3 class="acc__t" data-t="t70">Lipofilling (Lipostruttura)</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-lipofilling" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="prose" data-t="n6"><p>Il lipofilling è un trattamento per il ripristino dei volumi del viso e del corpo che utilizza il proprio tessuto adiposo anziché un filler sintetico.</p><p>Il grasso viene prelevato delicatamente da un’area in cui è presente in quantità sufficiente — come addome, fianchi o cosce — accuratamente preparato e quindi trasferito in piccole quantità e con grande precisione nelle zone in cui il volume è diminuito.</p><p>Il principale vantaggio è che il materiale utilizzato per ripristinare i volumi è il proprio tessuto vivente. Non viene introdotto un filler sintetico per creare volume e, una volta attecchito, il tessuto adiposo trasferito può integrarsi nell’area trattata sviluppando un proprio apporto sanguigno.</p><p>Il lipofilling è particolarmente indicato quando si desidera un ripristino più completo dei volumi. Nel viso può attenuare gli avvallamenti, restituire pienezza alle guance e alle tempie, ridefinire il profilo mandibolare o rivitalizzare le aree che si sono svuotate con il passare degli anni.</p><p>Può essere utilizzato anche sulle mani o in altre aree del corpo per correggere alcune irregolarità del contorno dovute a traumi o a precedenti interventi chirurgici.</p><p>A differenza di un filler dermico, che viene progressivamente riassorbito dall’organismo in funzione delle caratteristiche del prodotto utilizzato, il tessuto adiposo che attecchisce può offrire un ripristino di volume duraturo.</p><p>È tuttavia importante sapere che non tutto il grasso trasferito sopravvive. Una parte viene fisiologicamente riassorbita nei primi mesi e il risultato definitivo si manifesta progressivamente. Per questo può essere indicato un secondo trattamento per raggiungere il grado di correzione desiderato.</p><p>Il lipofilling può offrire anche un ulteriore beneficio sulla qualità della pelle sovrastante. Nei mesi successivi al trattamento, alcuni pazienti osservano un miglioramento della texture, della morbidezza e della qualità complessiva della pelle. Questi effetti variano da persona a persona e devono essere considerati un beneficio aggiuntivo, piuttosto che l’obiettivo principale del trattamento.</p><p>La differenza rispetto ai filler sintetici, quindi, non riguarda semplicemente la durata. Il lipofilling permette di ripristinare i volumi utilizzando un tessuto proveniente dal proprio organismo e, allo stesso tempo, di ridurre eventuali accumuli adiposi localizzati nell’area donatrice.</p><p>Il risultato che si ricerca è un’integrazione, non un’aggiunta: volumi ripristinati, contorni naturali e un viso o un corpo che rimane pienamente riconoscibile come il proprio.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="fili-di-sospensione">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-fili-di-sospensione">
+            <span class="acc__num">06</span>
+            <h3 class="acc__t" data-t="t51">Fili di sospensione</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-fili-di-sospensione" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="prose" data-t="n7"><p>I fili si collocano a metà strada tra i trattamenti che riempiono e la chirurgia che solleva.</p><p>Quando, con il passare del tempo, cominciano a evidenziarsi una perdita di tono ed elasticità della pelle e i primi cedimenti del viso, si può ricorrere a questo tipo di trattamento.</p><p>I fili funzionano al meglio nei casi di rilassamento da lieve a moderato: in pazienti che hanno iniziato a notare un profilo mandibolare meno definito o uno zigomo che perde parte della sua evidenza, ma che sono ancora lontani dall’aver bisogno di un lifting o preferiscono rimandarlo.</p><p>Inseriamo fili sottili nel viso in anestesia locale, esercitando una delicata trazione verso l’alto sui tessuti rilassati. Spesso li associamo a lipofilling, filler o tossina botulinica, così che volume, movimento e sostegno possano essere affrontati insieme, anziché uno alla volta.</p><p>Le tecniche più moderne utilizzano fili con un nucleo in poliestere rivestito da silicone medicale solido, secondo la tecnica Thread &amp; Lift. Si tratta di fili progettati per consentire un sollevamento e una definizione dei contorni del viso apprezzabili.</p><p>Tra le tecniche a nostra disposizione, questa è quella a cui ricorriamo di preferenza perché consente, a nostro avviso, un sollevamento netto ma discreto.</p><p>Lavoriamo in anestesia locale e la seduta dura di norma quaranta-cinquanta minuti. Non sono necessarie incisioni né rimangono cicatrici visibili; la maggior parte delle pazienti riprende le normali attività già nei primi giorni dopo la procedura.</p><p>Oltre a questi fili, più efficienti ma anche più costosi, sono molto diffusi i fili realizzati con materiali riassorbibili, come il PDO (polidiossanone).</p><p>I fili di polidiossanone vengono proposti da molte aziende come prodotti in grado di agire sulla qualità della pelle. Si riassorbono nell’arco di circa sei-otto mesi e, durante il processo di riassorbimento, provocano una risposta rigenerativa controllata che porta la pelle a produrre nuovo collagene.</p><p>Questo li rende utili quando il rilassamento è lieve: un profilo mandibolare che si è appena ammorbidito o una pelle che ha perso parte del proprio tono ed elasticità. Il loro utilizzo viene proposto non solo sul viso, ma anche in alcune aree del corpo nelle quali la pelle si è leggermente rilassata.</p><p>Trattamenti di questo tipo si sono diffusi per una ragione semplice: permettono di rimandare la chirurgia, consentendo di ottenere un certo grado di miglioramento, per quanto delicato.</p><p>Ciò che non possono fare è sostituirla. I fili possono contribuire a ritardare un lifting, ma non possono riprodurne il risultato. Quando i tessuti sono realmente scesi, il lifting rimane l’intervento che affronta il problema alla sua origine.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="volumi-del-viso">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-volumi-del-viso">
+            <span class="acc__num">07</span>
+            <h3 class="acc__t" data-t="t75">Ridefinizione dei contorni e dei volumi del viso</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-volumi-del-viso" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="prose" data-t="n8"><p>L’armonia e l’estetica del viso dipendono anche dalla corretta proporzione dei suoi volumi.</p><p>L’invecchiamento sottrae volume in più punti contemporaneamente. Lo zigomo perde definizione, la guancia si appiattisce, la regione intorno agli occhi si incava e le labbra si assottigliano.</p><p>Alcuni visi, inoltre, presentano fin dall’origine una proiezione della regione zigomatica inferiore rispetto a quella che potrebbe essere considerata proporzionata al resto dei tratti. È una questione di anatomia più che di età e può essere corretta sostanzialmente secondo gli stessi principi.</p><p>Il modo più naturale per restituire volume al viso è utilizzare il tessuto adiposo del paziente stesso, trasferito attraverso il lipofilling. In alternativa, si possono utilizzare filler dermici, indicati per correzioni precise e per ritocchi più contenuti.</p><p>Quando opportuno, possiamo utilizzare entrambi, ciascuno per ciò che è più indicato.</p><p>L’obiettivo non è mai aggiungere più volume. È ottenere il volume giusto, nel giusto rapporto.</p><p>Quando il risultato è ben calibrato, nessun singolo tratto deve apparire artefatto.</p><p>Il viso torna semplicemente a mostrare un aspetto più giovane e armonioso.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="altre-aree" style="background:var(--paper);border-block:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow center" style="justify-content:center;" data-t="t85">Le altre aree</p>
+      <div class="aree-grid" style="max-width:900px;margin-inline:auto;">
+        <a class="area-card reveal" href="viso-e-occhi.html">
+          <div class="area-card__img"><img src="assets/area-viso.jpg" loading="lazy" data-t="t82" data-tp="alt" alt="Viso e Occhi" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">01</span><h3 class="area-card__t" data-t="t81">Viso e Occhi</h3></div>
+        </a>
+        <a class="area-card reveal" href="corpo-e-seno.html">
+          <div class="area-card__img"><img src="assets/area-corpo.jpg" loading="lazy" data-t="t84" data-tp="alt" alt="Corpo e seno" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">02</span><h3 class="area-card__t" data-t="t83">Corpo e seno</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section contatti" id="contatti">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-t="t86">Contatti</p>
+      <h2 class="title reveal" data-t="t87">Un incontro, prima di ogni decisione</h2>
+      <div class="contatti__grid">
+        <p class="contatti__intro reveal" data-t="t88">La prima consultazione con il Dr. Roberto Uccellini è un colloquio disteso e approfondito, dedicato interamente alle Sue esigenze e alle opzioni disponibili. Un confronto sincero, senza fretta: il primo, vero passo verso una scelta consapevole.</p>
+        <div class="reveal"><div class="contact-block"><div class="k" data-t="t89">Sede</div><div class="v" data-t="t90">Terni — Ambulatorio di Chirurgia Plastica<br>Direttore Sanitario</div></div><div class="contact-block"><div class="k" data-t="t91">Telefono</div><div class="v"><span class="ph" data-t="t92">da inserire</span></div></div><div class="contact-block"><div class="k" data-t="t93">Email</div><div class="v"><span class="ph" data-t="t94">da inserire</span></div></div><div class="contact-block"><div class="k" data-t="t95">Indirizzo</div><div class="v"><span class="ph" data-t="t96">da inserire</span></div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand"><a href="index.html"><img src="assets/logo-ru.png" data-t="t98" data-tp="alt" alt="Logo Roberto Uccellini" /></a></div>
+    <div class="footer__meta" data-t="t97">Roberto Uccellini — Chirurgia Plastica, Ricostruttiva ed Estetica<br>Specialista in Chirurgia Plastica Ricostruttiva ed Estetica e in Chirurgia Generale</div>
+  </div>
+</footer>
+
+<script>window.__EN__ = {"t1": "Non-surgical procedures — Roberto Uccellini, Aesthetic Medicine", "t2": "Non-surgical aesthetic medicine: dermal fillers, lip enhancement, PRP, botulinum toxin, hyperhidrosis treatment, lipofilling, thread lifting, facial volume redefinition.", "t3": "Main navigation", "t4": "Plastic, Reconstructive<br>and Aesthetic Surgery", "t5": "Roberto Uccellini logo", "t6": "Open menu", "t7": "Home", "t8": "Face and Eyes", "t9": "Body and Breast", "t10": "Non-surgical", "t11": "Contact", "t12": "Area 03", "t13": "Non-surgical procedures", "t14": "No incisions, little or no downtime", "t15": "Non-surgical treatments of the face and body", "t16": "Not everything requires an operation, and a good deal of what brings people here does not. In its early stages ageing shows in small things: slightly less volume in the cheek, a fold that has begun to hold its shape when the face is at rest, skin that has lost some of its light. These respond well to treatments that involve no incision and little or no recovery.", "t17": "The options include platelet-rich plasma, dermal fillers, botulinum toxin and thread lifting, used alone or in combination. Each addresses something quite specific — volume, movement, support, skin quality — and the skill lies less in the treatments themselves than in choosing which, where, and how little.", "t18": "They are not only for patients of a certain age. Younger patients often come to refine the lips, balance a feature that has always been slightly uneven or underdeveloped, or simply hold things where they are for longer.", "t19": "Restraint is the point. Overdone work is recognisable at a glance; well-judged work is not recognisable at all — the face keeps its character, its expression and its own way of ageing. And where a non-surgical treatment will not deliver what you are hoping for, we will say so, and explain what would.", "t20": "Restraint, before technique", "t21": "Introduction", "t22": "The treatments", "t23": "Select the treatment you would like to read about", "t24": "Tap a treatment to open it. Where available, photographs of cases appear at the top of each entry.", "t25": "Previous image", "t26": "Next image", "t27": "Dermal Fillers", "t28": "We use filler for one purpose: to replace volume. That is worth being clear about, because volume is what most early ageing actually costs you. As the support beneath the skin thins, a hollow appears under the eye, the cheekbone flattens, a line that used to come and go begins to stay. Placed well, filler restores what has gone from underneath, and the surface settles of its own accord.", "t29": "We work on the same principle where the volume was never there to begin with: a chin that sits a little back, cheekbones without much definition, lips that have thinned or were always fine. The treatment is quick, discomfort is minor, and there is little or no downtime — most of our patients carry on with their day afterwards.", "t30": "Fillers also have limits, and we would rather you knew them beforehand. They do not tighten loose skin, and they cannot correct advanced structural ageing. Used in the attempt, they add weight to a face that is already descending, which is precisely why overfilled results look heavy rather than younger. Where laxity is the real problem, we will say so and talk to you instead about eyelid surgery or a facelift — with filler then doing what it does best, refining the result afterwards.", "t31": "What you need, and it is often a little of each, comes down to what your face has lost and where. That is what we work out with you before anything is injected.", "t32": "Photo gallery", "t33": "Photographs of real cases. Results vary from person to person.", "t34": "Dermal Fillers — case 1 of 2, Dr. Roberto Uccellini", "t35": "Dermal Fillers — case 2 of 2, Dr. Roberto Uccellini", "t36": "Lip Enhancement", "t37": "Almost everyone who comes to us about lips says the same thing first: nothing obvious. It is a fair concern — overfilled lips are the most recognisable result in aesthetic medicine — and also the easiest to avoid, by working in small amounts and stopping early.", "t38": "We use hyaluronic acid fillers for most treatments, which allow us to redefine the border of the lip, even out a difference between upper and lower, or replace fullness that the years have taken. For selected patients, fat taken from your own body is an alternative, giving a softer and longer-lasting volume.", "t39": "The measure of a good result is proportion rather than size. Your lips should look as though they belong to the rest of your face — and, ideally, as though nothing was done at all.", "t40": "Photo gallery", "t41": "Photographs of real cases. Results vary from person to person.", "t42": "Lip Enhancement — case 1 of 2, Dr. Roberto Uccellini", "t43": "Lip Enhancement — case 2 of 2, Dr. Roberto Uccellini", "t44": "Botulinum Toxin · Hyperhidrosis", "t45": "The lines this treats are the ones you make yourself: across the forehead, between the brows, at the outer corner of the eye. Early on they appear only when you move. Over the years the crease stays behind after the expression has gone — and once it does, it deepens on its own.", "t46": "The frozen look everyone worries about comes from too much product spread across too many muscles. We work the other way, with small doses placed in specific muscles and the ones that carry your expression left alone. You should still be able to frown, look surprised and be read correctly by the people you are talking to. The point is that you look less tired, not less expressive.", "t47": "The appointment takes a few minutes and needs no recovery. The effect appears gradually over the following days, holds for a matter of months, and can then be repeated — which is why it works as well for preventing lines from settling as for softening the ones already there.", "t48": "Not only an aesthetic treatment", "t49": "The same substance has a long history in general medicine, and many patients are surprised by how broad its use is. We treat excessive sweating of the underarms, hands and feet with it — a straightforward and reliable indication. In other specialities it is used for chronic migraine, for muscle spasm, and for certain conditions affecting the eyes, including strabismus.", "t50": "If you are considering it for a medical rather than a cosmetic reason, say so when you book, and we will set the consultation up accordingly.", "t51": "Thread Lifting", "t52": "Threads sit between the treatments that fill and the surgery that lifts. We place fine absorbable threads beneath the skin under local anaesthetic, drawing slack tissue gently upward along the cheek, the jawline, the brow or the upper neck. The support is there immediately. Over the months that follow the threads dissolve, and the body lays down its own collagen along the path they took — which is where the longer-lasting part of the effect comes from.", "t53": "You will see the treatment described elsewhere as a non-surgical facelift. We would rather be straight with you: it is not one. The lift is a modest one, and it does not hold the way surgery holds. What it does do well is keep a face where it is for a while longer, without general anaesthesia, without incisions, and with a day or two of recovery instead of several weeks.", "t54": "Who it suits", "t55": "Threads work best for mild to moderate laxity — for patients who have started to notice the jawline softening or the cheek losing its definition, but who are some way from needing a facelift and would rather not have one yet. We often combine them with fillers or botulinum toxin, so that volume, movement and support are addressed together rather than one at a time.", "t56": "Where laxity is more advanced, we will tell you honestly that threads will disappoint you, and explain what would not. We would much rather have that conversation with you beforehand than afterwards.", "t57": "Silhouette Soft®", "t58": "Of the threads available to us, this is the one we reach for when the lift needs to be definite but discreet. The sutures are made of polylactic acid — a material long established in surgery and fully absorbed by the body — and carry a series of very small bidirectional cones along their length. The cones are what hold: once the thread is in position beneath the skin, they anchor the surrounding tissue and keep it where we have set it.", "t59": "The effect comes in two stages. The lift itself is visible the same day. Then, over the following weeks and months, the polylactic acid stimulates your own collagen, so firmness and skin quality carry on improving after the lift has settled.", "t60": "We work under local anaesthetic and the appointment usually takes between thirty and forty-five minutes. There are no incisions and no visible scars, and most patients return to normal activity very soon afterwards. Results generally hold for many months, and the treatment can be repeated when the time comes.", "t61": "PDO Threads", "t62": "Polydioxanone threads work more on the quality of the skin than on its position. Where cone-bearing sutures lift tissue and hold it, these do something quieter: they dissolve over roughly six to eight months and, as they go, provoke a controlled regenerative response that leads the skin to build new collagen of its own. The tightening is gentle and it develops gradually, rather than appearing on the day.", "t63": "That makes them useful where laxity is mild — a jawline that has softened slightly, skin that has lost a little of its firmness and elasticity — and not only on the face. We also use them on areas of the body where the skin has loosened somewhat but nothing more than that.", "t64": "Treatments of this kind have become popular for a straightforward reason: they let patients postpone surgery while still seeing a real, if subtle, improvement.", "t65": "What they will not do is replace it. Threads can delay a facelift; they cannot reproduce one. Where the tissue has genuinely descended, a facelift remains the procedure that addresses it properly — and we would rather tell you that at the outset than sell you a course of treatments that was never going to get you there.", "t66": "PRP — Platelet-Rich Plasma", "t67": "PRP begins with a small sample of your own blood. We spin it to concentrate the platelets, which carry the growth factors the body uses to repair itself, and inject that concentrate into the area being treated. Because it comes from you, there is nothing for the body to react against — no allergy and no risk of rejection.", "t68": "In aesthetic work we use it for the quality of the skin rather than its shape: texture, elasticity, and the fine crepiness that appears on the cheeks, around the eyes and on the neck. It also has a role in hair restoration, and the same principle is applied well beyond aesthetic medicine — in orthopaedics and sports medicine, to support healing in selected conditions.", "t69": "What PRP will not do is fill a hollow or lift anything, and it does not work overnight. It works by prompting your own tissue to regenerate, so the change appears gradually over several weeks and builds across a course of sessions rather than a single visit. At consultation we will tell you how many your case is likely to need — and, just as importantly, whether PRP is the right choice for what you actually want.", "t70": "Lipofilling — Lipostructure", "t71": "The principle is straightforward. We take fat from somewhere you have more of it than you want — the abdomen, the flanks, the thighs — prepare it carefully, and place it where volume is missing. Nothing synthetic is introduced, so there is nothing for the body to react against, and no question of allergy or rejection.", "t72": "We use it in the face, but by no means only there. Hands that have grown thin and veined respond particularly well. So do contour irregularities: a dent left by an injury, a hollow after earlier surgery, an area that has simply emptied over the years.", "t73": "There is one thing to know before you decide. Not all of the transferred fat survives. A proportion is reabsorbed during the first months, and what remains after that stays for good. This means a second session is sometimes needed to reach the result you are after, and we would rather you expected that from the beginning than met it as a surprise — we plan for it, instead of over-correcting at the first attempt.", "t74": "The fat that does take brings something else with it. Over the following months the skin above a graft tends to improve in texture and quality as well, which is one thing no synthetic filler can offer.", "t75": "Redefinition of Facial Volumes and Contours", "t76": "Restoring balance, rather than adding volume", "t77": "A face is read as a whole. Treat one area in isolation and the rest of the face argues with it — which is why we assess volume across the entire face before deciding to place anything anywhere.", "t78": "Ageing takes volume from several places at once. The cheekbone loses its definition, the cheek flattens, the area around the eye becomes hollow, the lips thin. Some faces also begin with less projection at the cheekbone than the rest of their features would suggest, which is a matter of anatomy rather than age and is corrected in much the same way.", "t79": "We restore volume either with your own fat, transferred by lipofilling — the most natural material available to us, and the one that lasts — or with dermal fillers, which suit precise corrections and smaller refinements. Frequently we use both, each for what it does best.", "t80": "The aim is never more volume. It is the right volume in the right relationship: cheekbone to cheek, cheek to jaw, midface to eye. When it is judged well, no single feature announces itself as treated. The face simply holds together again — and still reads unmistakably as yours.", "t81": "Face and Eyes", "t82": "Face and Eyes", "t83": "Body and breast", "t84": "Body and breast", "t85": "The other areas", "t86": "Contact", "t87": "A meeting, before any decision", "t88": "The first consultation with Dr. Roberto Uccellini is a relaxed and in-depth conversation, dedicated entirely to your needs and to the available options. A sincere exchange, without rush: the first, true step towards an informed choice.", "t89": "Location", "t90": "Terni — Plastic Surgery Outpatient Clinic<br>Medical Director", "t91": "Telephone", "t92": "to be added", "t93": "Email", "t94": "to be added", "t95": "Address", "t96": "to be added", "t97": "Roberto Uccellini — Plastic, Reconstructive and Aesthetic Surgery<br>Specialist in Plastic, Reconstructive and Aesthetic Surgery and in General Surgery", "t98": "Roberto Uccellini logo", "n1": "<p>Not every concern requires surgery. Many of the earliest signs of ageing are subtle: a little less volume in the cheek, a fold that remains visible when the face is at rest, or skin that has gradually lost some of its luminosity and elasticity. These changes can often be addressed with treatments that involve no incision and little or no downtime.</p><p>Among the non-surgical treatments most frequently requested are platelet-rich plasma (PRP), dermal fillers, botulinum toxin and, where appropriate, thread lifting. Each has a distinct role, whether to restore volume, soften dynamic lines, refine facial contours or improve the quality of the skin. The art lies not in using more, but in understanding which treatment is appropriate, where it should be used and when it is better to leave something alone.</p><p>These treatments are not limited to a particular age. Younger patients may seek subtle lip enhancement, correction of a longstanding asymmetry or refinement of facial proportions, while others wish to maintain freshness as the first signs of ageing appear.</p><p>Restraint is fundamental. The most successful treatment is rarely the one that can be seen. The face should retain its character, its movement and its individuality.</p><p>And if a non-surgical treatment cannot achieve what you are looking for, Dr. Uccellini will tell you. Sometimes the most appropriate recommendation it is to do less; sometimes it is to consider a surgical procedure that addresses the underlying change more effectively.</p>", "n2": "<p>Dermal fillers are used primarily to restore or enhance volume and to refine specific facial contours. As the face ages, changes in the underlying tissues can create hollows beneath the eyes, flatten the cheeks or alter the definition of the lips and chin.</p><p>Carefully placed filler can restore some of this lost volume or provide subtle structural refinement. It can also be used where a feature has always lacked projection or definition—for example, in the chin, cheeks or lips.</p><p>The treatment is generally quick, with minimal recovery, although temporary swelling, redness or bruising can occur. Results depend on the area treated, the product used and individual response.</p><p>Fillers have clear limitations. They do not resolve significant skin laxity or reposition descended facial tissues. Adding volume where the underlying issue is primarily laxity can produce a heavier appearance rather than a more youthful one.</p><p>For this reason, treatment begins with an assessment of the face as a whole. Where surgery would address the underlying concern more appropriately, Dr. Uccellini will explain this rather than attempting to compensate with additional filler.</p><p>The objective is not to add volume for its own sake, but to restore proportion with the smallest intervention necessary.</p>", "n3": "<p>Lip enhancement is not necessarily about increasing volume. More often, the aim is to restore subtle fullness, refresh the appearance of the lips, refine their definition or achieve greater harmony between the upper and lower lip.</p><p>Hyaluronic acid fillers are commonly used because they allow volume and contour to be adjusted with precision. They may be used to define the lip border, correct a mild asymmetry or restore fullness that has diminished with time.</p><p>For selected patients, fat grafting can provide an alternative approach, using the patient's own tissue to create softer, longer-lasting volume.</p><p>The treatment is deliberately conservative. The most harmonious lips are those that remain in proportion with the nose, chin and surrounding features. The objective is for the lips to look naturally balanced rather than visibly treated.</p>", "n4": "<p>PRP is a regenerative treatment that uses your own blood to improve the quality and vitality of the skin. A small blood sample is collected and processed to concentrate the platelets and their associated growth factors. This preparation is then carefully introduced into the areas being treated.</p><p>Unlike synthetic dermal fillers, PRP does not add artificial volume or alter the contours of the face. Its purpose is different: to support the skin's natural regenerative processes and improve its texture, elasticity and overall quality. It can be particularly valuable for skin that has become thinner, less supple or uneven in texture, including the face and the delicate area around the eyes and neck.</p><p>One of the principal advantages of PRP is that the material used comes entirely from your own body. There is no synthetic filler material and no need to introduce a foreign substance to create the treatment effect. As with any injectable procedure, however, temporary swelling, redness or bruising can occur.</p><p>PRP also offers a different kind of result from a filler. A filler provides an immediate structural effect by adding volume or definition; PRP works progressively, encouraging changes in the quality of the treated tissue rather than simply filling a hollow. The improvement therefore develops gradually and tends to be subtle and natural.</p><p>For patients who are beginning to notice a loss of skin quality but do not need additional volume, PRP can be an attractive option. It may also complement other treatments, including fillers, lipofilling or surgery, when different aspects of facial ageing need to be addressed.</p><p>PRP is not a substitute for a filler when volume restoration is required, nor can it correct significant skin laxity. Its strength lies elsewhere: in working with your own biology to improve the quality of the skin itself.</p><p>A course of treatments is often recommended, with the number and timing determined according to the condition of the skin and the result sought. Improvement is gradual and continues to develop over the weeks and months following treatment.</p><p>The principle is simple: rather than adding something to the face, PRP uses your own biological resources to encourage the skin to function better and appear healthier.</p>", "n5": "<p>Botulinum toxin is used to reduce the appearance of dynamic lines—the lines created by repeated contraction of facial muscles. Common treatment areas include the forehead, the lines between the eyebrows and the outer corners of the eyes.</p><p>The goal is not to eliminate movement, but to modulate the muscle activity responsible for unwanted lines while preserving natural expression. Treatment is therefore planned according to the individual pattern of movement rather than applied uniformly.</p><p>Small amounts are injected into carefully selected muscles. The effect develops gradually over several days and generally lasts for a number of months, although duration varies between individuals and treatment areas.</p><p>When appropriately dosed, the result should be subtle. You should continue to look like yourself, with the face remaining expressive and natural.</p><h4>Medical applications</h4><p>Botulinum toxin also has established medical uses beyond aesthetic medicine. Depending on the formulation and clinical indication, it may be used to treat conditions including excessive sweating and certain muscle-spasm disorders, as well as other neurological and ophthalmological conditions.</p><p>If your interest is medical rather than aesthetic, this can be discussed during your consultation so that the appropriate intervention can be arranged.</p><h4>Excessive sweating — Hyperhidrosis</h4><p>Botulinum toxin can effectively reduce excessive sweating in areas such as the underarms, hands and feet. Small injections temporarily block the nerve signals that stimulate the sweat glands, significantly reducing perspiration in the treated area.</p><p>The treatment is relatively quick and requires little or no downtime. The effect develops over the following days and typically lasts for several months, after which treatment can be repeated if needed.</p>", "n6": "<p>Lipofilling is a natural approach to restoring face and body volume, using your own fat rather than a synthetic filler. Fat is gently harvested from an area where it is available—such as the abdomen, flanks or thighs—carefully processed and then transferred in small, precise amounts to areas where volume has been lost.</p><p>The principal advantage is that the material used to restore volume is your own living tissue. There is no synthetic filler being introduced to create the volume, and the result can become an integrated part of the treated area as the transferred fat establishes its own blood supply.</p><p>Lipofilling is particularly valuable when a more comprehensive restoration of volume is desired. In the face, it can soften hollows, restore the fullness of the cheeks and temples, refine the contours of the jawline or rejuvenate areas that have become depleted with age. It can also be used on the hands and to correct selected contour irregularities following injury or previous surgery.</p><p>Unlike a dermal filler, which is gradually broken down by the body according to the properties of the product used, successfully grafted fat can provide long-lasting volume. It is important, however, to understand that not all transferred fat survives. A proportion is naturally reabsorbed during the first few months, and the final result becomes apparent progressively. In some cases, a second treatment may be appropriate to achieve the desired degree of correction.</p><p>Lipofilling may offer an additional benefit for the quality of the overlying skin. Patients can experience improvements in texture, softness and overall skin quality over the months following treatment. These effects vary between individuals and are considered an additional benefit rather than the primary purpose of fat grafting.</p><p>The difference from synthetic fillers is therefore not simply a question of duration. Lipofilling allows volume to be restored with tissue that comes from your own body, while also allowing unwanted localised fat to be reduced at the donor site.</p><p>The overall result is intended to be integrated: restored volume, natural contours and a face or body that remains entirely recognisable as your own.</p>", "n7": "<p>Thread lifting occupies a space between treatments that restore volume and surgery that lifts and repositions the tissues.</p><p>As the years pass, the skin gradually loses some of its tone and elasticity, and the first signs of facial laxity begin to appear. At this stage, thread lifting can provide a discreet way to improve definition without proceeding immediately to a surgical facelift.</p><p>Threads are most effective when laxity is mild to moderate—for patients who have begun to notice a softer jawline or a loss of definition around the cheekbones, but whose ageing is not yet advanced enough to require a facelift, or who would prefer to postpone surgery.</p><p>Fine threads are introduced beneath the skin under local anaesthesia and used to gently reposition relaxed tissues. When appropriate, thread lifting can be combined with lipofilling, dermal fillers or botulinum toxin, allowing volume, muscle activity and tissue support to be addressed together rather than separately.</p><h4>Thread &amp; Lift</h4><p>Among the techniques available, Dr. Uccellini favours the Thread &amp; Lift technique, which uses threads with a polyester core encased in solid medical-grade silicone.</p><p>These threads are designed to provide a more defined mechanical lifting effect and can produce a noticeable yet discreet improvement in facial contours.</p><p>The procedure is performed under local anaesthesia and usually takes approximately 40–50 minutes. There are no traditional surgical incisions or visible scars, and most patients can return to their usual activities within the first few days after surgery, although recovery varies according to the individual and the extent of treatment.</p><p>These threads are more durable and effective than some absorbable alternatives, but they are also more costly.</p><h4>PDO threads</h4><p>Absorbable threads made from polydioxanone (PDO) are also widely used. Unlike permanent or longer-lasting suspension threads, PDO threads gradually dissolve over approximately six to eight months.</p><p>Their proposed benefit is not primarily mechanical lifting, but stimulation of a controlled tissue response as the material is absorbed. This may stimulate collagen production and contribute to a subtle improvement in skin quality and firmness.</p><p>PDO threads are therefore better suited to mild laxity—for example, an early loss of definition along the jawline or a slight reduction in skin tone and elasticity. They can be used not only on the face but, in selected cases, on areas of the body where the skin has become mildly lax.</p><p>Thread treatments have become popular for a straightforward reason: they can offer a degree of improvement without surgery and may allow some patients to postpone a facelift.</p><p>They do, however, have clear limits.</p><p>Threads can provide support and repositioning when the degree of laxity is appropriate, but they cannot reproduce the results of a surgical facelift. When the facial tissues have descended significantly, surgery remains the treatment that directly addresses the underlying structural changes.</p><p>The aim is therefore not to replace surgery, but to choose the least invasive treatment capable of achieving an appropriate and natural result.</p>", "n8": "<p>The face is perceived as a whole. A change in one area inevitably affects the way the surrounding features are seen, which is why facial rejuvenation should begin with an assessment of overall proportion rather than with a decision to treat a particular feature.</p><p>With time, volume may diminish in several areas simultaneously. The cheek can flatten, the cheekbone can lose definition, the temples become hollow and the lips gradually become thinner. In other patients, reduced projection in a particular area is simply part of their natural anatomy rather than a consequence of ageing.</p><p>Our approach is to identify where balance has been lost and determine whether volume restoration is genuinely needed. Depending on the individual, this may involve autologous fat through lipofilling, carefully selected dermal fillers, or a combination of the two.</p><p>Lipofilling offers the possibility of restoring volume using your own tissue, creating a more comprehensive and long-lasting form of volume restoration. Dermal fillers, by contrast, allow highly precise correction and subtle refinement in selected areas. Each has its place, and the choice depends on the anatomy, the degree of volume loss and the result being sought.</p><p>The objective is not to create more volume, but to restore the relationships between the different parts of the face: cheekbone and cheek, midface and eye, cheek and jaw, lips and chin.</p><p>When these proportions are carefully considered, no single feature should announce the treatment. The face should simply appear more balanced, rested and harmonious, while retaining its character and individuality.</p><h4>A considered approach</h4><p>Every treatment begins with the same questions: what has changed, what would you like to improve, and what does not need to be changed?</p><p>Sometimes the most appropriate treatment is a combination of techniques. Sometimes it is a very small intervention. And sometimes the best decision is to do nothing.</p><p>The most refined result is often achieved by doing less—but doing it precisely.</p>"};</script>
+<script>
+(function(){
+"use strict";
+var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- header ---- */
+var header=document.querySelector(".header");
+function onScroll(){ header.classList.toggle("scrolled", window.scrollY>12); }
+onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
+
+/* ---- menu mobile ---- */
+var toggle=document.getElementById("navToggle"), nav=document.getElementById("nav");
+toggle.addEventListener("click",function(){
+  var open=document.body.classList.toggle("nav-open");
+  toggle.setAttribute("aria-expanded",open?"true":"false");
+});
+nav.addEventListener("click",function(e){
+  if(e.target.tagName==="A"){document.body.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");}
+});
+
+/* ---- ancore interne: la sezione viene centrata nella finestra ---- */
+(function(){
+  var HEAD=78;
+  function targetTop(el){
+    var r=el.getBoundingClientRect(), h=r.height, vh=window.innerHeight, top=r.top+window.pageYOffset;
+    if(h < vh-HEAD-24) return top-(vh-h)/2;
+    return top-HEAD-14;
+  }
+  function goTo(el,smooth){
+    window.scrollTo({top:Math.max(0,targetTop(el)),behavior:(smooth&&!reduceMotion)?"smooth":"auto"});
+    /* le immagini caricate in ritardo cambiano l'altezza della pagina: correggiamo */
+    var n=0,fix=setInterval(function(){
+      n++;
+      var y=Math.max(0,targetTop(el));
+      if(Math.abs(y-window.pageYOffset)>10)window.scrollTo({top:y,behavior:"auto"});
+      if(n>5)clearInterval(fix);
+    },280);
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute("href").slice(1);
+    if(!id)return;
+    var el=document.getElementById(id);
+    if(!el||el.classList.contains("acc"))return;
+    e.preventDefault();
+    if(history.replaceState)history.replaceState(null,"","#"+id);
+    goTo(el,true);
+  });
+  window.addEventListener("load",function(){
+    if(!location.hash)return;
+    var el=document.getElementById(location.hash.slice(1));
+    if(el&&!el.classList.contains("acc"))setTimeout(function(){goTo(el,false);},120);
+  });
+})();
+
+/* ---- reveal ---- */
+var revealEls=[].slice.call(document.querySelectorAll(".reveal"));
+if(reduceMotion||!("IntersectionObserver" in window)){
+  revealEls.forEach(function(el){el.classList.add("is-visible");});
+}else{
+  var io=new IntersectionObserver(function(entries){
+    var shown=0;
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.style.transitionDelay=(shown*90)+"ms";en.target.classList.add("is-visible");shown++;io.unobserve(en.target);}
+    });
+  },{threshold:.1,rootMargin:"0px 0px -6% 0px"});
+  revealEls.forEach(function(el){io.observe(el);});
+}
+
+
+/* ============================================================
+   GALLERIE — swipe, frecce, puntini, rotazione automatica
+   ============================================================ */
+var galleries=[];
+document.querySelectorAll("[data-gallery]").forEach(function(g){
+  var vp=g.querySelector(".gallery__vp"),
+      track=g.querySelector(".gallery__track"),
+      slides=[].slice.call(g.querySelectorAll(".gslide")),
+      dots=[].slice.call(g.querySelectorAll(".gal-dot")),
+      i=0,timer=null,visible=false,hover=false,open=false;
+
+  function render(anim){
+    if(!anim)track.classList.add("no-anim");
+    track.style.transform="translateX("+(-i*100)+"%)";
+    if(!anim)requestAnimationFrame(function(){track.classList.remove("no-anim");});
+    dots.forEach(function(d,k){d.classList.toggle("is-active",k===i);d.setAttribute("aria-current",k===i?"true":"false");});
+    slides.forEach(function(s,k){s.setAttribute("aria-hidden",k===i?"false":"true");});
+  }
+  function go(n){ i=(n+slides.length)%slides.length; render(true); }
+  function tick(){ go(i+1); }
+  function play(){ stop(); if(slides.length<2||reduceMotion)return; if(visible&&!hover&&open)timer=setInterval(tick,5200); }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+
+  g.querySelectorAll(".gal-arrow").forEach(function(b){
+    b.addEventListener("click",function(e){e.stopPropagation();go(i+(b.classList.contains("next")?1:-1));play();});
+  });
+  dots.forEach(function(d,k){d.addEventListener("click",function(){go(k);play();});});
+  vp.addEventListener("mouseenter",function(){hover=true;stop();});
+  vp.addEventListener("mouseleave",function(){hover=false;play();});
+
+  /* swipe / drag */
+  var x0=null,y0=null,locked=null;
+  vp.addEventListener("pointerdown",function(e){x0=e.clientX;y0=e.clientY;locked=null;});
+  vp.addEventListener("pointermove",function(e){
+    if(x0===null)return;
+    var dx=e.clientX-x0,dy=e.clientY-y0;
+    if(locked===null&&(Math.abs(dx)>6||Math.abs(dy)>6))locked=Math.abs(dx)>Math.abs(dy)?"x":"y";
+  });
+  vp.addEventListener("pointerup",function(e){
+    if(x0===null)return;
+    var dx=e.clientX-x0;
+    if(locked==="x"&&Math.abs(dx)>42){ go(i+(dx<0?1:-1)); play(); }
+    x0=null;y0=null;locked=null;
+  });
+  vp.addEventListener("pointercancel",function(){x0=null;y0=null;locked=null;});
+
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){visible=en[0].isIntersecting;play();},{threshold:.35}).observe(vp);
+  }else{ visible=true; }
+
+  function preload(){
+    slides.forEach(function(s){
+      var im=s.querySelector("img");
+      if(im&&!im.complete){ im.removeAttribute("loading"); im.src=im.getAttribute("src"); }
+    });
+  }
+  galleries.push({el:g,setOpen:function(v){open=v;if(v)preload();play();}});
+  render(false);
+});
+function galleriesIn(node,v){
+  galleries.forEach(function(G){ if(node.contains(G.el)) G.setOpen(v); });
+}
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+var accs=[].slice.call(document.querySelectorAll(".acc"));
+function panelOf(a){return a.querySelector(".acc__panel");}
+function setOpen(a,v,instant){
+  var p=panelOf(a),inner=p.firstElementChild,btn=a.querySelector(".acc__head");
+  a.classList.toggle("is-open",v);
+  btn.setAttribute("aria-expanded",v?"true":"false");
+  p.setAttribute("aria-hidden",v?"false":"true");
+  if(instant||reduceMotion){ p.style.height=v?"auto":"0"; galleriesIn(a,v); return; }
+  if(v){
+    p.style.height=inner.offsetHeight+"px";
+    p.addEventListener("transitionend",function h(e){
+      if(e.propertyName!=="height")return;
+      p.style.height="auto"; p.removeEventListener("transitionend",h);
+    });
+  }else{
+    p.style.height=inner.offsetHeight+"px";
+    requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.height="0";});});
+  }
+  galleriesIn(a,v);
+}
+accs.forEach(function(a){
+  a.querySelector(".acc__head").addEventListener("click",function(){
+    /* nessuna chiusura automatica delle altre schede: la pagina si apre
+       verso il basso e il titolo cliccato resta esattamente dov'e' */
+    var before=a.getBoundingClientRect().top;
+    setOpen(a,!a.classList.contains("is-open"));
+    var after=a.getBoundingClientRect().top;
+    if(after!==before)window.scrollBy(0,after-before);
+  });
+});
+/* tutte le schede chiuse all'avvio; si apre solo quella richiamata da un link diretto */
+(function(){
+  if(!location.hash)return;
+  var target=null;
+  try{ target=document.querySelector(".acc"+CSS.escape(location.hash)); }catch(e){ target=document.getElementById(location.hash.slice(1)); }
+  if(!target||!target.classList.contains("acc"))return;
+  setOpen(target,true,true);
+  setTimeout(function(){window.scrollTo({top:target.getBoundingClientRect().top+window.scrollY-84,behavior:"auto"});},60);
+})();
+window.addEventListener("resize",function(){
+  accs.forEach(function(a){ if(a.classList.contains("is-open")) panelOf(a).style.height="auto"; });
+});
+
+/* ============================================================
+   LINGUA IT / EN
+   ============================================================ */
+var EN=window.__EN__||{}, IT={};
+document.querySelectorAll("[data-t]").forEach(function(el){
+  var k=el.getAttribute("data-t"),p=el.getAttribute("data-tp");
+  IT[k]= p ? el.getAttribute(p) : el.innerHTML;
+});
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(function(el){
+    var k=el.getAttribute("data-t"),p=el.getAttribute("data-tp");
+    var v=(lang==="en"?EN[k]:IT[k]);
+    if(v==null)return;
+    if(p)el.setAttribute(p,v); else el.innerHTML=v;
+  });
+  document.querySelectorAll(".lang-btn").forEach(function(b){
+    var on=b.getAttribute("data-lang")===lang;
+    b.classList.toggle("is-active",on);
+    b.setAttribute("aria-pressed",on?"true":"false");
+  });
+  try{localStorage.setItem("site-lang",lang);}catch(e){}
+  accs.forEach(function(a){ if(a.classList.contains("is-open")) panelOf(a).style.height="auto"; });
+}
+document.querySelectorAll(".lang-btn").forEach(function(b){
+  b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});
+});
+var saved="it"; try{saved=localStorage.getItem("site-lang")||"it";}catch(e){}
+if(saved==="en")setLang("en");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roberto Uccellini — Chirurgia Plastica, Ricostruttiva ed Estetica</title>
+<meta name="description" content="Roberto Uccellini, specialista in Chirurgia Plastica Ricostruttiva ed Estetica e in Chirurgia Generale. Oltre vent'anni di chirurgia tra l'Italia e Londra." />
+
+<!-- ============================================================
+     GOOGLE FONTS — unica dipendenza esterna consentita
+     Fraunces (titoli, alta resa editoriale) · Spectral (corpo)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   1. TOKEN / VARIABILI
+   ============================================================ */
+:root{
+  --bg:#F6F2EC;          /* fondo avorio caldo  */
+  --ink:#15120E;         /* testo inchiostro    */
+  --brass:#A8884F;       /* accento ottone/oro  */
+  --brass-text:#8C6F3B;  /* ottone leggermente piu scuro per testo piccolo (contrasto AA) */
+  --green:#1E3A34;       /* verde profondo secondario */
+  --green-soft:#2A4C44;
+  --ink-60:rgba(21,18,14,.62);
+  --ink-45:rgba(21,18,14,.45);
+  --line:rgba(21,18,14,.14);
+  --paper:#FBF8F3;       /* carta leggermente piu chiara per le card */
+
+  --shadow-sm:0 1px 3px rgba(21,18,14,.05),0 8px 24px rgba(21,18,14,.06);
+  --shadow-md:0 2px 6px rgba(21,18,14,.06),0 24px 60px rgba(21,18,14,.10);
+
+  --maxw:1240px;
+  --gutter:clamp(20px,5vw,72px);
+
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"Spectral",Georgia,serif;
+  --f-sans:"Roboto","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+
+/* ============================================================
+   2. RESET / BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-weight:400;
+  font-size:clamp(16px,1.05vw + 12px,18px);
+  line-height:1.72;
+  letter-spacing:.002em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none;}
+h1,h2,h3,p{margin:0;}
+::selection{background:var(--brass);color:#fff;}
+
+/* Grana sottile di sfondo (SVG turbulence inline) */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.045;
+  mix-blend-mode:multiply;
+}
+
+/* ============================================================
+   3. LAYOUT HELPERS
+   ============================================================ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+.section{position:relative;z-index:2;padding-block:clamp(72px,11vw,160px);scroll-margin-top:84px;}
+
+.eyebrow{
+  font-family:var(--f-body);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--brass-text);
+  margin:0 0 1.4rem;
+  display:flex;align-items:center;gap:.85em;
+}
+.eyebrow::before{
+  content:"";width:34px;height:1px;background:var(--brass);
+  display:inline-block;flex:none;
+}
+.eyebrow.center{justify-content:center;}
+
+h2.title{
+  font-family:var(--f-display);
+  font-optical-sizing:auto;
+  font-weight:450;
+  font-size:clamp(1.9rem,4.4vw,3.5rem);
+  line-height:1.06;
+  letter-spacing:-.012em;
+  text-wrap:balance;
+}
+.lead{font-size:1.12rem;color:var(--ink-60);}
+
+.prose p{margin-bottom:1.25em;max-width:64ch;color:rgba(21,18,14,.82);}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{font-weight:600;color:var(--ink);}
+
+/* ============================================================
+   4. REVEAL (IntersectionObserver)
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+.reveal.is-visible{opacity:1;transform:none;}
+
+/* ============================================================
+   5. HEADER STICKY
+   ============================================================ */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,242,236,.72);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s ease,background .4s ease;
+}
+.header.scrolled{border-bottom-color:var(--line);background:rgba(246,242,236,.88);}
+.header__inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:14px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand img{height:46px;width:auto;}
+.brand .brand__sub{
+  font-family:var(--f-body);font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-45);line-height:1.4;
+  border-left:1px solid var(--line);padding-left:12px;max-width:140px;
+}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,28px);}
+.nav a{
+  font-size:.82rem;letter-spacing:.04em;color:var(--ink-60);
+  position:relative;padding-block:6px;white-space:nowrap;transition:color .3s ease;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--brass);transition:right .35s cubic-bezier(.2,.7,.2,1);
+}
+.nav a:hover{color:var(--ink);}
+.nav a:hover::after{right:0;}
+
+.nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex:none;}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+  content:"";display:block;width:24px;height:1.5px;background:var(--ink);position:relative;transition:transform .35s ease,opacity .25s ease;
+}
+.nav-toggle span::before{position:absolute;top:-7px;left:0;}
+.nav-toggle span::after{position:absolute;top:7px;left:0;}
+.nav-open .nav-toggle span{background:transparent;}
+.nav-open .nav-toggle span::before{transform:translateY(7px) rotate(45deg);}
+.nav-open .nav-toggle span::after{transform:translateY(-7px) rotate(-45deg);}
+
+/* Language switcher (flags) */
+.lang-switch{display:flex;align-items:center;gap:6px;flex:none;margin-left:14px;}
+.lang-btn{
+  width:30px;height:21px;padding:0;border-radius:3px;overflow:hidden;
+  border:1px solid var(--line);opacity:.5;
+  transition:opacity .25s ease, box-shadow .25s ease, transform .25s ease;
+  display:flex;align-items:center;justify-content:center;background:#fff;
+}
+.lang-btn svg{width:100%;height:100%;display:block;}
+.lang-btn:hover{opacity:.9;transform:translateY(-1px);}
+.lang-btn.is-active{opacity:1;box-shadow:0 0 0 2px var(--brass);}
+@media (max-width:980px){
+  .lang-switch{order:2;margin-left:auto;margin-right:8px;}
+  .nav-toggle{order:3;}
+}
+
+/* ============================================================
+   6. HERO
+   ============================================================ */
+.hero{position:relative;z-index:2;padding-top:clamp(40px,7vw,84px);padding-bottom:clamp(56px,8vw,110px);overflow:hidden;}
+.hero__grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;
+}
+.hero__copy{max-width:46ch;}
+.hero__name{
+  font-family:var(--f-display);font-optical-sizing:auto;
+  font-weight:400;line-height:.94;letter-spacing:-.02em;
+  font-size:clamp(3.2rem,9vw,6.4rem);
+  margin:.1em 0 .35em;
+}
+.hero__headline{
+  font-family:var(--f-display);font-weight:340;font-style:italic;
+  font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.3;
+  color:var(--ink);letter-spacing:-.01em;margin-bottom:1.5rem;text-wrap:pretty;
+}
+.hero__support{
+  font-size:.96rem;color:var(--ink-60);max-width:42ch;
+  padding-top:1.4rem;border-top:1px solid var(--line);
+}
+
+.hero__media{position:relative;display:flex;justify-content:center;align-items:flex-end;min-height:clamp(360px,52vw,620px);}
+/* arco/forma morbida dietro al ritratto */
+.hero__media::before{
+  content:"";position:absolute;z-index:0;
+  width:min(108%,560px);aspect-ratio:1/1.18;
+  border-radius:50% 50% 46% 46%/55% 55% 45% 45%;
+  background:radial-gradient(120% 100% at 50% 25%,rgba(168,136,79,.22),rgba(168,136,79,.06) 60%,transparent 72%);
+  bottom:-4%;left:50%;transform:translateX(-50%);
+}
+.hero__media::after{
+  content:"";position:absolute;z-index:0;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(96%,470px);height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);
+  opacity:.5;
+}
+.hero__portrait{
+  position:relative;z-index:1;
+  width:auto;max-height:clamp(360px,52vw,640px);
+  filter:drop-shadow(0 32px 50px rgba(21,18,14,.18));
+}
+
+/* Animazione di entrata morbida al load */
+.intro{opacity:0;transform:translateY(20px);}
+.loaded .intro{opacity:1;transform:none;transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);}
+.loaded .intro.d1{transition-delay:.08s;}
+.loaded .intro.d2{transition-delay:.2s;}
+.loaded .intro.d3{transition-delay:.32s;}
+.loaded .intro.d4{transition-delay:.44s;}
+.loaded .intro.media{transition-delay:.18s;transition-duration:1.2s;}
+
+/* ============================================================
+   7. CHI E — due colonne
+   ============================================================ */
+.split{display:grid;grid-template-columns:minmax(260px,.78fr) 1.22fr;gap:clamp(28px,5vw,80px);align-items:start;}
+.split__head{position:sticky;top:104px;}
+
+/* ============================================================
+   8. MARQUEE (caroselli a scorrimento continuo)
+   ============================================================ */
+.marquee-line{text-align:center;max-width:54ch;margin:0 auto clamp(36px,5vw,60px);font-size:1.12rem;color:var(--ink-60);text-wrap:balance;}
+.marquee{
+  position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+}
+.marquee__track{display:flex;width:max-content;will-change:transform;}
+.marquee[data-speed]{--dur:48s;}
+.marquee__track{animation:marquee var(--dur,48s) linear infinite;}
+.marquee:hover .marquee__track{animation-play-state:paused;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* Associazioni */
+.assoc-item{
+  flex:none;width:clamp(200px,22vw,280px);height:120px;margin-inline:clamp(14px,2vw,30px);
+  display:flex;align-items:center;justify-content:center;
+}
+.assoc-item img{
+  max-height:78px;max-width:100%;width:auto;object-fit:contain;
+  transition:transform .5s ease;
+}
+.assoc-item:hover img{transform:scale(1.04);}
+.assoc-ph{
+  flex:none;width:clamp(200px,22vw,280px);height:120px;margin-inline:clamp(14px,2vw,30px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  border:1px dashed var(--line);border-radius:4px;
+  background:repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(21,18,14,.025) 7px,rgba(21,18,14,.025) 14px);
+  padding:14px;
+}
+.assoc-ph__t{font-family:var(--f-display);font-size:1rem;line-height:1.2;color:var(--ink-60);}
+.assoc-ph__m{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin-top:8px;}
+
+/* Titoli accademici (card diploma) */
+.titolo-card{
+  flex:none;width:clamp(280px,34vw,420px);margin-inline:clamp(10px,1.6vw,22px);
+  background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  box-shadow:var(--shadow-sm);text-align:left;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;
+}
+.titolo-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.titolo-card__img{position:relative;background:#efeae1;aspect-ratio:4/3;overflow:hidden;}
+.titolo-card__img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s ease;}
+.titolo-card:hover .titolo-card__img img{transform:scale(1.04);}
+.titolo-card__zoom{
+  position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:50%;
+  background:rgba(246,242,236,.9);display:flex;align-items:center;justify-content:center;
+  color:var(--ink);opacity:0;transform:scale(.85);transition:opacity .4s ease,transform .4s ease;
+}
+.titolo-card:hover .titolo-card__zoom{opacity:1;transform:none;}
+.titolo-card__cap{padding:18px 20px 20px;}
+.titolo-card__cap .t{font-family:var(--f-display);font-size:1.08rem;line-height:1.22;margin-bottom:.35em;}
+.titolo-card__cap .m{font-size:.82rem;color:var(--ink-60);}
+.titoli-support{text-align:center;max-width:60ch;margin:clamp(40px,5vw,56px) auto 0;font-size:.96rem;color:var(--ink-60);font-style:italic;}
+
+/* Recensioni — stile Google */
+.review-card{
+  flex:none;width:clamp(300px,30vw,392px);margin-inline:clamp(10px,1.4vw,20px);
+  background:#fff;border:1px solid rgba(21,18,14,.10);border-radius:10px;
+  padding:24px 26px 26px;box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;font-family:var(--f-sans);
+}
+.review-card__head{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px;}
+.review-avatar{
+  flex:none;width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:var(--f-sans);font-weight:500;font-size:1.1rem;line-height:1;
+}
+.review-id{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;}
+.review-id .review-name{font-family:var(--f-sans);font-weight:500;font-size:.98rem;color:#202124;line-height:1.2;}
+.review-id .review-sub{font-family:var(--f-sans);font-size:.78rem;color:#5f6368;}
+.review-g{flex:none;width:22px;height:22px;margin-top:2px;}
+.stars{display:flex;gap:1px;margin-bottom:12px;color:#FBBC04;}
+.stars svg{width:18px;height:18px;}
+.review-card__text{font-family:var(--f-sans);font-weight:400;font-size:.95rem;line-height:1.62;color:#3c4043;margin-bottom:0;}
+.review-badge{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:clamp(40px,5vw,56px);font-size:.82rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-60);font-family:var(--f-sans);
+}
+.review-badge svg{width:18px;height:18px;}
+
+/* ============================================================
+   9. MENTORE / sezioni a colonna singola con figura inline
+   ============================================================ */
+.col{max-width:760px;}
+.col.center{margin-inline:auto;}
+.figure{margin:0;}
+.figure img{width:100%;border-radius:6px;box-shadow:var(--shadow-md);}
+.figure figcaption{
+  margin-top:14px;font-size:.82rem;letter-spacing:.02em;color:var(--ink-60);
+  font-style:italic;display:flex;align-items:center;gap:.6em;
+}
+.figure figcaption::before{content:"";width:22px;height:1px;background:var(--brass);flex:none;}
+
+/* Figura inserita nel flusso di una sezione (dopo il testo).
+   max-width = stessa misura del testo (.prose p, 64ch) e allineata
+   al suo bordo sinistro: cosi l'immagine risulta centrata RISPETTO
+   AL TESTO sopra/sotto, non rispetto alla pagina. */
+.section-figure{margin:clamp(34px,5vw,52px) 0;max-width:64ch;}
+.section-figure img{width:100%;border-radius:8px;box-shadow:var(--shadow-md);display:block;}
+.section-figure.portrait{display:flex;flex-direction:column;align-items:center;}
+.section-figure.portrait img{max-width:420px;width:100%;}
+.section-figure figcaption{
+  margin-top:14px;font-size:.82rem;letter-spacing:.02em;color:var(--ink-60);
+  font-style:italic;display:flex;align-items:center;gap:.6em;
+}
+.section-figure figcaption::before{content:"";width:22px;height:1px;background:var(--brass);flex:none;}
+
+/* Figura cutout su banda verde (bisturi) — centrata sul testo (64ch) */
+.figure-cut{margin:clamp(34px,5vw,56px) 0;max-width:64ch;display:flex;justify-content:center;}
+.figure-cut img{
+  width:100%;max-width:560px;height:auto;
+  filter:drop-shadow(0 26px 44px rgba(0,0,0,.4));
+}
+
+/* ============================================================
+   10b. AREE DI INTERVENTO — tre card con immagini
+   ============================================================ */
+.aree-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(18px,2.6vw,34px);margin-top:clamp(40px,5vw,60px);
+}
+.area-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;
+  display:flex;flex-direction:column;
+}
+.area-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.area-card image-slot{display:block;width:100%;height:clamp(220px,26vw,300px);}
+.area-card__img{width:100%;height:clamp(220px,26vw,300px);overflow:hidden;background:#efeae1;}
+.area-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+.area-card:hover .area-card__img img{transform:scale(1.05);}
+.area-card__cap{
+  padding:22px 24px 26px;display:flex;align-items:baseline;gap:.7em;
+}
+.area-card__num{
+  font-family:var(--f-body);font-size:.72rem;letter-spacing:.18em;color:var(--brass-text);
+  font-weight:600;flex:none;
+}
+.area-card__t{font-family:var(--f-display);font-weight:450;font-size:1.32rem;line-height:1.15;letter-spacing:-.01em;}
+@media (max-width:780px){
+  .aree-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;}
+}
+
+/* ============================================================
+   10. BANDA VERDE — distinzione
+   ============================================================ */
+.band-green{background:var(--green);color:#EFEBE2;position:relative;z-index:2;}
+.band-green .eyebrow{color:#C9A86A;}
+.band-green .eyebrow::before{background:#C9A86A;}
+.band-green h2.title{color:#FBF8F3;}
+.band-green .prose p{color:rgba(239,235,226,.82);}
+.band-green .prose strong{color:#fff;}
+.pullquote{
+  margin:clamp(44px,6vw,72px) 0;padding:clamp(28px,4vw,44px) 0;
+  border-top:1px solid rgba(201,168,106,.32);border-bottom:1px solid rgba(201,168,106,.32);
+}
+.pullquote blockquote{
+  margin:0;font-family:var(--f-display);font-style:italic;font-weight:340;
+  font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.28;color:#FBF8F3;letter-spacing:-.01em;
+  text-wrap:pretty;max-width:24ch;
+}
+.pullquote .qmark{font-size:1.3em;color:#C9A86A;}
+.pullquote cite{
+  display:block;margin-top:1.2rem;font-style:normal;font-family:var(--f-body);
+  font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:#C9A86A;
+}
+.closing{font-size:1.18rem;line-height:1.55;color:#FBF8F3;max-width:60ch;font-family:var(--f-display);font-weight:340;}
+
+/* ============================================================
+   11. CONTATTI / FOOTER (verde)
+   ============================================================ */
+.contatti{background:var(--green);color:#EFEBE2;position:relative;z-index:2;}
+.contatti .eyebrow{color:#C9A86A;}
+.contatti .eyebrow::before{background:#C9A86A;}
+.contatti h2.title{color:#FBF8F3;}
+.contatti__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,90px);align-items:start;margin-top:clamp(36px,5vw,56px);}
+.contatti__intro{font-size:1.15rem;line-height:1.6;color:rgba(239,235,226,.88);font-family:var(--f-display);font-weight:340;max-width:48ch;}
+.contact-block{border-top:1px solid rgba(201,168,106,.3);padding-top:22px;margin-top:26px;}
+.contact-block .k{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#C9A86A;margin-bottom:8px;}
+.contact-block .v{font-size:1.02rem;color:#FBF8F3;line-height:1.5;}
+.contact-block .v .ph{color:rgba(239,235,226,.5);font-style:italic;}
+
+.footer{background:var(--green);color:#EFEBE2;position:relative;z-index:2;border-top:1px solid rgba(201,168,106,.22);}
+.footer__inner{
+  max-width:var(--maxw);margin:0 auto;padding:48px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.footer__brand{display:flex;align-items:center;gap:14px;}
+.footer__brand img{height:54px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.footer__meta{font-size:.78rem;color:rgba(239,235,226,.6);letter-spacing:.04em;line-height:1.7;text-align:right;}
+
+/* ============================================================
+   12. LIGHTBOX
+   ============================================================ */
+.lightbox{
+  position:fixed;inset:0;z-index:200;display:none;
+  align-items:center;justify-content:center;padding:clamp(20px,5vw,60px);
+  background:rgba(21,18,14,.86);backdrop-filter:blur(6px);
+  opacity:0;transition:opacity .4s ease;
+}
+.lightbox.open{display:flex;opacity:1;}
+.lightbox figure{margin:0;max-width:min(1000px,92vw);max-height:90vh;display:flex;flex-direction:column;}
+.lightbox img{max-width:100%;max-height:78vh;width:auto;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5);object-fit:contain;}
+.lightbox figcaption{color:#EFEBE2;text-align:center;margin-top:16px;font-size:.92rem;font-style:italic;}
+.lightbox__close{
+  position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;transition:background .3s ease;
+}
+.lightbox__close:hover{background:rgba(255,255,255,.22);}
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .nav{
+    position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    padding:8px var(--gutter) 24px;
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .35s ease,opacity .35s ease;
+    max-height:calc(100vh - 64px);overflow:auto;
+  }
+  .nav a{width:100%;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;}
+  .nav a::after{display:none;}
+  .nav-open .nav{transform:none;opacity:1;pointer-events:auto;}
+  .nav-toggle{display:flex;}
+  .brand .brand__sub{display:none;}
+}
+@media (max-width:840px){
+  .hero__grid{grid-template-columns:1fr;}
+  .hero__media{min-height:auto;}
+  .hero__portrait{max-height:clamp(320px,70vw,460px);}
+  .split{grid-template-columns:1fr;gap:18px;}
+  .split__head{position:static;}
+  .contatti__grid{grid-template-columns:1fr;}
+  .footer__inner{flex-direction:column;align-items:flex-start;}
+  .footer__meta{text-align:left;}
+}
+
+/* ============================================================
+   BANNER PRIMA / DOPO (sotto la hero)
+   ============================================================ */
+.ba-band{position:relative;z-index:2;padding:clamp(8px,2vw,24px) 0 clamp(48px,6vw,84px);}
+.ba-band .eyebrow{margin-bottom:clamp(18px,2.4vw,28px);}
+.ba-band .marquee__track{align-items:flex-start;}
+.ba-card{flex:none;display:block;width:clamp(250px,30vw,380px);margin-inline:clamp(7px,1vw,12px);color:inherit;text-decoration:none;}
+.ba-card__img{display:block;aspect-ratio:1300/984;overflow:hidden;border-radius:4px;background:#efeae1;box-shadow:0 14px 34px rgba(21,18,14,.12);}
+.ba-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+.ba-card:hover .ba-card__img img{transform:scale(1.03);}
+.ba-card__cap{display:block;margin-top:.7rem;font-family:var(--f-display);font-style:italic;font-size:.98rem;color:var(--ink-60);text-align:center;}
+.ba-note{text-align:center;font-size:.86rem;font-style:italic;color:var(--ink-60);margin:clamp(18px,2.4vw,28px) auto 0;padding-inline:var(--gutter);}
+@media (max-width:840px){
+  /* hero mobile: ritratto più grande e più in alto */
+  .hero{padding-top:clamp(24px,6vw,40px);padding-bottom:0;}
+  .hero__grid{gap:0;}
+  .hero__copy{max-width:none;}
+  .hero__media{margin-top:-28px;}
+  .hero__media::before{width:min(96%,520px);bottom:0;}
+  .hero__portrait{width:min(94vw,470px);height:auto;max-height:none;}
+  .ba-card{width:clamp(230px,72vw,320px);}
+}
+
+/* ============================================================
+   14. PREFERS-REDUCED-MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  .reveal{opacity:1;transform:none;}
+  .intro{opacity:1;transform:none;}
+  .marquee__track{animation:none;}
+  /* contenuto comunque raggiungibile tramite scorrimento orizzontale */
+  .marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;}
+  .marquee__track{width:max-content;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER STICKY
+     ============================================================ -->
+<header class="header" id="top">
+  <div class="header__inner">
+    <a class="brand" href="#top" aria-label="Roberto Uccellini — home">
+      <img src="assets/logo-ru.png" alt="Logo Roberto Uccellini" />
+      <span class="brand__sub">Chirurgia Plastica<br>Ricostruttiva ed Estetica</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigazione principale">
+      <a href="#chi-e">Chi è</a>
+      <a href="#associazioni">Associazioni</a>
+      <a href="#mentore">Mentore</a>
+      <a href="#esperienza">Esperienza</a>
+      <a href="#distinzione">Plastico o estetico</a>
+      <a href="#titoli">Titoli</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#interventi">Interventi</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Lingua / Language">
+      <button type="button" class="lang-btn is-active" data-lang="it" aria-label="Italiano" title="Italiano">
+        <svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#CE2B37"/></svg>
+      </button>
+      <button type="button" class="lang-btn" data-lang="en" aria-label="English" title="English">
+        <svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg>
+      </button>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="hero wrap" aria-labelledby="hero-name">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow intro d1">Chirurgia Plastica, Ricostruttiva ed Estetica</p>
+        <h1 class="hero__name intro d2" id="hero-name">Roberto Uccellini</h1>
+        <p class="hero__headline intro d3">Oltre vent'anni di chirurgia, tra l'Italia e Londra. Una sola idea di eccellenza: il risultato più naturale, nel rispetto assoluto della persona.</p>
+        <p class="hero__support intro d4">Specialista in Chirurgia Plastica Ricostruttiva ed Estetica e in Chirurgia Generale. In attività dal 1995.</p>
+      </div>
+      <div class="hero__media intro media">
+        <img class="hero__portrait" src="assets/roberto-portrait.png" alt="Ritratto del Dr. Roberto Uccellini" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       1b. BANNER PRIMA / DOPO — Marquee
+       ============================================================ -->
+  <section class="ba-band" id="risultati" aria-label="Prima e dopo — casi reali">
+    <p class="eyebrow center" style="justify-content:center;" data-en="Before and after · real cases">Prima e dopo · casi reali</p>
+    <div class="marquee" data-marquee data-speed="slow">
+      <div class="marquee__track">
+        <a class="ba-card" href="viso-e-occhi.html#blefaroplastica"><span class="ba-card__img"><img src="assets/trattamenti/viso/blefaroplastica-1.jpg" loading="lazy" decoding="async" alt="Blefaroplastica — prima e dopo, caso reale" data-en-alt="Blepharoplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Blepharoplasty">Blefaroplastica</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#lifting"><span class="ba-card__img"><img src="assets/trattamenti/viso/lifting-1.jpg" loading="lazy" decoding="async" alt="Lifting del viso — prima e dopo, caso reale" data-en-alt="Facelift — before and after, real case" /></span><span class="ba-card__cap" data-en="Facelift">Lifting del viso</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#rinoplastica"><span class="ba-card__img"><img src="assets/trattamenti/viso/rinoplastica-2.jpg" loading="lazy" decoding="async" alt="Rinoplastica — prima e dopo, caso reale" data-en-alt="Rhinoplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Rhinoplasty">Rinoplastica</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#blefaroplastica"><span class="ba-card__img"><img src="assets/trattamenti/viso/blefaroplastica-3.jpg" loading="lazy" decoding="async" alt="Blefaroplastica — prima e dopo, caso reale" data-en-alt="Blepharoplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Blepharoplasty">Blefaroplastica</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#liposcultura-viso-collo"><span class="ba-card__img"><img src="assets/trattamenti/viso/liposcultura-viso-collo-2.jpg" loading="lazy" decoding="async" alt="Liposcultura del viso e del collo — prima e dopo, caso reale" data-en-alt="Face and neck liposculpture — before and after, real case" /></span><span class="ba-card__cap" data-en="Face and neck liposculpture">Liposcultura del viso e del collo</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#otoplastica"><span class="ba-card__img"><img src="assets/trattamenti/viso/otoplastica-3.jpg" loading="lazy" decoding="async" alt="Otoplastica — prima e dopo, caso reale" data-en-alt="Otoplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Otoplasty">Otoplastica</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#lifting"><span class="ba-card__img"><img src="assets/trattamenti/viso/lifting-3.jpg" loading="lazy" decoding="async" alt="Lifting del viso — prima e dopo, caso reale" data-en-alt="Facelift — before and after, real case" /></span><span class="ba-card__cap" data-en="Facelift">Lifting del viso</span></a>
+        <a class="ba-card" href="trattamenti-non-chirurgici.html#labbra"><span class="ba-card__img"><img src="assets/trattamenti/non-chirurgici/labbra-1.jpg" loading="lazy" decoding="async" alt="Labbra — prima e dopo, caso reale" data-en-alt="Lip enhancement — before and after, real case" /></span><span class="ba-card__cap" data-en="Lip enhancement">Labbra</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#blefaroplastica"><span class="ba-card__img"><img src="assets/trattamenti/viso/blefaroplastica-2.jpg" loading="lazy" decoding="async" alt="Blefaroplastica — prima e dopo, caso reale" data-en-alt="Blepharoplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Blepharoplasty">Blefaroplastica</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#liposcultura-viso-collo"><span class="ba-card__img"><img src="assets/trattamenti/viso/liposcultura-viso-collo-1.jpg" loading="lazy" decoding="async" alt="Liposcultura del viso e del collo — prima e dopo, caso reale" data-en-alt="Face and neck liposculpture — before and after, real case" /></span><span class="ba-card__cap" data-en="Face and neck liposculpture">Liposcultura del viso e del collo</span></a>
+        <a class="ba-card" href="viso-e-occhi.html#lipostruttura"><span class="ba-card__img"><img src="assets/trattamenti/viso/lipostruttura-1.jpg" loading="lazy" decoding="async" alt="Lipofilling — prima e dopo, caso reale" data-en-alt="Lipofilling — before and after, real case" /></span><span class="ba-card__cap" data-en="Lipofilling">Lipofilling</span></a>
+        <a class="ba-card" href="corpo-e-seno.html#brachioplastica"><span class="ba-card__img"><img src="assets/trattamenti/corpo/brachioplastica-2.jpg" loading="lazy" decoding="async" alt="Brachioplastica — prima e dopo, caso reale" data-en-alt="Brachioplasty — before and after, real case" /></span><span class="ba-card__cap" data-en="Brachioplasty">Brachioplastica</span></a>
+      </div>
+    </div>
+    <p class="ba-note" data-en="Photographs of real cases. Results vary from person to person.">Fotografie di casi reali. I risultati variano da persona a persona.</p>
+  </section>
+
+  <!-- ============================================================
+       2. CHI E
+       ============================================================ -->
+  <section class="section" id="chi-e">
+    <div class="wrap split">
+      <div class="split__head reveal">
+        <p class="eyebrow">Chi è</p>
+        <h2 class="title">Un metodo, prima ancora che una mano</h2>
+      </div>
+      <div class="prose reveal">
+        <p>Roberto Uccellini ha dedicato l'intera carriera a un obiettivo che non ammette compromessi: offrire a ciascun paziente <strong>lo standard di cura più alto possibile</strong>. È specialista sia in Chirurgia Plastica Ricostruttiva ed Estetica sia in Chirurgia Generale, con <strong>oltre vent'anni di esperienza</strong> maturata in Italia e all'estero. La sua formazione e la sua competenza abbracciano l'intero spettro chirurgico: dalla chirurgia generale agli interventi di chirurgia plastica ed estetica, dalle procedure mini-invasive fino ai trattamenti non chirurgici del viso e del corpo.</p>
+        <p>La sua idea di chirurgia estetica si misura su due parametri precisi: <strong>la sicurezza del paziente e la naturalezza del risultato</strong>, con tempi di recupero rapidi. Nessun eccesso, nessuna promessa irrealistica: solo equilibrio.</p>
+        <p>Decidere di sottoporsi a un intervento è una scelta delicata, e raramente semplice. “Per questo la prima consultazione non è una formalità: è un dialogo, un momento per comprendere ciò che il paziente desidera e valutare con franchezza ciò che è realmente possibile.”</p>
+        <p>Il Dr. Uccellini ascolta con attenzione ciò che la paziente desidera, ne valuta con franchezza l’anatomia, le aspettative e le reali possibilità di miglioramento, spiegando con chiarezza benefici, limiti, rischi e tempi di recupero.</p>
+        <p>Quando esistono alternative all’intervento, vengono sempre considerate e discusse. Perché la qualità di una decisione chirurgica non dipende soltanto dalla tecnica, ma anche dalla capacità di capire quando intervenire, come farlo e, altrettanto importante, quando non farlo.</p>
+        <p><strong>Un buon risultato, oltre che dalla tecnica, nasce dalla fiducia.</strong></p>
+        <figure class="section-figure reveal">
+          <img src="assets/studio-sala-operatoria.jpg" loading="lazy" decoding="async" alt="Lo studio e la sala operatoria dell'Ambulatorio di Chirurgia Plastica di Terni" />
+          <figcaption>Lo studio e la sala operatoria — Ambulatorio di Chirurgia Plastica, Terni</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. ASSOCIAZIONI — Marquee #1
+       ============================================================ -->
+  <section class="section" id="associazioni" style="padding-block:clamp(56px,8vw,110px);">
+    <div class="wrap">
+      <p class="eyebrow center" style="justify-content:center;">Associazioni</p>
+      <p class="marquee-line reveal">Già membro ordinario delle principali società scientifiche di chirurgia plastica, in Italia e nel mondo.</p>
+    </div>
+    <div class="marquee reveal" data-marquee aria-label="Società scientifiche">
+      <div class="marquee__track">
+        <div class="assoc-item"><img src="assets/isaps.jpg" alt="ISAPS — International Society of Aesthetic Plastic Surgery" loading="lazy" /></div>
+        <div class="assoc-item"><img src="assets/sicpre.png" alt="SICPRE — Società Italiana di Chirurgia Plastica Ricostruttiva ed Estetica" loading="lazy" /></div>
+        <div class="assoc-item"><img src="assets/aicpe.png" alt="AICPE — Associazione Italiana Chirurgia Plastica Estetica" loading="lazy" /></div>
+        <div class="assoc-item"><img src="assets/gmc.svg" alt="General Medical Council — Regno Unito" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. IL MENTORE
+       ============================================================ -->
+  <section class="section" id="mentore">
+    <div class="wrap">
+      <div class="col center">
+        <div class="reveal">
+          <p class="eyebrow">Il Mentore</p>
+          <h2 class="title" style="margin-bottom:1.6rem;">Una scuola, un'eredità</h2>
+        </div>
+        <div class="prose reveal">
+          <p>Ogni grande chirurgo ha un maestro. Il primo mentore in chirurgia plastica di Roberto Uccellini è <strong>Mr. Brent Tanner</strong>, celebre chirurgo plastico inglese e "Maestro d'Arte", già Direttore del Centro Ustionati del <strong>Queen Victoria Hospital</strong> di East Grinstead, in Inghilterra — oltre che amico personale del Dr. Uccellini dal 1989.</p>
+        </div>
+        <figure class="section-figure reveal">
+          <img src="assets/mentore.jpg" alt="Roberto Uccellini insieme al suo mentore Mr. Brent Tanner" loading="lazy" />
+          <figcaption>Roberto Uccellini con Mr. Brent Tanner</figcaption>
+        </figure>
+        <div class="prose reveal">
+          <p>Il Queen Victoria Hospital non è un ospedale qualunque: è uno dei luoghi che hanno fatto <strong>la storia della chirurgia plastica mondiale</strong>. Fu qui che, durante la Seconda Guerra Mondiale, nacquero molte delle tecniche ricostruttive fondamentali della disciplina moderna — sviluppate per ridare un volto e un corpo agli aviatori rimasti gravemente ustionati durante la <strong>Battaglia d'Inghilterra</strong>. Da quelle corsie sono passati alcuni tra i più importanti chirurghi plastici del pianeta.</p>
+          <p>Fin dagli anni Novanta, Roberto Uccellini ha frequentato regolarmente il Queen Victoria Hospital sotto la guida di Mr. Tanner, lavorando al suo fianco anche in Italia e affiancandolo in altre realtà britanniche d'eccellenza, tra cui il Tunbridge Wells Independent Hospital e lo Spire Hospital di Brighton. Per un periodo ha operato per il <strong>Servizio Sanitario Nazionale inglese (NHS)</strong> proprio al Queen Victoria Hospital.</p>
+          <p>È da questa scuola — fatta di rigore, arte e dedizione — che è nato anche il suo capitolo londinese, culminato nel ruolo di <strong>Consultant Plastic Surgeon presso The Private Clinic of Harley Street</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. ESPERIENZA INTERNAZIONALE
+       ============================================================ -->
+  <section class="section" id="esperienza" style="background:var(--paper);border-block:1px solid var(--line);">
+    <div class="wrap">
+      <div class="col center">
+        <div class="reveal">
+          <p class="eyebrow">Esperienza internazionale</p>
+          <h2 class="title" style="margin-bottom:1.6rem;">Una carriera senza confini</h2>
+        </div>
+        <div class="prose reveal">
+          <p>La formazione di Roberto Uccellini non si è mai fermata ai confini nazionali. Negli Stati Uniti e in Canada ha frequentato come <strong>visiting doctor</strong> alcuni dei più prestigiosi centri d'eccellenza per la chirurgia plastica, tra cui il <strong>Manhattan Eye, Ear and Throat Hospital</strong> di New York e il <strong>Plastic and Aesthetic Surgery Centre</strong> di Montréal.</p>
+          <p>In Italia, dal 1995 al 1998, è stato assistente chirurgo in una nota clinica privata di chirurgia plastica a Firenze, operando con regolarità anche a Roma e a Rimini. Dal 1999 è <strong>Direttore Sanitario dell'Ambulatorio di Chirurgia Plastica di Terni</strong>, in Umbria.</p>
+          <p>Un percorso che intreccia due mondi — quello italiano e quello britannico — e che porta nello studio di ogni giorno lo stesso metodo appreso nelle migliori scuole internazionali.</p>
+        </div>
+        <figure class="section-figure portrait reveal">
+          <img src="assets/royal-society.jpg" alt="Roberto Uccellini accanto alla targa della Royal Society of Medicine a Londra" loading="lazy" />
+          <figcaption>Roberto Uccellini presso la Royal Society of Medicine, Londra</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. CHIRURGO PLASTICO O ESTETICO? — banda verde + pull-quote
+       ============================================================ -->
+  <section class="section band-green" id="distinzione">
+    <div class="wrap">
+      <div class="col center">
+        <p class="eyebrow reveal">Una distinzione che conta</p>
+        <h2 class="title reveal" style="margin-bottom:1.8rem;">Chirurgo plastico o chirurgo estetico?</h2>
+        <div class="prose reveal">
+          <p>L'ordinamento universitario prevede un'unica vera specializzazione in materia: Chirurgia Plastica, Ricostruttiva ed Estetica — cinque anni di studi specialistici riconosciuti. La "chirurgia estetica", da sola, non esiste come specializzazione: per questo spesso si definiscono “chirurghi estetici” anche medici che non hanno la specializzazione in Chirurgia Plastica, contando sul fatto che il pubblico questa differenza non la conosce.</p>
+        </div>
+
+        <figure class="figure-cut reveal">
+          <img src="assets/scalpel.png" alt="Mano del chirurgo, con guanto sterile, che impugna un bisturi" loading="lazy" />
+        </figure>
+
+        <div class="prose reveal">
+          <p><strong>Roberto Uccellini è, a pieno titolo, specialista in Chirurgia Plastica Ricostruttiva ed Estetica, con il massimo dei voti e la lode — e specialista anche in Chirurgia Generale: una completezza che pochi possono vantare.</strong></p>
+        </div>
+
+        <div class="pullquote reveal">
+          <blockquote><span class="qmark">«</span>Mi chiamano di continuo "chirurgo estetico". È un'imprecisione inappropriata: dietro quella parola - Chirurgo Plastico - c'è un percorso di studi che merita di essere chiamato con il suo nome.<span class="qmark">»</span></blockquote>
+          <cite>Roberto Uccellini</cite>
+        </div>
+
+        <p class="closing reveal">Un consiglio vale più di mille parole: chieda sempre qual è la specializzazione universitaria del suo chirurgo. È la prima, vera garanzia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. TITOLI ACCADEMICI — Marquee #2 (lightbox)
+       ============================================================ -->
+  <section class="section" id="titoli">
+    <div class="wrap">
+      <p class="eyebrow center">Titoli accademici</p>
+      <p class="marquee-line reveal">Diciotto anni di studi accademici: una laurea e due specializzazioni universitarie.</p>
+    </div>
+    <div class="marquee reveal" data-marquee data-speed="slow" aria-label="Titoli accademici">
+      <div class="marquee__track">
+        <button class="titolo-card" data-lightbox="assets/laurea1.jpg" data-caption="Laurea in Medicina e Chirurgia · Università degli Studi di Perugia">
+          <span class="titolo-card__img"><img src="assets/laurea1.jpg" alt="Diploma di Laurea in Medicina e Chirurgia, Università degli Studi di Perugia" loading="lazy" />
+            <span class="titolo-card__zoom" aria-hidden="true">⤢</span></span>
+          <span class="titolo-card__cap"><span class="t">Laurea in Medicina e Chirurgia</span><span class="m">Università degli Studi di Perugia</span></span>
+        </button>
+        <button class="titolo-card" data-lightbox="assets/laurea2.jpg" data-caption="Specializzazione in Chirurgia Generale · Università degli Studi di Perugia · 1995">
+          <span class="titolo-card__img"><img src="assets/laurea2.jpg" alt="Diploma di Specializzazione in Chirurgia Generale, Università degli Studi di Perugia, 1995" loading="lazy" />
+            <span class="titolo-card__zoom" aria-hidden="true">⤢</span></span>
+          <span class="titolo-card__cap"><span class="t">Specializzazione in Chirurgia Generale</span><span class="m">Università degli Studi di Perugia · 1995</span></span>
+        </button>
+        <button class="titolo-card" data-lightbox="assets/laurea3.jpg" data-caption="Specializzazione in Chirurgia Plastica e Ricostruttiva · Università degli Studi di Perugia · 2011 · 50/50 e lode">
+          <span class="titolo-card__img"><img src="assets/laurea3.jpg" alt="Diploma di Specializzazione in Chirurgia Plastica e Ricostruttiva, Università degli Studi di Perugia, 2011, votazione 50 su 50 e lode" loading="lazy" />
+            <span class="titolo-card__zoom" aria-hidden="true">⤢</span></span>
+          <span class="titolo-card__cap"><span class="t">Specializzazione in Chirurgia Plastica e Ricostruttiva</span><span class="m">Università degli Studi di Perugia · 2011 · 50/50 e lode</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="titoli-support reveal">Durante la formazione ha maturato esperienza diretta anche in Chirurgia Mammaria, Vascolare, Videolaparoscopica, Robotica, Endocrinologica e Addominale.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. RECENSIONI GOOGLE — Marquee #3
+       ============================================================ -->
+  <section class="section" id="recensioni" style="background:var(--paper);border-block:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow center">Recensioni Google</p>
+      <p class="marquee-line reveal">Le parole di chi ha scelto di affidarsi.</p>
+    </div>
+    <div class="marquee reveal" data-marquee data-speed="vslow" aria-label="Recensioni dei pazienti">
+      <div class="marquee__track">
+        <!-- review template items (duplicated by JS for seamless loop) -->
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#8C6F3B" aria-hidden="true">M</span>
+            <span class="review-id"><span class="review-name">Maria Zaharia</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">Ho avuto la fortuna di incontrare il Dr. Roberto Uccellini: mi ha cambiato la vita, mentalmente e fisicamente. I suoi consigli e il suo modo di parlare mi hanno ridato la fiducia che avevo perso da tanto tempo. Grazie alle sue mani e alla sua esperienza, riesco a guardarmi allo specchio e mi piace quello che vedo. Sono passati solo tre mesi. Grazie, Dottor Roberto Uccellini: se potessi, darei dieci stelle!</p>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#1E3A34" aria-hidden="true">G</span>
+            <span class="review-id"><span class="review-name">Guido Minucci</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">Un professionista di estrema abilità tecnica. Con una procedura apparentemente semplice, applicata in modo raffinato ed esperto e con strumenti all'avanguardia, ha risolto il mio problema in maniera egregia. Consigliatissimo.</p>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#9A5B5B" aria-hidden="true">A</span>
+            <span class="review-id"><span class="review-name">Anna Maria Bugari</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">Lui è una meraviglia: oltre a essere bravissimo, senza mai esagerare, ascolta i problemi dei suoi pazienti. È empatico, simpatico e anche bello, il che non guasta.</p>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#5B7B9A" aria-hidden="true">S</span>
+            <span class="review-id"><span class="review-name">Samantha Poggi</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">Ho avuto la fortuna di incontrare il Dott. Uccellini: grande professionista. I suoi consigli sono stati utilissimi per raggiungere il mio sogno. Staff eccezionale, pulizia e supporto. Lo consiglio vivamente. Grazie, Dottore!</p>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#6B7A4F" aria-hidden="true">S</span>
+            <span class="review-id"><span class="review-name">Soela Tordoni</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">Il migliore in assoluto: super dottore e super staff. Lo consiglio vivamente.</p>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__head">
+            <span class="review-avatar" style="background:#7A5B8C" aria-hidden="true">P</span>
+            <span class="review-id"><span class="review-name">Pietro Petri</span><span class="review-sub">Recensione su Google</span></span>
+            <span class="review-g" data-g aria-hidden="true"></span>
+          </div>
+          <div class="stars" aria-label="Cinque stelle su cinque" data-stars></div>
+          <p class="review-card__text">È una lunga storia, la mia con Roberto Uccellini: ci siamo conosciuti alla facoltà di medicina a Firenze negli anni '80 ed è stato come un fratello maggiore per me. Poi sono tornato in Brasile e mi sono specializzato in chirurgia plastica; ci siamo ritrovati intorno al 2005, con mia grande sorpresa.</p>
+        </figure>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="review-badge reveal">
+        <span class="review-g" data-g aria-hidden="true" style="width:18px;height:18px;display:inline-flex"></span>
+        Recensioni verificate su Google
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8b. AREE DI INTERVENTO — tre card con immagini
+       ============================================================ -->
+  <section class="section" id="interventi">
+    <div class="wrap">
+      <p class="eyebrow center">Aree di intervento</p>
+      <div class="aree-grid">
+        <a class="area-card reveal" href="viso-e-occhi.html">
+          <div class="area-card__img"><img src="assets/area-viso.jpg" alt="Trattamento del viso e del contorno occhi" loading="lazy" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">01</span><h3 class="area-card__t">Viso e Occhi</h3></div>
+        </a>
+        <a class="area-card reveal" href="corpo-e-seno.html">
+          <div class="area-card__img"><img src="assets/area-corpo.jpg" alt="Chirurgia del corpo e del seno" loading="lazy" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">02</span><h3 class="area-card__t">Corpo e seno</h3></div>
+        </a>
+        <a class="area-card reveal" href="trattamenti-non-chirurgici.html">
+          <div class="area-card__img"><img src="assets/area-non-chirurgiche.jpg" alt="Trattamenti non chirurgici del viso e del corpo" loading="lazy" /></div>
+          <div class="area-card__cap"><span class="area-card__num">03</span><h3 class="area-card__t">Pratiche non chirurgiche</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. CONTATTI
+       ============================================================ -->
+  <section class="section contatti" id="contatti">
+    <div class="wrap">
+      <p class="eyebrow reveal">Contatti</p>
+      <h2 class="title reveal">Un incontro, prima di ogni decisione</h2>
+      <div class="contatti__grid">
+        <p class="contatti__intro reveal">La prima consultazione con il Dr. Roberto Uccellini è un colloquio disteso e approfondito, dedicato interamente alle Sue esigenze e alle opzioni disponibili. Un confronto sincero, senza fretta: il primo, vero passo verso una scelta consapevole.</p>
+        <div class="reveal">
+          <div class="contact-block">
+            <div class="k">Sede</div>
+            <div class="v">Terni — Ambulatorio di Chirurgia Plastica<br>Direttore Sanitario</div>
+          </div>
+          <div class="contact-block">
+            <div class="k">Telefono</div>
+            <div class="v"><span class="ph">da inserire</span></div>
+          </div>
+          <div class="contact-block">
+            <div class="k">Email</div>
+            <div class="v"><span class="ph">da inserire</span></div>
+          </div>
+          <div class="contact-block">
+            <div class="k">Indirizzo</div>
+            <div class="v"><span class="ph">da inserire</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-ru.png" alt="Logo Roberto Uccellini" />
+    </div>
+    <div class="footer__meta">
+      Roberto Uccellini — Chirurgia Plastica, Ricostruttiva ed Estetica<br>
+      Specialista in Chirurgia Plastica Ricostruttiva ed Estetica e in Chirurgia Generale
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Anteprima ingrandita del titolo accademico">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Chiudi">×</button>
+  <figure>
+    <img id="lightboxImg" alt="" />
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
+</div>
+
+<script>
+/* ============================================================
+   JS — vanilla, nessuna dipendenza
+   ============================================================ */
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Entrata morbida al load ---- */
+  window.addEventListener("load", function(){
+    document.body.classList.add("loaded");
+  });
+  // fallback se "load" tarda
+  setTimeout(function(){ document.body.classList.add("loaded"); }, 1200);
+
+  /* ---- Header: stato "scrolled" ---- */
+  var header = document.querySelector(".header");
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---- Menu mobile ---- */
+  var toggle = document.getElementById("navToggle");
+  var nav = document.getElementById("nav");
+  toggle.addEventListener("click", function(){
+    var open = document.body.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ---- Stelle dorate (stile Google) per le recensioni ---- */
+  var starSVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.95 5.98 6.6.96-4.77 4.65 1.12 6.57L12 17.98 6.1 20.16l1.12-6.57L2.45 8.94l6.6-.96z"/></svg>';
+  document.querySelectorAll("[data-stars]").forEach(function(el){
+    el.innerHTML = starSVG.repeat(5);
+  });
+
+  /* ---- Logo "G" di Google (indica la provenienza delle recensioni) ---- */
+  var googleG = '<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true">'
+    + '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>'
+    + '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>'
+    + '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>'
+    + '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>'
+    + '</svg>';
+  document.querySelectorAll("[data-g]").forEach(function(el){ el.innerHTML = googleG; });
+
+  /* ---- Reveal allo scroll con stagger ---- */
+  var revealEls = [].slice.call(document.querySelectorAll(".reveal"));
+  if(reduceMotion || !("IntersectionObserver" in window)){
+    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      // raggruppa per ordinare lo stagger tra fratelli visibili insieme
+      var shown = 0;
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          el.style.transitionDelay = (shown * 90) + "ms";
+          el.classList.add("is-visible");
+          shown++;
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Marquee: duplica il contenuto per un loop seamless ---- */
+  var speedMap = {normal:48, slow:64, vslow:90};
+  document.querySelectorAll("[data-marquee]").forEach(function(m){
+    var track = m.querySelector(".marquee__track");
+    if(!track) return;
+    // durata proporzionale alla velocità richiesta
+    var key = m.getAttribute("data-speed") || "normal";
+    var dur = speedMap[key] || 48;
+    // duplica i figli una volta -> il -50% dell'animazione combacia perfettamente
+    var clone = track.cloneNode(true);
+    // i cloni sono puramente decorativi
+    clone.setAttribute("aria-hidden","true");
+    Array.prototype.forEach.call(track.children, function(child){
+      var c = child.cloneNode(true);
+      c.setAttribute("aria-hidden","true");
+      // rimuovi handler interattivi dai cloni (i bottoni lightbox restano cliccabili lo stesso)
+      track.appendChild(c);
+    });
+    m.style.setProperty("--dur", dur + "s");
+  });
+
+  /* ---- Lightbox per i titoli accademici ---- */
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightboxImg");
+  var lbCap = document.getElementById("lightboxCap");
+  var lbClose = document.getElementById("lightboxClose");
+  var lastFocus = null;
+
+  function openLightbox(src, cap, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || cap || "";
+    lbCap.textContent = cap || "";
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+    lastFocus = document.activeElement;
+    lbClose.focus();
+  }
+  function closeLightbox(){
+    lb.classList.remove("open");
+    document.body.style.overflow = "";
+    setTimeout(function(){ lbImg.removeAttribute("src"); }, 350);
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  // delega: funziona anche sui cloni del marquee
+  document.addEventListener("click", function(e){
+    var card = e.target.closest("[data-lightbox]");
+    if(card){
+      var img = card.querySelector("img");
+      openLightbox(card.getAttribute("data-lightbox"), card.getAttribute("data-caption"), img ? img.alt : "");
+    }
+  });
+  lbClose.addEventListener("click", closeLightbox);
+  lb.addEventListener("click", function(e){ if(e.target === lb) closeLightbox(); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && lb.classList.contains("open")) closeLightbox();
+  });
+})();
+</script>
+
+<script>
+/* ============================================================
+   LANGUAGE SWITCHER (IT / EN) — vanilla, no deps
+   Runs AFTER main script so marquee clones already exist and
+   data-g SVG is already injected.
+   ============================================================ */
+(function(){
+  "use strict";
+
+  var originals = new WeakMap();
+
+  function snap(el, prop){
+    var m = originals.get(el);
+    if(!m){ m = {}; originals.set(el, m); }
+    if(!(prop in m)){
+      if(prop === 'text') m[prop] = el.textContent;
+      else if(prop === 'html') m[prop] = el.innerHTML;
+      else if(prop.indexOf('attr:') === 0) m[prop] = el.getAttribute(prop.slice(5));
+    }
+    return m[prop];
+  }
+  function setVal(el, prop, val){
+    if(prop === 'text') el.textContent = val;
+    else if(prop === 'html') el.innerHTML = val;
+    else if(prop.indexOf('attr:') === 0) el.setAttribute(prop.slice(5), val);
+  }
+  function apply(sel, prop, en, lang){
+    document.querySelectorAll(sel).forEach(function(el){
+      snap(el, prop);
+      if(lang === 'en') setVal(el, prop, en);
+      else setVal(el, prop, originals.get(el)[prop]);
+    });
+  }
+
+  /* Static selectors → English value */
+  var T = [
+    ['title', 'text', 'Roberto Uccellini — Plastic, Reconstructive and Aesthetic Surgery'],
+    ['meta[name="description"]', 'attr:content', 'Roberto Uccellini, specialist in Plastic, Reconstructive and Aesthetic Surgery and in General Surgery. Over twenty years of surgery between Italy and London.'],
+
+    /* Header */
+    ['.brand', 'attr:aria-label', 'Roberto Uccellini — home'],
+    ['.brand__sub', 'html', 'Plastic, Reconstructive<br>and Aesthetic Surgery'],
+    ['.brand img', 'attr:alt', 'Roberto Uccellini logo'],
+    ['header .nav', 'attr:aria-label', 'Main navigation'],
+    ['header .nav a[href="#chi-e"]', 'text', 'About'],
+    ['header .nav a[href="#associazioni"]', 'text', 'Affiliations'],
+    ['header .nav a[href="#mentore"]', 'text', 'Mentor'],
+    ['header .nav a[href="#esperienza"]', 'text', 'Experience'],
+    ['header .nav a[href="#distinzione"]', 'text', 'Plastic or aesthetic'],
+    ['header .nav a[href="#titoli"]', 'text', 'Credentials'],
+    ['header .nav a[href="#recensioni"]', 'text', 'Reviews'],
+    ['header .nav a[href="#interventi"]', 'text', 'Procedures'],
+    ['header .nav a[href="#contatti"]', 'text', 'Contact'],
+    ['#navToggle', 'attr:aria-label', 'Open menu'],
+    ['#risultati', 'attr:aria-label', 'Before and after — real cases'],
+
+    /* Hero */
+    ['.hero .eyebrow', 'text', 'Plastic, Reconstructive and Aesthetic Surgery'],
+    ['.hero__headline', 'text', "Over twenty years of surgical experience, between Italy and London. One enduring idea of excellence: the most natural result, with absolute respect for the person."],
+    ['.hero__support', 'text', 'Specialist in Plastic, Reconstructive and Aesthetic Surgery and in General Surgery. Practising since 1995.'],
+    ['.hero__portrait', 'attr:alt', 'Portrait of Dr. Roberto Uccellini'],
+
+    /* Chi è / About */
+    ['#chi-e .eyebrow', 'text', 'About'],
+    ['#chi-e h2.title', 'text', 'The right concept before the right technique'],
+    ['#chi-e .section-figure figcaption', 'text', 'The consulting room and the operating theatre — Plastic Surgery Clinic, Terni'],
+    ['#chi-e .section-figure img', 'attr:alt', 'The consulting room and the operating theatre of the Plastic Surgery Clinic in Terni'],
+
+    /* Associazioni */
+    ['#associazioni .eyebrow', 'text', 'Affiliations'],
+    ['#associazioni .marquee-line', 'text', 'Former ordinary member of the leading scientific societies of plastic surgery, in Italy and worldwide.'],
+
+    /* Mentore */
+    ['#mentore .eyebrow', 'text', 'The Mentor'],
+    ['#mentore h2.title', 'text', 'A tradition of excellence'],
+    ['#mentore .section-figure figcaption', 'text', 'Roberto Uccellini with Mr. Brent Tanner'],
+    ['#mentore .section-figure img', 'attr:alt', 'Roberto Uccellini together with his mentor Mr. Brent Tanner'],
+
+    /* Esperienza */
+    ['#esperienza .eyebrow', 'text', 'International experience'],
+    ['#esperienza h2.title', 'text', 'A career without borders'],
+    ['#esperienza .section-figure figcaption', 'text', 'Roberto Uccellini at the Royal Society of Medicine, London'],
+    ['#esperienza .section-figure img', 'attr:alt', 'Roberto Uccellini next to the Royal Society of Medicine plaque in London'],
+
+    /* Distinzione */
+    ['#distinzione .eyebrow', 'text', 'A distinction that matters'],
+    ['#distinzione h2.title', 'text', 'Plastic surgeon or aesthetic surgeon?'],
+    ['#distinzione cite', 'text', 'Roberto Uccellini'],
+    ['#distinzione .closing', 'text', "One piece of advice is worth more than a thousand words: before choosing a surgeon, ask a simple question — what is your university specialist qualification? Understanding a surgeon’s formal training is one of the first steps towards making an informed decision."],
+    ['#distinzione .figure-cut img', 'attr:alt', "Surgeon's hand, wearing a sterile glove, holding a scalpel"],
+
+    /* Titoli */
+    ['#titoli .eyebrow', 'text', 'Academic credentials'],
+    ['#titoli .marquee-line', 'text', 'Eighteen years of university education: one degree and two specialist qualifications.'],
+    ['#titoli .titoli-support', 'text', "Alongside his specialist training, Dr. Roberto Uccellini gained direct surgical experience in a range of fields, including Breast, Vascular, Videolaparoscopic, Robotic, Endocrine and Abdominal Surgery. This broad surgical background has continued to inform his approach to plastic and aesthetic surgery: meticulous planning, respect for anatomy and a focus on the individual patient."],
+
+    /* Recensioni */
+    ['#recensioni .eyebrow', 'text', 'Google Reviews'],
+    ['#recensioni .marquee-line', 'text', 'The words of those who have chosen to put their trust in him.'],
+
+    /* Interventi */
+    ['#interventi .eyebrow', 'text', 'Areas of intervention'],
+
+    /* Contatti */
+    ['#contatti .eyebrow', 'text', 'Contact'],
+    ['#contatti h2.title', 'text', 'A meeting, before any decision'],
+    ['#contatti .contatti__intro', 'text', "The first consultation with Dr. Roberto Uccellini is a relaxed, thorough conversation dedicated entirely to your needs, your expectations and the options available to you. An honest exchange, without pressure and without haste. Because the first step towards any treatment should be an informed decision."],
+
+    /* Footer + lightbox */
+    ['.footer__brand img', 'attr:alt', 'Roberto Uccellini logo'],
+    ['#lightbox', 'attr:aria-label', 'Enlarged preview of the academic credential'],
+    ['#lightboxClose', 'attr:aria-label', 'Close']
+  ];
+
+  /* Complex / iterable translations */
+  function applyComplex(lang){
+    /* Banner prima/dopo (anche i cloni del marquee) */
+    document.querySelectorAll('#risultati [data-en]').forEach(function(el){
+      snap(el, 'text');
+      setVal(el, 'text', lang === 'en' ? el.getAttribute('data-en') : originals.get(el).text);
+    });
+    document.querySelectorAll('#risultati [data-en-alt]').forEach(function(el){
+      snap(el, 'attr:alt');
+      setVal(el, 'attr:alt', lang === 'en' ? el.getAttribute('data-en-alt') : originals.get(el)['attr:alt']);
+    });
+    document.querySelectorAll('#risultati .ba-card[aria-hidden="true"]').forEach(function(a){ a.setAttribute('tabindex','-1'); });
+
+    /* Chi è — 3 paragraphs */
+    var chieEn = ["Throughout his career, Dr. Uccellini has pursued one uncompromising goal: to offer every patient <strong>the highest possible standard of care</strong>.", "A specialist in both Plastic, Reconstructive and Aesthetic Surgery and General Surgery, he has gained <strong>over twenty years of experience</strong> in Italy and abroad. His expertise encompasses a broad surgical spectrum, from general and major surgery to plastic and aesthetic procedures, as well as minimally invasive techniques and non-surgical treatments for the face and body.", "His approach to aesthetic surgery is guided by two principles: <strong>patient safety and a natural, harmonious outcome</strong>, with particular attention to ensuring a smooth and rapid recovery. No excess. No empty promises. Just balance.", "Choosing to undergo surgery is a delicate decision, and rarely a simple one. For this reason, the first conversation isn’t a commitment to surgery, it’s about listening to your goals.", "Dr. Uccellini listens carefully to the needs of each patient, evaluates them with integrity and clinical experience, and provides an honest opinion on their condition, their expectations and the genuine appropriateness of surgery. Where clinically appropriate, non-surgical treatment options will be considered and offered as an alternative to surgery. A good outcome, before technique, begins with trust.", ""];
+    document.querySelectorAll('#chi-e .prose p').forEach(function(p, i){
+      if(chieEn[i] == null) return;
+      snap(p, 'html');
+      setVal(p, 'html', lang === 'en' ? chieEn[i] : originals.get(p).html);
+      p.style.display = (lang === 'en' && chieEn[i] === '') ? 'none' : '';
+    });
+
+    /* Mentore — prose 1 (1 p) + prose 2 (3 p) */
+    var mentoreProses = document.querySelectorAll('#mentore .prose');
+    if(mentoreProses[0]){
+      var mp1 = mentoreProses[0].querySelector('p');
+      if(mp1){
+        snap(mp1, 'html');
+        var en1 = "Every great surgeon has a master. Roberto Uccellini’s first mentor in plastic surgery is <strong>Mr. Brent Tanner</strong>, the renowned English plastic surgeon and “Master of Art”, formerly Director of the Burns Unit at the <strong>Queen Victoria Hospital</strong> in East Grinstead, England, and a personal friend of Dr. Uccellini since 1989.";
+        setVal(mp1, 'html', lang === 'en' ? en1 : originals.get(mp1).html);
+      }
+    }
+    if(mentoreProses[1]){
+      var mp2En = ["The Queen Victoria Hospital is no ordinary hospital. It is one of the institutions that helped shape <strong>the history of modern plastic surgery worldwide</strong>. During the Second World War, it became a centre for the development of pioneering reconstructive techniques, created to restore the faces and bodies of airmen severely burned during the <strong>Battle of Britain</strong>. Some of the most influential plastic surgeons of the modern era trained on its wards.", "Since the 1990s, Roberto Uccellini has regularly returned to the Queen Victoria Hospital under Mr. Tanner’s guidance, while also working alongside him in Italy and at other British centres of excellence, including Tunbridge Wells Independent Hospital and Spire Hospital in Brighton. For a period, Dr. Uccellini also practised within the <strong>British National Health Service (NHS)</strong> at the Queen Victoria Hospital itself.", "This experience, shaped by rigour, craftsmanship and dedication, laid the foundation for his career in London and ultimately led to his appointment as <strong>Consultant Plastic Surgeon at The Private Clinic of Harley Street</strong>."];
+      mentoreProses[1].querySelectorAll('p').forEach(function(p, i){
+        if(mp2En[i] == null) return;
+        snap(p, 'html');
+        setVal(p, 'html', lang === 'en' ? mp2En[i] : originals.get(p).html);
+      });
+    }
+
+    /* Esperienza — 3 paragraphs */
+    var espEn = ["Roberto Uccellini’s training has never been confined by national borders. In the United States and Canada, he attended as a <strong>visiting doctor</strong> at internationally renowned centres of plastic surgery, including the <strong>Manhattan Eye, Ear and Throat Hospital</strong> in New York and the <strong>Plastic and Aesthetic Surgery Centre</strong> in Montréal.", "In Italy, from 1995 to 1998, he worked as an assistant surgeon at a leading private plastic surgery clinic in Florence, while also operating regularly in Rome and Rimini. Since 1999, he has served as <strong>Medical Director of the Plastic Surgery Outpatient Clinic in Terni</strong>, Umbria.", "A career shaped across two worlds — Italian and British — and enriched by experience in the finest international surgical centres."];
+    document.querySelectorAll('#esperienza .prose p').forEach(function(p, i){
+      if(espEn[i] == null) return;
+      snap(p, 'html');
+      setVal(p, 'html', lang === 'en' ? espEn[i] : originals.get(p).html);
+    });
+
+    /* Distinzione — 2 prose divs (1 p each) + blockquote */
+    var distEn = ["The recognised university specialisation in this medical field is Plastic, Reconstructive and Aesthetic Surgery. It is a formal specialist qualification encompassing Reconstructive, Plastic and Aesthetic Surgery. The expression “Aesthetic Surgeon”, by contrast, does not identify a separate university specialisation. This distinction matters: patients should be able to understand the specialist training and qualifications of the person they are considering for surgery.", "<strong>Roberto Uccellini is a specialist in Plastic, Reconstructive and Aesthetic Surgery, graduating with the highest marks and honours. He is also a specialist in General Surgery — a combination of training that gives him a particularly broad surgical background.</strong>"];
+    document.querySelectorAll('#distinzione .prose').forEach(function(d, i){
+      var p = d.querySelector('p');
+      if(!p || distEn[i] == null) return;
+      snap(p, 'html');
+      setVal(p, 'html', lang === 'en' ? distEn[i] : originals.get(p).html);
+    });
+    var bq = document.querySelector('#distinzione .pullquote blockquote');
+    if(bq){
+      snap(bq, 'html');
+      var bqEn = "<span class=\"qmark\">«</span>I am constantly described as an ‘aesthetic surgeon’. It is an inaccuracy that, I admit, bothers me: behind that word lies a course of study that deserves to be called by its proper name.<span class=\"qmark\">»</span>";
+      setVal(bq, 'html', lang === 'en' ? bqEn : originals.get(bq).html);
+    }
+
+    /* Titoli — cards (includes marquee clones) */
+    var titoliEn = [
+      ['Degree in Medicine and Surgery', 'University of Perugia'],
+      ['Specialisation in General Surgery', 'University of Perugia · 1995'],
+      ['Specialisation in Plastic and Reconstructive Surgery', 'University of Perugia · 2011 · 50/50 with honours']
+    ];
+    document.querySelectorAll('#titoli .titolo-card').forEach(function(card, i){
+      var idx = i % titoliEn.length;
+      var t = card.querySelector('.titolo-card__cap .t');
+      var m = card.querySelector('.titolo-card__cap .m');
+      if(t){
+        snap(t, 'text');
+        setVal(t, 'text', lang === 'en' ? titoliEn[idx][0] : originals.get(t).text);
+      }
+      if(m){
+        snap(m, 'text');
+        setVal(m, 'text', lang === 'en' ? titoliEn[idx][1] : originals.get(m).text);
+      }
+    });
+
+    /* Reviews (originals + clones) */
+    var reviewsEn = ["I had the good fortune to meet Dr. Roberto Uccellini. He changed my life, both mentally and physically. His advice and the way he spoke to me gave me back the confidence I had lost long ago. Thanks to his skill and experience, I can look at myself in the mirror and genuinely like what I see. Only three months have passed. Thank you, Dr. Roberto Uccellini — if I could, I would give you ten stars!", "A professional of exceptional technical ability. With an apparently simple procedure, carried out with refined expertise and state-of-the-art instruments, he resolved my problem brilliantly. Highly recommended.", "He is wonderful. As well as being extremely skilled and never overdoing things, he listens carefully to his patients’ concerns. He is empathetic, friendly and — which certainly doesn’t hurt — good-looking too.", "I had the good fortune to meet Dr. Uccellini: a great professional. His advice was extremely helpful in achieving my dream. Exceptional staff, cleanliness and support. I highly recommend him. Thank you, Doctor!", "Absolutely the best. Superb doctor and superb staff. Highly recommended.", "My story with Roberto Uccellini goes back a long way. We met at medical school in Florence in the 1980s, and he was like an older brother to me. I then returned to Brazil and specialised in plastic surgery. We met again around 2005, to my great surprise."];
+    document.querySelectorAll('#recensioni .review-card').forEach(function(card, i){
+      var idx = i % reviewsEn.length;
+      var txt = card.querySelector('.review-card__text');
+      var sub = card.querySelector('.review-sub');
+      var stars = card.querySelector('.stars');
+      if(txt){
+        snap(txt, 'text');
+        setVal(txt, 'text', lang === 'en' ? reviewsEn[idx] : originals.get(txt).text);
+      }
+      if(sub){
+        snap(sub, 'text');
+        setVal(sub, 'text', lang === 'en' ? 'Review on Google' : originals.get(sub).text);
+      }
+      if(stars){
+        snap(stars, 'attr:aria-label');
+        setVal(stars, 'attr:aria-label', lang === 'en' ? 'Five stars out of five' : originals.get(stars)['attr:aria-label']);
+      }
+    });
+
+    /* Review badge — preserves the Google G svg inline */
+    var badge = document.querySelector('#recensioni .review-badge');
+    if(badge){
+      snap(badge, 'html');
+      var googleG = '<svg viewBox="0 0 48 48" width="100%" height="100%" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
+      var badgeEn = '<span class="review-g" aria-hidden="true" style="width:18px;height:18px;display:inline-flex">'+googleG+'</span> Verified reviews on Google';
+      setVal(badge, 'html', lang === 'en' ? badgeEn : originals.get(badge).html);
+    }
+
+    /* Aree di intervento */
+    var areasEn = ['Face and Eyes', 'Body and breast', 'Non-surgical procedures'];
+    var areasAlt = ['Treatment of the face and eye contour', 'Body and breast surgery', 'Non-surgical treatments of the face and body'];
+    document.querySelectorAll('#interventi .area-card').forEach(function(card, i){
+      var t = card.querySelector('.area-card__t');
+      var img = card.querySelector('.area-card__img img');
+      if(t && areasEn[i] != null){
+        snap(t, 'text');
+        setVal(t, 'text', lang === 'en' ? areasEn[i] : originals.get(t).text);
+      }
+      if(img && areasAlt[i] != null){
+        snap(img, 'attr:alt');
+        setVal(img, 'attr:alt', lang === 'en' ? areasAlt[i] : originals.get(img)['attr:alt']);
+      }
+    });
+
+    /* Contatti blocks */
+    var contactsEn = [
+      ['Location', 'Terni — Plastic Surgery Outpatient Clinic<br>Medical Director'],
+      ['Telephone', '<span class="ph">to be added</span>'],
+      ['Email', '<span class="ph">to be added</span>'],
+      ['Address', '<span class="ph">to be added</span>']
+    ];
+    document.querySelectorAll('#contatti .contact-block').forEach(function(b, i){
+      var k = b.querySelector('.k');
+      var v = b.querySelector('.v');
+      if(!contactsEn[i]) return;
+      if(k){
+        snap(k, 'text');
+        setVal(k, 'text', lang === 'en' ? contactsEn[i][0] : originals.get(k).text);
+      }
+      if(v){
+        snap(v, 'html');
+        setVal(v, 'html', lang === 'en' ? contactsEn[i][1] : originals.get(v).html);
+      }
+    });
+
+    /* Footer meta */
+    var fm = document.querySelector('.footer__meta');
+    if(fm){
+      snap(fm, 'html');
+      var fmEn = 'Roberto Uccellini — Plastic, Reconstructive and Aesthetic Surgery<br>Specialist in Plastic, Reconstructive and Aesthetic Surgery and in General Surgery';
+      setVal(fm, 'html', lang === 'en' ? fmEn : originals.get(fm).html);
+    }
+  }
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    T.forEach(function(row){ apply(row[0], row[1], row[2], lang); });
+    applyComplex(lang);
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('site-lang', lang); } catch(e){}
+  }
+
+  /* Hook click handlers */
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setLang(this.getAttribute('data-lang'));
+    });
+  });
+
+  /* I cloni del banner prima/dopo non devono ricevere il focus da tastiera */
+  document.querySelectorAll('#risultati .ba-card[aria-hidden="true"]').forEach(function(a){ a.setAttribute('tabindex','-1'); });
+
+  /* Restore stored preference */
+  var saved = 'it';
+  try { saved = localStorage.getItem('site-lang') || 'it'; } catch(e){}
+  if(saved === 'en') setLang('en');
+})();
+</script>
+<style>
+/* le tre aree devono entrare per intero nella finestra quando si arriva dall'ancora */
+#interventi{padding-block:clamp(52px,6.5vw,92px);}
+#interventi .area-card__img{height:clamp(190px,20vw,248px);}
+#interventi .area-card image-slot{height:clamp(190px,20vw,248px);}
+</style>
+<script>
+(function(){
+var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ---- ancore interne: la sezione viene centrata nella finestra ---- */
+(function(){
+  var HEAD=78;
+  function targetTop(el){
+    var r=el.getBoundingClientRect(), h=r.height, vh=window.innerHeight, top=r.top+window.pageYOffset;
+    if(h < vh-HEAD-24) return top-(vh-h)/2;
+    return top-HEAD-14;
+  }
+  function goTo(el,smooth){
+    window.scrollTo({top:Math.max(0,targetTop(el)),behavior:(smooth&&!reduceMotion)?"smooth":"auto"});
+    /* le immagini caricate in ritardo cambiano l'altezza della pagina: correggiamo */
+    var n=0,fix=setInterval(function(){
+      n++;
+      var y=Math.max(0,targetTop(el));
+      if(Math.abs(y-window.pageYOffset)>10)window.scrollTo({top:y,behavior:"auto"});
+      if(n>5)clearInterval(fix);
+    },280);
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute("href").slice(1);
+    if(!id)return;
+    var el=document.getElementById(id);
+    if(!el||el.classList.contains("acc"))return;
+    e.preventDefault();
+    if(history.replaceState)history.replaceState(null,"","#"+id);
+    goTo(el,true);
+  });
+  window.addEventListener("load",function(){
+    if(!location.hash)return;
+    var el=document.getElementById(location.hash.slice(1));
+    if(el&&!el.classList.contains("acc"))setTimeout(function(){goTo(el,false);},120);
+  });
+})();
+})();
+</script>
+</body>
+</html>

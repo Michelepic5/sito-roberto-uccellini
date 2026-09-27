@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-t="t1">Viso e Occhi — Roberto Uccellini, Chirurgia Plastica</title>
+<meta name="description" data-t="t2" data-tp="content" content="Ringiovanimento chirurgico del viso: blefaroplastica, lifting, rinoplastica, otoplastica, liposcultura del viso e del collo, lipostruttura." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F6F2EC; --ink:#15120E; --brass:#A8884F; --brass-text:#8C6F3B;
+  --green:#1E3A34; --green-soft:#2A4C44;
+  --ink-60:rgba(21,18,14,.62); --ink-45:rgba(21,18,14,.45);
+  --line:rgba(21,18,14,.14); --paper:#FBF8F3;
+  --shadow-sm:0 1px 3px rgba(21,18,14,.05),0 8px 24px rgba(21,18,14,.06);
+  --shadow-md:0 2px 6px rgba(21,18,14,.06),0 24px 60px rgba(21,18,14,.10);
+  --maxw:1240px; --gutter:clamp(20px,5vw,72px);
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"Spectral",Georgia,serif;
+  --f-sans:"Roboto","Helvetica Neue",Arial,system-ui,sans-serif;
+  /* accento: identico alla pagina principale */
+  --cat:var(--brass); --cat-deep:var(--brass-text); --cat-tint:rgba(168,136,79,.13);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-weight:400;
+  font-size:clamp(16px,1.05vw + 12px,18px);line-height:1.72;letter-spacing:.002em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;cursor:pointer;border:none;background:none;}
+h1,h2,h3,h4,p{margin:0;}
+::selection{background:var(--brass);color:#fff;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.045;mix-blend-mode:multiply;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+.section{position:relative;z-index:2;padding-block:clamp(64px,9vw,132px);scroll-margin-top:84px;}
+.col{max-width:760px;}
+.col.center{margin-inline:auto;}
+
+.eyebrow{font-family:var(--f-body);font-size:.78rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--brass-text);margin:0 0 1.4rem;display:flex;align-items:center;gap:.85em;}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--cat);display:inline-block;flex:none;}
+.eyebrow.center{justify-content:center;}
+h2.title{font-family:var(--f-display);font-optical-sizing:auto;font-weight:450;
+  font-size:clamp(1.8rem,4vw,3.1rem);line-height:1.08;letter-spacing:-.012em;text-wrap:balance;}
+.prose p{margin-bottom:1.25em;max-width:64ch;color:rgba(21,18,14,.82);}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{font-weight:600;color:var(--ink);}
+.prose h4{font-family:var(--f-display);font-weight:500;font-style:italic;
+  font-size:1.16rem;line-height:1.3;color:var(--ink);margin:2em 0 .8em;letter-spacing:-.005em;}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+.reveal.is-visible{opacity:1;transform:none;}
+
+/* ---------- HEADER ---------- */
+.header{position:sticky;top:0;z-index:50;background:rgba(246,242,236,.72);
+  backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .4s ease,background .4s ease;}
+.header.scrolled{border-bottom-color:var(--line);background:rgba(246,242,236,.9);}
+.header__inner{max-width:var(--maxw);margin:0 auto;padding:14px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand img{height:46px;width:auto;}
+.brand .brand__sub{font-family:var(--f-body);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-45);line-height:1.4;border-left:1px solid var(--line);padding-left:12px;max-width:140px;}
+.nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,28px);}
+.nav a{font-size:.82rem;letter-spacing:.04em;color:var(--ink-60);position:relative;padding-block:6px;
+  white-space:nowrap;transition:color .3s ease;}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--cat);
+  transition:right .35s cubic-bezier(.2,.7,.2,1);}
+.nav a:hover{color:var(--ink);}
+.nav a:hover::after{right:0;}
+.nav a[aria-current="page"]{color:var(--ink);}
+.nav a[aria-current="page"]::after{right:0;}
+.nav-toggle{display:none;width:44px;height:44px;align-items:center;justify-content:center;flex:none;}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{content:"";display:block;width:24px;height:1.5px;
+  background:var(--ink);position:relative;transition:transform .35s ease,opacity .25s ease;}
+.nav-toggle span::before{position:absolute;top:-7px;left:0;}
+.nav-toggle span::after{position:absolute;top:7px;left:0;}
+.nav-open .nav-toggle span{background:transparent;}
+.nav-open .nav-toggle span::before{transform:translateY(7px) rotate(45deg);}
+.nav-open .nav-toggle span::after{transform:translateY(-7px) rotate(-45deg);}
+.lang-switch{display:flex;align-items:center;gap:6px;flex:none;margin-left:14px;}
+.lang-btn{width:30px;height:21px;padding:0;border-radius:3px;overflow:hidden;border:1px solid var(--line);
+  opacity:.5;transition:opacity .25s ease,box-shadow .25s ease,transform .25s ease;
+  display:flex;align-items:center;justify-content:center;background:#fff;}
+.lang-btn svg{width:100%;height:100%;display:block;}
+.lang-btn:hover{opacity:.9;transform:translateY(-1px);}
+.lang-btn.is-active{opacity:1;box-shadow:0 0 0 2px var(--cat);}
+@media (max-width:980px){.lang-switch{order:2;margin-left:auto;margin-right:8px;}.nav-toggle{order:3;}}
+
+/* ---------- PAGE HERO ---------- */
+.phero{position:relative;z-index:2;padding-block:clamp(26px,3.6vw,52px) clamp(34px,5vw,64px);overflow:hidden;}
+.phero::before{content:"";position:absolute;z-index:0;left:50%;top:-42%;transform:translateX(-50%);
+  width:min(140%,1500px);aspect-ratio:2/1;border-radius:50%;
+  background:radial-gradient(60% 60% at 50% 60%,var(--cat-tint),transparent 70%);pointer-events:none;}
+.phero__inner{position:relative;z-index:1;}
+.phero__num{font-family:var(--f-body);font-size:.74rem;font-weight:600;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--brass-text);display:flex;align-items:center;gap:.85em;margin-bottom:1.2rem;}
+.phero__num::before{content:"";width:34px;height:1px;background:var(--cat);flex:none;}
+.phero__t{font-family:var(--f-display);font-optical-sizing:auto;font-weight:400;line-height:.98;
+  letter-spacing:-.02em;font-size:clamp(2.4rem,5.6vw,4.5rem);max-width:14ch;text-wrap:balance;}
+.phero__lead{font-family:var(--f-display);font-weight:340;font-style:italic;
+  font-size:clamp(1.15rem,2.3vw,1.65rem);line-height:1.34;color:var(--ink-60);margin-top:1.1rem;max-width:34ch;}
+.phero__grid{display:grid;grid-template-columns:1.14fr .86fr;gap:clamp(28px,4.5vw,60px);align-items:center;}
+.phero__copy{max-width:46ch;}
+.phero__media{margin:0;position:relative;}
+.phero__media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;
+  box-shadow:var(--shadow-md);display:block;}
+@media (max-width:840px){
+  .phero__grid{grid-template-columns:1fr;gap:clamp(22px,4vw,30px);}
+  .phero__copy{max-width:none;}
+  .phero__media img{aspect-ratio:16/9;}
+}
+
+/* ---------- INTRO ---------- */
+.intro-sec{background:var(--paper);border-block:1px solid var(--line);}
+.split{display:grid;grid-template-columns:minmax(240px,.72fr) 1.28fr;gap:clamp(26px,5vw,80px);align-items:start;}
+.split__head{position:sticky;top:104px;}
+
+/* ---------- ACCORDION ---------- */
+.acc-hint{font-size:.92rem;color:var(--ink-60);font-style:italic;margin-top:1rem;}
+.acc-list{margin-top:clamp(34px,5vw,54px);border-top:1px solid var(--line);}
+.acc{border-bottom:1px solid var(--line);}
+.acc__head{display:flex;align-items:center;gap:clamp(.7em,1.6vw,1.2em);width:100%;text-align:left;
+  padding:clamp(20px,2.6vw,28px) 0;transition:padding-left .4s cubic-bezier(.2,.7,.2,1);}
+.acc__head:hover{padding-left:8px;}
+.acc__num{font-family:var(--f-body);font-size:.72rem;font-weight:600;letter-spacing:.18em;
+  color:var(--brass-text);flex:none;width:2.2em;align-self:center;}
+.acc__t{font-family:var(--f-display);font-weight:450;font-size:clamp(1.18rem,2.3vw,1.62rem);
+  line-height:1.2;letter-spacing:-.01em;flex:1;text-wrap:balance;}
+.acc__ico{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--cat);position:relative;
+  align-self:center;transition:background .35s ease,transform .45s cubic-bezier(.2,.7,.2,1);}
+.acc__ico::before,.acc__ico::after{content:"";position:absolute;left:50%;top:50%;background:var(--cat);
+  transition:opacity .3s ease,background .35s ease;}
+.acc__ico::before{width:11px;height:1.5px;transform:translate(-50%,-50%);}
+.acc__ico::after{width:1.5px;height:11px;transform:translate(-50%,-50%);}
+.acc.is-open .acc__ico{background:var(--cat);transform:rotate(180deg);}
+.acc.is-open .acc__ico::before{background:#fff;}
+.acc.is-open .acc__ico::after{opacity:0;}
+.acc__panel{height:0;overflow:hidden;transition:height .55s cubic-bezier(.2,.7,.2,1);}
+.acc__inner{padding:0 0 clamp(34px,4.5vw,52px);}
+@media (min-width:781px){.acc__inner{padding-left:calc(2.2em + clamp(.7em,1.6vw,1.2em));}}
+
+/* ---------- GALLERY ---------- */
+.gallery{margin-top:clamp(26px,3.6vw,40px);max-width:min(100%,430px);}
+.gallery__vp{position:relative;overflow:hidden;border-radius:8px;box-shadow:var(--shadow-md);
+  background:#ECE6DC;touch-action:pan-y;}
+.gallery__track{display:flex;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+.gallery__track.no-anim{transition:none;}
+.gslide{flex:0 0 100%;margin:0;position:relative;}
+.gslide img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;
+  background:rgba(251,248,243,.88);color:var(--ink);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(21,18,14,.16);opacity:0;transition:opacity .35s ease,background .3s ease;z-index:2;}
+.gallery__vp:hover .gal-arrow,.gal-arrow:focus-visible{opacity:1;}
+.gal-arrow:hover{background:#fff;}
+.gal-arrow.prev{left:12px;}
+.gal-arrow.next{right:12px;}
+.gal-arrow svg{width:15px;height:15px;}
+@media (hover:none){.gal-arrow{opacity:.92;}}
+.gal-foot{display:flex;align-items:center;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.gal-dots{display:flex;gap:7px;}
+.gal-dot{width:7px;height:7px;border-radius:50%;background:rgba(21,18,14,.2);padding:0;
+  transition:background .3s ease,transform .3s ease;}
+.gal-dot.is-active{background:var(--cat);transform:scale(1.35);}
+.gal-note{font-size:.74rem;max-width:64ch;letter-spacing:.02em;color:var(--ink-45);font-style:italic;
+  display:flex;align-items:center;gap:.6em;}
+.gal-note::before{content:"";width:20px;height:1px;background:var(--cat);flex:none;}
+
+/* ---------- ALTRE AREE ---------- */
+.aree-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.6vw,34px);
+  margin-top:clamp(30px,4vw,46px);}
+.area-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;
+  box-shadow:var(--shadow-sm);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;display:block;}
+.area-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.area-card__img{width:100%;height:clamp(180px,20vw,240px);overflow:hidden;background:#efeae1;}
+.area-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+.area-card:hover .area-card__img img{transform:scale(1.05);}
+.area-card__cap{padding:20px 24px 24px;display:flex;align-items:baseline;gap:.7em;}
+.area-card__num{font-family:var(--f-body);font-size:.72rem;letter-spacing:.18em;font-weight:600;flex:none;color:var(--brass-text);}
+.area-card__t{font-family:var(--f-display);font-weight:450;font-size:1.28rem;line-height:1.15;letter-spacing:-.01em;}
+@media (max-width:640px){.aree-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto;}}
+
+/* ---------- CONTATTI / FOOTER ---------- */
+.contatti{background:var(--green);color:#EFEBE2;position:relative;z-index:2;}
+.contatti .eyebrow{color:#C9A86A;}
+.contatti .eyebrow::before{background:#C9A86A;}
+.contatti h2.title{color:#FBF8F3;}
+.contatti__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,90px);align-items:start;margin-top:clamp(36px,5vw,56px);}
+.contatti__intro{font-size:1.15rem;line-height:1.6;color:rgba(239,235,226,.88);font-family:var(--f-display);font-weight:340;max-width:48ch;}
+.contact-block{border-top:1px solid rgba(201,168,106,.3);padding-top:22px;margin-top:26px;}
+.contact-block .k{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#C9A86A;margin-bottom:8px;}
+.contact-block .v{font-size:1.02rem;color:#FBF8F3;line-height:1.5;}
+.contact-block .v .ph{color:rgba(239,235,226,.5);font-style:italic;}
+.footer{background:var(--green);color:#EFEBE2;position:relative;z-index:2;border-top:1px solid rgba(201,168,106,.22);}
+.footer__inner{max-width:var(--maxw);margin:0 auto;padding:48px var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer__brand img{height:54px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.footer__meta{font-size:.78rem;color:rgba(239,235,226,.6);letter-spacing:.04em;line-height:1.7;text-align:right;}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .nav{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--bg);border-bottom:1px solid var(--line);padding:8px var(--gutter) 24px;
+    transform:translateY(-12px);opacity:0;pointer-events:none;
+    transition:transform .35s ease,opacity .35s ease;max-height:calc(100vh - 64px);overflow:auto;}
+  .nav a{width:100%;padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem;}
+  .nav a::after{display:none;}
+  .nav-open .nav{transform:none;opacity:1;pointer-events:auto;}
+  .nav-toggle{display:flex;}
+  .brand .brand__sub{display:none;}
+}
+@media (max-width:840px){
+  .split{grid-template-columns:1fr;gap:18px;}
+  .split__head{position:static;}
+  .contatti__grid{grid-template-columns:1fr;}
+  .footer__inner{flex-direction:column;align-items:flex-start;}
+  .footer__meta{text-align:left;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  .reveal{opacity:1;transform:none;}
+}
+.acc__inner > .gallery:first-child{margin-top:0;margin-bottom:clamp(26px,3.6vw,40px);}
+.acc__inner .prose h4{margin-top:1.6em;}
+</style>
+</head>
+<body>
+<header class="header" id="top">
+  <div class="header__inner">
+    <a class="brand" href="index.html" aria-label="Roberto Uccellini — home">
+      <img src="assets/logo-ru.png" data-t="t5" data-tp="alt" alt="Logo Roberto Uccellini" />
+      <span class="brand__sub" data-t="t4">Chirurgia Plastica<br>Ricostruttiva ed Estetica</span>
+    </a>
+    <nav class="nav" id="nav" data-t="t3" data-tp="aria-label" aria-label="Navigazione principale">
+      <a href="index.html" data-t="t7">Home</a>
+      <a href="viso-e-occhi.html" aria-current="page" data-t="t8">Viso e Occhi</a>
+      <a href="corpo-e-seno.html" data-t="t9">Corpo e Seno</a>
+      <a href="trattamenti-non-chirurgici.html" data-t="t10">Non chirurgici</a>
+      <a href="#contatti" data-t="t11">Contatti</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Lingua / Language">
+      <button type="button" class="lang-btn is-active" data-lang="it" aria-label="Italiano" title="Italiano"><svg viewBox="0 0 60 40" aria-hidden="true"><rect width="20" height="40" fill="#009246"/><rect x="20" width="20" height="40" fill="#fff"/><rect x="40" width="20" height="40" fill="#CE2B37"/></svg></button>
+      <button type="button" class="lang-btn" data-lang="en" aria-label="English" title="English"><svg viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M0,30 L60,0" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></button>
+    </div>
+    <button class="nav-toggle" id="navToggle" data-t="t6" data-tp="aria-label" aria-label="Apri menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+<main>
+  <section class="phero wrap">
+    <div class="phero__inner phero__grid">
+      <div class="phero__copy">
+        <p class="phero__num" data-t="t12">Area 01</p>
+        <h1 class="phero__t" data-t="t13">Viso e Occhi</h1>
+        <p class="phero__lead" data-t="t14">Ringiovanimento chirurgico e armonia dei tratti</p>
+      </div>
+      <figure class="phero__media">
+        <img src="assets/area-viso.jpg" fetchpriority="high" decoding="async" data-t="t15" data-tp="alt" alt="Trattamento del viso e del contorno occhi" style="object-position:50% 15%;" />
+      </figure>
+    </div>
+  </section>
+  <section class="section intro-sec" id="introduzione">
+    <div class="wrap split">
+      <div class="split__head reveal">
+        <p class="eyebrow" data-t="t20">Introduzione</p>
+        <h2 class="title" data-t="t19">Il proprio viso, riposato e in equilibrio</h2>
+      </div>
+      <div class="prose reveal" data-t="n1"><p>Quando incontriamo qualcuno, il viso è la prima cosa che vediamo. Porta con sé la nostra espressione, il nostro umore e, inevitabilmente, la nostra età. Per questo può pesare vedere allo specchio un volto che appare stanco, appesantito o semplicemente più vecchio di come ci sentiamo — ed è per la stessa ragione che anche una piccola asimmetria, o un tratto ereditato con cui non abbiamo mai fatto davvero pace, può incidere silenziosamente sulla nostra sicurezza.</p><p>La moderna chirurgia del viso offre tecniche raffinate, spesso mini-invasive, per correggere i cambiamenti che l’età porta con sé — i tessuti che cedono, le pieghe che si approfondiscono, la perdita di volume intorno agli zigomi e agli occhi — preservando l’espressività e l’identità dei tratti individuali.</p><p>A seconda del grado di correzione necessario, le possibilità vanno da interventi più completi, come il lifting, la chirurgia delle palpebre (blefaroplastica) o il lipofilling, fino a trattamenti più delicati, con tempi di recupero minimi.</p><p>Ogni viso invecchia in modo diverso. Per questo, nulla comincia dalla tecnica. Il Dr. Roberto Uccellini valuterà la Sua anatomia del viso, ascolterà ciò che desidera cambiare e Le spiegherà con franchezza che cosa è possibile ottenere, come si svolge il recupero e quali sono i rischi.</p><p>L’obiettivo non è mai creare un viso diverso, ma restituire freschezza ed equilibrio al Suo: il Suo viso, semplicemente più riposato e in armonia.</p></div>
+    </div>
+  </section>
+  <section class="section" id="trattamenti">
+    <div class="wrap">
+      <div class="col reveal">
+        <p class="eyebrow" data-t="t21">I trattamenti</p>
+        <h2 class="title" data-t="t22">Scelga il trattamento che desidera approfondire</h2>
+        <p class="acc-hint" data-t="t23">Tocchi un trattamento per aprirlo. Le fotografie dei casi, quando disponibili, sono in apertura della scheda.</p>
+      </div>
+      <div class="acc-list">
+        <article class="acc reveal" id="blefaroplastica">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-blefaroplastica">
+            <span class="acc__num">01</span>
+            <h3 class="acc__t" data-t="t26">Blefaroplastica — Chirurgia delle palpebre</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-blefaroplastica" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t31" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/blefaroplastica-1.jpg" loading="lazy" decoding="async" data-t="t33" data-tp="alt" alt="Blefaroplastica — Chirurgia delle palpebre — caso clinico 1 di 4, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/blefaroplastica-2.jpg" loading="lazy" decoding="async" data-t="t34" data-tp="alt" alt="Blefaroplastica — Chirurgia delle palpebre — caso clinico 2 di 4, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/blefaroplastica-3.jpg" loading="lazy" decoding="async" data-t="t35" data-tp="alt" alt="Blefaroplastica — Chirurgia delle palpebre — caso clinico 3 di 4, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/blefaroplastica-4.jpg" loading="lazy" decoding="async" data-t="t36" data-tp="alt" alt="Blefaroplastica — Chirurgia delle palpebre — caso clinico 4 di 4, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t24" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t25" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button><button type="button" class="gal-dot" aria-label="3"></button><button type="button" class="gal-dot" aria-label="4"></button></div><p class="gal-note" data-t="t32">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n2"><p>Il cambiamento che i pazienti descrivono dopo un intervento alle palpebre è raramente drastico. Gli amici notano un aspetto più riposato, ma spesso non sanno dire esattamente perché. Lo sguardo è più aperto, l’espressione più distesa, senza che nulla faccia pensare a un intervento. È proprio questa la finalità: ringiovanire lo sguardo con naturalezza, senza alterarne l’identità.</p><p>L’età non è l’unico fattore. In alcune persone, la predisposizione ereditaria può rendere le palpebre pesanti o prominenti molto prima di quanto ci si aspetterebbe.</p><p>L’intervento è soprattutto una questione di precisione. Si rimuove la pelle in eccesso, si riposiziona o si riduce il grasso che tende a protrudere e, quando necessario, si interviene sulle strutture che contribuiscono alla pesantezza dello sguardo. Le palpebre superiori e inferiori possono essere trattate insieme o separatamente, a seconda di ciò che determina realmente il problema.</p><p>Le palpebre occupano una posizione centrale nel viso, dove anche una differenza di pochi millimetri può risultare immediatamente evidente. Una blefaroplastica ben pianificata lascia intatta la forma dei Suoi occhi; ciò che cambia è quanto il Suo sguardo appare riposato.</p><p>Quale approccio sia più adatto a Lei dipende dalla Sua anatomia e dalle caratteristiche dei tessuti. Il Dr. Roberto Uccellini potrà stabilirlo correttamente solo dopo averLa visitata personalmente.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="lifting">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-lifting">
+            <span class="acc__num">02</span>
+            <h3 class="acc__t" data-t="t37">Lifting del viso</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-lifting" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t41" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/lifting-1.jpg" loading="lazy" decoding="async" data-t="t43" data-tp="alt" alt="Lifting del viso — caso clinico 1 di 3, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/lifting-2.jpg" loading="lazy" decoding="async" data-t="t44" data-tp="alt" alt="Lifting del viso — caso clinico 2 di 3, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/lifting-3.jpg" loading="lazy" decoding="async" data-t="t45" data-tp="alt" alt="Lifting del viso — caso clinico 3 di 3, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t24" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t25" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button><button type="button" class="gal-dot" aria-label="3"></button></div><p class="gal-note" data-t="t42">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n3"><p>Il lifting interviene là dove i segni del tempo diventano più evidenti. Le pieghe profonde si attenuano, il rilassamento lungo la mandibola e il collo viene corretto, i contorni del viso ritrovano definizione e gli angoli della bocca possono essere liberati da quella tendenza verso il basso che conferisce al volto un’espressione stanca o malinconica, anche quando non corrisponde a come ci si sente. Ciò che ritorna è soprattutto definizione e freschezza.</p><p>È la tecnica moderna a rendere il risultato discreto. Anziché limitarsi a tendere la pelle, si riposizionano e si sostengono le strutture profonde del viso, mentre la pelle viene ridistribuita senza tensioni eccessive. I tratti vengono ammorbiditi, non stirati, preservando l’espressività naturale del volto. Il recupero è generalmente più rapido di quanto si pensi.</p><p>Il lifting è l’intervento più completo per correggere i cambiamenti del viso legati all’invecchiamento e alla perdita di elasticità dei tessuti. Quando necessario, può essere associato alla chirurgia delle palpebre, al lipofilling o a trattamenti complementari meno invasivi, come tossina botulinica, PRP e filler.</p><p>L’obiettivo non è cambiare il volto, ma valorizzarne i lineamenti, ripristinare la definizione perduta e restituire freschezza, preservandone l’equilibrio e la naturale espressività.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="liposcultura-viso-collo">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-liposcultura-viso-collo">
+            <span class="acc__num">03</span>
+            <h3 class="acc__t" data-t="t46">Liposcultura del viso e del collo</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-liposcultura-viso-collo" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t51" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/liposcultura-viso-collo-1.jpg" loading="lazy" decoding="async" data-t="t53" data-tp="alt" alt="Liposcultura del viso e del collo — caso clinico 1 di 2, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/liposcultura-viso-collo-2.jpg" loading="lazy" decoding="async" data-t="t54" data-tp="alt" alt="Liposcultura del viso e del collo — caso clinico 2 di 2, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t24" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t25" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button></div><p class="gal-note" data-t="t52">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n4"><p>L’accumulo di tessuto adiposo sotto il mento ha spesso poco a che vedere con il peso corporeo. Alcune persone hanno semplicemente una predisposizione costituzionale a sviluppare depositi adiposi in questa zona, che possono persistere anche quando il peso è stabile e non rispondere in modo significativo alla dieta.</p><p>La liposcultura permette di ridurre questi depositi in modo mirato, attraverso sottili microcannule che consentono di rimodellare il tessuto adiposo con precisione, rispettando i contorni naturali del viso e del collo. Il risultato più evidente è spesso nel profilo: una linea mandibolare più definita e una transizione più netta tra mento e collo.</p><p>In alcuni casi, il grasso prelevato può essere opportunamente trattato e utilizzato per ripristinare volume in altre aree del viso che ne abbiano bisogno, secondo le caratteristiche e le esigenze individuali.</p><p>Durante la visita, il Dr. Roberto Uccellini valuterà la qualità dei tessuti, la distribuzione del tessuto adiposo e l’elasticità della pelle, per stabilire se la liposcultura sia sufficiente da sola o se sia più indicato associarla ad altre procedure di rimodellamento e ringiovanimento del viso.</p><p>L’obiettivo è sempre proporzionare il trattamento al volto: ridurre ciò che è in eccesso, definire i contorni e preservare l’equilibrio naturale delle Sue caratteristiche.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="otoplastica">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-otoplastica">
+            <span class="acc__num">04</span>
+            <h3 class="acc__t" data-t="t55">Otoplastica — Orecchie sporgenti</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-otoplastica" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t60" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/otoplastica-1.jpg" loading="lazy" decoding="async" data-t="t62" data-tp="alt" alt="Otoplastica — Orecchie sporgenti — caso clinico 1 di 3, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/otoplastica-2.jpg" loading="lazy" decoding="async" data-t="t63" data-tp="alt" alt="Otoplastica — Orecchie sporgenti — caso clinico 2 di 3, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/otoplastica-3.jpg" loading="lazy" decoding="async" data-t="t64" data-tp="alt" alt="Otoplastica — Orecchie sporgenti — caso clinico 3 di 3, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t24" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t25" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button><button type="button" class="gal-dot" aria-label="3"></button></div><p class="gal-note" data-t="t61">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n5"><p>Le orecchie sporgenti sono uno dei pochi tratti che si portano, quasi immutati, dall’infanzia alla vita adulta. Per alcune persone rappresentano semplicemente una caratteristica distintiva; per altre possono essere fonte di disagio estetico e influire sulla sicurezza personale.</p><p>L’intervento consiste nel rimodellare la cartilagine e nel ricreare la naturale piega dell’orecchio, che nelle orecchie sporgenti può essere assente o poco sviluppata, avvicinandolo alla testa e armonizzandolo con le proporzioni del viso.</p><p>L’otoplastica è uno di quegli interventi che possono risolvere una caratteristica a cui una persona ha pensato per anni — e permetterle, dopo, di non pensarci più.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="rinoplastica">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-rinoplastica">
+            <span class="acc__num">05</span>
+            <h3 class="acc__t" data-t="t65">Rinoplastica</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-rinoplastica" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t69" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/rinoplastica-1.jpg" loading="lazy" decoding="async" data-t="t71" data-tp="alt" alt="Rinoplastica — caso clinico 1 di 2, Dr. Roberto Uccellini" /></figure><figure class="gslide"><img src="assets/trattamenti/viso/rinoplastica-2.jpg" loading="lazy" decoding="async" data-t="t72" data-tp="alt" alt="Rinoplastica — caso clinico 2 di 2, Dr. Roberto Uccellini" /></figure></div>
+              <button type="button" class="gal-arrow prev" data-t="t24" data-tp="aria-label" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="gal-arrow next" data-t="t25" data-tp="aria-label" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+            <div class="gal-foot"><div class="gal-dots"><button type="button" class="gal-dot is-active" aria-label="1"></button><button type="button" class="gal-dot" aria-label="2"></button></div><p class="gal-note" data-t="t70">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n6"><p>Il naso occupa una posizione centrale nel volto e contribuisce in modo determinante all’equilibrio dei lineamenti. Anche modifiche di pochi millimetri possono influenzare la percezione dell’intero viso. Per questo la rinoplastica non riguarda soltanto il naso, ma l’equilibrio dell’intero volto.</p><p>Le motivazioni che portano a richiedere una rinoplastica sono diverse: un gibbo sul dorso, una punta poco definita o rivolta verso il basso, un dorso irregolare, un naso proporzionalmente importante o asimmetrie congenite che possono alterare l’equilibrio del profilo e del volto nel suo insieme.</p><p>La scelta del trattamento nasce sempre da un’attenta analisi anatomica che considera non soltanto il naso, ma anche il rapporto con fronte, mento, labbra e zigomi.</p><p>Durante la visita, il Dr. Roberto Uccellini valuterà le caratteristiche strutturali del Suo naso, ascolterà le Sue aspettative e definirà insieme a Lei un progetto chirurgico personalizzato.</p><p>L’obiettivo è ottenere un risultato naturale e stabile nel tempo, in armonia con l’insieme del volto e con i tratti che ne definiscono l’identità.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="lobo-orecchio">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-lobo-orecchio">
+            <span class="acc__num">06</span>
+            <h3 class="acc__t" data-t="t73">Riparazione del lobo dell'orecchio</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-lobo-orecchio" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t78" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/lobo-orecchio-1.jpg" loading="lazy" decoding="async" data-t="t80" data-tp="alt" alt="Riparazione del lobo dell&#x27;orecchio — caso clinico 1 di 1, Dr. Roberto Uccellini" /></figure></div>
+              
+            </div>
+            <div class="gal-foot"><p class="gal-note" data-t="t79">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n7"><p>Un lobo lacerato o progressivamente allargato è una piccola cosa che può finire per condizionarne molte: quali orecchini indossare, se raccogliere i capelli, persino come posizionarsi per una fotografia. Le cause più comuni sono anni di orecchini pesanti, una chiusura rimasta impigliata o un foro che si è progressivamente allargato.</p><p>La correzione consiste in un piccolo intervento chirurgico, eseguito in anestesia locale, che permette di ricostruire il lobo e ripristinarne forma, continuità e proporzione.</p><p>L’intervento viene pianificato in base all’entità della lesione e all’anatomia del Suo lobo, con l’obiettivo di ottenere un risultato naturale e una cicatrice il meno visibile possibile.</p><p>Dopo un adeguato periodo di guarigione, il lobo può generalmente essere nuovamente perforato, seguendo le indicazioni del Dr. Roberto Uccellini e, quando possibile, scegliendo una posizione leggermente diversa da quella del foro originario.</p></div>
+            </div>
+          </div>
+        </article>
+        <article class="acc reveal" id="lipostruttura">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="p-lipostruttura">
+            <span class="acc__num">07</span>
+            <h3 class="acc__t" data-t="t81">Lipofilling (lipostruttura) — Trapianto di grasso autologo</h3>
+            <span class="acc__ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc__panel" id="p-lipostruttura" aria-hidden="true">
+            <div class="acc__inner">
+              <div class="gallery" data-gallery data-t="t86" data-tp="aria-label" aria-label="Galleria fotografica" aria-roledescription="carousel">
+            <div class="gallery__vp">
+              <div class="gallery__track"><figure class="gslide"><img src="assets/trattamenti/viso/lipostruttura-1.jpg" loading="lazy" decoding="async" data-t="t88" data-tp="alt" alt="Lipostruttura — Trapianto di grasso autologo — caso clinico 1 di 1, Dr. Roberto Uccellini" /></figure></div>
+              
+            </div>
+            <div class="gal-foot"><p class="gal-note" data-t="t87">Fotografie di casi reali. I risultati variano da persona a persona.</p></div>
+          </div>
+              <div class="prose" data-t="n8"><p>Con il passare del tempo, il viso non perde soltanto elasticità: i tessuti si assottigliano e alcune aree perdono progressivamente volume. Il cambiamento può essere inizialmente sottile — uno zigomo che appare più piatto, una tempia leggermente incavata, un'ombra più evidente sotto gli occhi — ma nel tempo può conferire al volto un aspetto più svuotato e stanco.</p><p>Il lipofilling permette di ripristinare parte di questo volume utilizzando il proprio tessuto adiposo. Il grasso viene prelevato delicatamente da un'area in cui è disponibile, accuratamente processato e trasferito in piccole quantità nelle zone che necessitano di maggiore pienezza, come zigomi, tempie, profilo mandibolare o labbra.</p><p>Il vantaggio principale è che il materiale utilizzato è il tessuto del paziente stesso. Una parte del grasso trasferito attecchisce, sviluppando un proprio apporto sanguigno e integrandosi stabilmente nei tessuti circostanti, offrendo un risultato di volume duraturo. Una parte viene invece naturalmente riassorbita nei primi mesi; per questo il risultato si definisce progressivamente e, in alcuni casi, può essere indicato un ulteriore trattamento. Una volta attecchito il grasso autologo si integra perfettamente con i tessuti circostanti – ed è questa una differenza essenziale rispetto ai filler sintetici.</p><p>Il lipofilling può inoltre essere associato a un miglioramento della qualità della pelle sovrastante. Nei mesi successivi alcuni pazienti osservano una pelle più morbida e uniforme, anche se questo effetto è variabile e rappresenta un beneficio aggiuntivo rispetto all'obiettivo principale, che rimane il ripristino del volume.</p><p>Il principio è semplice: non aggiungere qualcosa di estraneo, ma restituire al viso parte di ciò che ha perso, utilizzando un tessuto che appartiene già al paziente.</p><p>Il risultato desiderato non è un volto diverso, ma un volto più pieno, equilibrato e riposato, che rimanga riconoscibilmente il proprio.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="altre-aree" style="background:var(--paper);border-block:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow center" style="justify-content:center;" data-t="t93">Le altre aree</p>
+      <div class="aree-grid" style="max-width:900px;margin-inline:auto;">
+        <a class="area-card reveal" href="corpo-e-seno.html">
+          <div class="area-card__img"><img src="assets/area-corpo.jpg" loading="lazy" data-t="t90" data-tp="alt" alt="Corpo e seno" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">02</span><h3 class="area-card__t" data-t="t89">Corpo e seno</h3></div>
+        </a>
+        <a class="area-card reveal" href="trattamenti-non-chirurgici.html">
+          <div class="area-card__img"><img src="assets/area-non-chirurgiche.jpg" loading="lazy" data-t="t92" data-tp="alt" alt="Pratiche non chirurgiche" style="object-position:50% 15%;" /></div>
+          <div class="area-card__cap"><span class="area-card__num">03</span><h3 class="area-card__t" data-t="t91">Pratiche non chirurgiche</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section contatti" id="contatti">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-t="t94">Contatti</p>
+      <h2 class="title reveal" data-t="t95">Un incontro, prima di ogni decisione</h2>
+      <div class="contatti__grid">
+        <p class="contatti__intro reveal" data-t="t96">La prima consultazione con il Dr. Roberto Uccellini è un colloquio disteso e approfondito, dedicato interamente alle Sue esigenze e alle opzioni disponibili. Un confronto sincero, senza fretta: il primo, vero passo verso una scelta consapevole.</p>
+        <div class="reveal"><div class="contact-block"><div class="k" data-t="t97">Sede</div><div class="v" data-t="t98">Terni — Ambulatorio di Chirurgia Plastica<br>Direttore Sanitario</div></div><div class="contact-block"><div class="k" data-t="t99">Telefono</div><div class="v"><span class="ph" data-t="t100">da inserire</span></div></div><div class="contact-block"><div class="k" data-t="t101">Email</div><div class="v"><span class="ph" data-t="t102">da inserire</span></div></div><div class="contact-block"><div class="k" data-t="t103">Indirizzo</div><div class="v"><span class="ph" data-t="t104">da inserire</span></div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand"><a href="index.html"><img src="assets/logo-ru.png" data-t="t106" data-tp="alt" alt="Logo Roberto Uccellini" /></a></div>
+    <div class="footer__meta" data-t="t105">Roberto Uccellini — Chirurgia Plastica, Ricostruttiva ed Estetica<br>Specialista in Chirurgia Plastica Ricostruttiva ed Estetica e in Chirurgia Generale</div>
+  </div>
+</footer>
+
+<script>window.__EN__ = {"t1": "Face and Eyes — Roberto Uccellini, Plastic Surgery", "t2": "Surgical facial rejuvenation: blepharoplasty, facelift, rhinoplasty, otoplasty, face and neck liposculpture, lipostructure.", "t3": "Main navigation", "t4": "Plastic, Reconstructive<br>and Aesthetic Surgery", "t5": "Roberto Uccellini logo", "t6": "Open menu", "t7": "Home", "t8": "Face and Eyes", "t9": "Body and Breast", "t10": "Non-surgical", "t11": "Contact", "t12": "Area 01", "t13": "Face and Eyes", "t14": "Surgical rejuvenation and harmony of the features", "t15": "Treatment of the face and eye contour", "t16": "When we meet someone, our face is the first thing they see. It carries our expression, our mood and, unavoidably, our age. That is why it can weigh on us when the face in the mirror begins to look tired, heavy or simply older than we feel — and why even a small asymmetry or an inherited feature we have never quite made peace with can quietly affect our confidence.", "t17": "Modern facial surgery offers refined, often minimally invasive techniques to correct the changes ageing brings — sagging tissue, deepening folds, a loss of volume around the cheeks and eyes — while fully preserving your expressions and your individual features. Depending on how much correction is needed, the options range from comprehensive procedures such as a facelift, eyelid surgery (blepharoplasty) or fat grafting (lipostructure) to gentler treatments with very little downtime.", "t18": "Every face ages differently, so nothing begins with a technique. Dr. Roberto Uccellini will assess your facial anatomy, listen to what you would like to change, and explain openly what is possible, how recovery unfolds and what risks are involved. The aim is never a different face — only your own, rested and in balance.", "t19": "Your face, naturally refreshed", "t20": "Introduction", "t21": "The treatments", "t22": "Select the treatment you would like to read about", "t23": "Tap a treatment to open it. Where available, photographs of cases appear at the top of each entry.", "t24": "Previous image", "t25": "Next image", "t26": "Blepharoplasty — Eyelid Surgery", "t27": "The change people describe after eyelid surgery is rarely dramatic. Friends notice that you look well and cannot quite say why. The gaze is open, the expression rested, and nothing about it points to a reason — which is exactly the intention. Age is not the only factor here: for some, heredity makes the eyelids a concern far earlier than expected.", "t28": "The procedure itself is a matter of precision. Excess skin is removed, protruding fat is repositioned or reduced, and the creases at the outer corner are eased. Upper and lower lids can be treated together or separately, depending on what is genuinely causing the heaviness — and sometimes the eyelid is not the cause at all, but the brow above it or the cheek below.", "t29": "That distinction matters. The eyelids sit at the centre of the face, where a difference of a few millimetres is immediately legible. A well-planned blepharoplasty leaves the shape of your own eye entirely intact; what changes is how rested it looks.", "t30": "Which approach fits you is a question of anatomy, and one Dr. Roberto Uccellini can answer properly only after examining you in person.", "t31": "Photo gallery", "t32": "Photographs of real cases. Results vary from person to person.", "t33": "Blepharoplasty — Eyelid Surgery — case 1 of 4, Dr. Roberto Uccellini", "t34": "Blepharoplasty — Eyelid Surgery — case 2 of 4, Dr. Roberto Uccellini", "t35": "Blepharoplasty — Eyelid Surgery — case 3 of 4, Dr. Roberto Uccellini", "t36": "Blepharoplasty — Eyelid Surgery — case 4 of 4, Dr. Roberto Uccellini", "t37": "Facelift", "t38": "A facelift works where the years show most clearly. Deep folds soften, slackness along the jaw and neck firms up, hollow cheeks regain their fullness, and the corners of the mouth lift out of the downward set that lends a tired or downcast look to a face that feels neither. What comes back is definition and freshness.", "t39": "Modern technique is what keeps this discreet. Rather than pulling at the skin, the deeper structures of the face are repositioned and supported. The features are softened, not stretched, and recovery is considerably quicker than the procedure's reputation suggests.", "t40": "As the most complete of these procedures, a facelift is often combined with eyelid surgery, fat grafting or lighter treatments, so that the whole face reads consistently rather than one part looking newer than the rest.", "t41": "Photo gallery", "t42": "Photographs of real cases. Results vary from person to person.", "t43": "Facelift — case 1 of 3, Dr. Roberto Uccellini", "t44": "Facelift — case 2 of 3, Dr. Roberto Uccellini", "t45": "Facelift — case 3 of 3, Dr. Roberto Uccellini", "t46": "Face and Neck Liposculpture", "t47": "Fullness beneath the chin often has very little to do with weight. Some people are simply built to store fat there, which is why it persists through every diet and every disciplined year — and why correcting it is a question of a small, precise procedure rather than willpower.", "t48": "Fine micro-cannulas remove these localised deposits under the chin and along the neck. Where it is useful, the fat taken away can be prepared and placed elsewhere in the face, replacing fullness that age has drawn out of the cheeks. Little is discarded; it is closer to an exchange than a removal.", "t49": "The difference shows most in profile — a clear line between jaw and neck, the contour that photographs from the side reveal first and that reads, without anyone naming it, as elegance.", "t50": "Whether liposculpture on its own is enough, or whether the skin also needs support to settle smoothly, comes down to your own tissue. Dr. Roberto Uccellini will say so directly.", "t51": "Photo gallery", "t52": "Photographs of real cases. Results vary from person to person.", "t53": "Face and Neck Liposculpture — case 1 of 2, Dr. Roberto Uccellini", "t54": "Face and Neck Liposculpture — case 2 of 2, Dr. Roberto Uccellini", "t55": "Otoplasty — Prominent Ears", "t56": "Prominent ears are one of the few features people carry from childhood into adult life unchanged — along with the haircuts, the hats and the small habits arranged around them.", "t57": "The correction itself is straightforward. The cartilage is reshaped and the natural fold that is missing or too shallow in most prominent ears is recreated, bringing them closer to the head and into proportion with the face. Differences in the earlobe or in shape between the two sides are addressed at the same time, and the incisions sit behind the ear, where they are not seen.", "t58": "The result is permanent, and it is meant to be unremarkable: ears that suit the face and are no longer the first thing anyone notices about it. Otoplasty is often done in adolescence.", "t59": "It is one of the rare operations that settles something a person has thought about for decades — and then allows them never to think about it again.", "t60": "Photo gallery", "t61": "Photographs of real cases. Results vary from person to person.", "t62": "Otoplasty — Prominent Ears — case 1 of 3, Dr. Roberto Uccellini", "t63": "Otoplasty — Prominent Ears — case 2 of 3, Dr. Roberto Uccellini", "t64": "Otoplasty — Prominent Ears — case 3 of 3, Dr. Roberto Uccellini", "t65": "Rhinoplasty", "t66": "The nose sets the balance of a face. Alter it by a few millimetres and the eyes, the mouth and the line of the jaw are all read slightly differently — which is why it is the one feature that cannot be worked around, and the one most often steered away from the camera.", "t67": "The surgery works on the framework beneath the skin rather than on the surface. The upper third of the nose is supported by bone, the lower two thirds by cartilage. Reducing a hump means lowering both together and then narrowing the sides so that the bridge stays even and smooth. The tip is shaped rather than simply reduced: the cartilage that holds it is repositioned and secured, which is what lifts a drooping tip or brings definition to one that has none. As much support is rebuilt as is taken away — that is what keeps the shape stable over the years and the breathing unimpaired.", "t68": "All of it is planned around your face rather than around an ideal. Your resemblance to your family and the character of your features stay exactly where they are.", "t69": "Photo gallery", "t70": "Photographs of real cases. Results vary from person to person.", "t71": "Rhinoplasty — case 1 of 2, Dr. Roberto Uccellini", "t72": "Rhinoplasty — case 2 of 2, Dr. Roberto Uccellini", "t73": "Earlobe Repair", "t74": "A torn or stretched earlobe is a small thing that ends up dictating a surprising amount — which earrings can be worn, whether the hair goes up, how a photograph is angled. Years of heavy earrings, a caught clasp or a piercing that has slowly widened are the usual causes.", "t75": "The repair is done in a single visit under local anaesthetic. The damaged edges are removed and the lobe is rebuilt with very fine sutures, following its own outline so that the line of the repair is easily concealed. You go home the same day, discomfort is minimal, and healing is quick.", "t76": "Once it has settled, the lobe looks and feels as it did before. After a suitable interval it can usually be pierced again — generally just beside the original site — if you would like to wear earrings as you used to.", "t77": "A small correction, and the whole question stops arising.", "t78": "Photo gallery", "t79": "Photographs of real cases. Results vary from person to person.", "t80": "Earlobe Repair — case 1 of 1, Dr. Roberto Uccellini", "t81": "Lipofilling — Autologous Fat Grafting", "t82": "It usually shows itself in ordinary light: a photograph taken from above, a mirror in a lift, a morning when concealer settles into the shadow beneath the eye instead of covering it. Nothing has really dropped. The face simply looks emptier than it used to — flatter across the cheek, hollow at the temple, thinner in a way that reads as tired rather than slim. That is volume loss, and tightening the skin alone does not correct it.", "t83": "Lipostructure puts back what has gone, and it uses nothing but your own tissue to do it. Fat is taken gently from somewhere there is more of it than you want, purified, and laid down in fine layers where volume has been lost: the cheeks, the temples, the jawline, the lips. Because the tissue is yours, the body accepts it. Once it has taken, it stays — which is the essential difference between this and a filler.", "t84": "There is a second effect that tends to surprise people. Over the months that follow, the skin above a graft usually improves in texture and suppleness as well. Volume returns first; quality follows.", "t85": "Nothing is added that was not already yours. That, more than any technique, is why the result looks like you rather than like work.", "t86": "Photo gallery", "t87": "Photographs of real cases. Results vary from person to person.", "t88": "Lipostructure — Autologous Fat Grafting — case 1 of 1, Dr. Roberto Uccellini", "t89": "Body and breast", "t90": "Body and breast", "t91": "Non-surgical procedures", "t92": "Non-surgical procedures", "t93": "The other areas", "t94": "Contact", "t95": "A meeting, before any decision", "t96": "The first consultation with Dr. Roberto Uccellini is a relaxed and in-depth conversation, dedicated entirely to your needs and to the available options. A sincere exchange, without rush: the first, true step towards an informed choice.", "t97": "Location", "t98": "Terni — Plastic Surgery Outpatient Clinic<br>Medical Director", "t99": "Telephone", "t100": "to be added", "t101": "Email", "t102": "to be added", "t103": "Address", "t104": "to be added", "t105": "Roberto Uccellini — Plastic, Reconstructive and Aesthetic Surgery<br>Specialist in Plastic, Reconstructive and Aesthetic Surgery and in General Surgery", "t106": "Roberto Uccellini logo", "n1": "<p>The face is the first expression of who we are. It reflects our character, our emotions and, inevitably, the passage of time. Yet the face we see in the mirror does not always correspond to how we feel within ourselves.</p><p>For some, ageing gradually brings a tired or heavier appearance. For others, an inherited feature or subtle asymmetry may have remained a source of concern for years. Modern facial surgery offers highly refined techniques to address these changes while preserving what makes each face recognisably its own.</p><p>Depending on your anatomy and the degree of correction desired, treatment may range from comprehensive surgical rejuvenation—such as facelift surgery, blepharoplasty or facial fat grafting—to more focused procedures designed to achieve a subtle improvement with limited recovery.</p><p>There is no universal approach to facial rejuvenation. Every face has its own proportions, structures and character. For this reason, treatment begins not with a procedure, but with a careful consultation.</p><p>Dr. Roberto Uccellini takes the time to understand what you would like to change, assess your facial anatomy and discuss what can realistically be achieved. The technique is selected according to your individual needs, with equal attention given to the quality of the result, the recovery process and the potential risks.</p><p>The objective is not to create a different face. It is to restore freshness, proportion and harmony—while allowing you to remain entirely yourself.</p>", "n2": "<p>The most appreciated results of eyelid surgery are often the most discreet. The eyes appear more open and rested; the face looks fresher and less tired. Yet there is nothing obviously “done”.</p><p>Blepharoplasty is a procedure of precision. Depending on the individual anatomy, it may involve the removal or repositioning of excess skin and fat, together with carefully considered refinement of the tissues surrounding the eyes.</p><p>The upper eyelids, lower eyelids, or both may be treated, according to the structures responsible for heaviness, puffiness or an aged appearance. In some patients, hereditary characteristics mean that these concerns become apparent long before the effects of ageing.</p><p>Because the eyelids occupy such a central and expressive position within the face, even very small changes can influence the overall appearance. The aim of a well-planned blepharoplasty is therefore not to alter the identity or natural shape of the eyes, but to restore a more open, rested appearance while respecting the individual's anatomy.</p><p>The appropriate technique can only be determined through a personal assessment. During your consultation, Dr. Roberto Uccellini will examine the eyelids and surrounding structures, listen carefully to your concerns and explain which approach may be appropriate for you, including the expected recovery and potential risks.</p>", "n3": "<p>A facelift addresses the changes that become increasingly visible with time: loss of definition along the jawline, laxity of the neck, deepening folds and a gradual descent of the facial tissues. The result is not simply a tighter appearance, but a restoration of proportion, structure and vitality.</p><p>Contemporary facelift surgery is designed to achieve a discreet result. Rather than relying on tension in the skin, modern techniques address the deeper supporting structures of the face, repositioning and supporting them before the skin is gently redraped. This allows the features to be refreshed without creating a pulled or overly operated appearance.</p><p>The aim is to restore the architecture of the face as it has changed with ageing and tissue laxity, while preserving the individuality and expressiveness that make it yours.</p><p>A facelift may be performed alongside other procedures when this is appropriate to the individual anatomy. Eyelid surgery, facial fat grafting or selected non-surgical treatments may complement the result, addressing areas that require a different approach.</p><p>Every facelift is therefore planned as an individual procedure. During consultation, Dr. Roberto Uccellini will assess the face and neck as a whole and explain which combination of techniques may provide the most harmonious result, together with the expected recovery and potential risks.</p><p>The objective is refinement rather than transformation: a face that appears rested, defined and naturally renewed.</p>", "n4": "<p>Fullness beneath the chin is not necessarily related to body weight. For some people, a tendency to retain localised fat beneath the chin and along the neck is simply part of their anatomy. When this is the principal concern, a carefully performed liposculpture can refine the contour without requiring a more extensive procedure.</p><p>Using fine cannulas, localised deposits of fat are selectively removed from beneath the chin and along the neck.</p><p>Where appropriate, extracted fat can be purified and delicately transferred to areas of the face where volume has diminished, such as the cheeks, restoring natural fullness and harmony.</p><p>The effect is particularly apparent in profile: a cleaner transition between the jawline and neck, with greater definition and a more balanced facial contour.</p><p>The suitability of liposculpture alone depends on the quality and elasticity of the skin, as well as the underlying anatomy. Where additional support or a different surgical approach is required, Dr. Roberto Uccellini will explain this during your consultation.</p><p>The goal is precise, proportionate refinement—never an exaggerated change in the character of the face.</p>", "n5": "<p>The ears are a distinctive part of the face, and when they are more prominent than desired, this can become a concern from childhood and continue into adult life. Even a subtle difference in their position or shape can influence the overall balance of the face.</p><p>Otoplasty is designed to bring the ears into greater harmony with the head and facial proportions. The cartilage is carefully reshaped, and where necessary, the natural folds of the ear are refined or recreated. Differences in shape, size or position between the two ears can also be addressed as part of the procedure.</p><p>The incisions are discreetly placed behind the ears, allowing the resulting scars to remain concealed within the natural contours.</p><p>Otoplasty is frequently performed during adolescence, although it can be undertaken in adulthood when desired. The procedure is intended to provide a lasting correction while preserving a natural appearance and the individual character of the ears.</p><p>The objective is not to make the ears disappear, but to restore proportion and balance so that they become a harmonious, understated part of the face rather than its defining feature.</p>", "n6": "<p>The nose occupies the centre of the face and plays a defining role in its overall balance. Even subtle changes in its shape or proportions can influence the way the eyes, mouth and jawline are perceived. For this reason, rhinoplasty is not simply about changing the nose, but about refining its relationship with the face as a whole.</p><p>The procedure is planned around the underlying framework of bone and cartilage rather than simply the surface of the skin. The nasal bones form the upper part of the structure, while cartilage supports the lower two thirds, including the tip. Depending on the individual anatomy, a dorsal hump may be reduced and the nasal bones refined to create a smooth, proportionate bridge. The tip can be reshaped through precise modification and repositioning of its supporting cartilage, addressing concerns such as a drooping, broad or insufficiently defined tip.</p><p>Every rhinoplasty is designed in relation to the individual face rather than according to a predetermined ideal. The aim is to create a nose that belongs naturally to your features, preserving the character of your face and, where appropriate, the qualities that reflect your family resemblance.</p>", "n7": "<p>A torn or elongated earlobe can be a small concern with a surprisingly visible impact. Heavy earrings, accidental traction or a gradually enlarged piercing can alter the shape of the lobe and affect the way earrings can be worn.</p><p>Earlobe repair is a precise procedure, performed under local anaesthesia. The damaged tissue is carefully removed and the lobe reconstructed with fine sutures, following its natural contour. The incision is positioned to remain as discreet as possible as the area heals.</p><p>The procedure is generally completed in a single visit, with patients able to return home the same day. Discomfort is usually limited, and the recovery period is relatively short.</p><p>Once fully healed, the earlobe can regain a natural shape and proportion. If desired, repiercing may usually be considered after an appropriate healing interval, generally at a new site rather than directly through the previous repair.</p><p>A discreet correction can restore both the appearance of the earlobe and the freedom to wear earrings with confidence.</p>", "n8": "<p>Facial ageing is not only a matter of skin laxity. Over time, the face gradually loses volume, creating hollowness around the eyes and temples, flattening the cheeks and altering the soft transitions that give the face its natural fullness and harmony.</p><p>Lipofilling—also known as lipostructure—uses your own fat to restore volume where it has diminished. Fat is gently harvested from an appropriate donor area, carefully processed and then transferred in small, precise amounts to selected areas of the face. Depending on the individual anatomy, these may include the cheeks, temples, lips, jawline or areas around the eyes.</p><p>Because the treatment uses your own tissue, there is no synthetic filler material involved. A proportion of the transferred fat establishes a blood supply and becomes living tissue within the treated area, while some resorption during healing is expected. The final result therefore develops gradually as the tissues settle.</p><p>The purpose is not simply to add volume, but to restore the subtle fullness and transitions that have changed with time. In some patients, lipofilling is performed alongside a facelift, blepharoplasty or another facial procedure; in others, it may be used as an independent treatment.</p><p>There may also be a secondary benefit to the quality of the overlying skin. Some patients experience improvements in skin texture and suppleness over the months following treatment, although these effects can vary and are not the primary purpose of the procedure.</p><p>Every treatment is individually planned. The amount of fat transferred, its placement and the areas treated depend on your facial anatomy, proportions and degree of volume loss.</p><p>The result is intended to be discreet and harmonious: not a fuller or different face, but a restoration of the balance and softness that time has gradually taken away.</p>"};</script>
+<script>
+(function(){
+"use strict";
+var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- header ---- */
+var header=document.querySelector(".header");
+function onScroll(){ header.classList.toggle("scrolled", window.scrollY>12); }
+onScroll(); window.addEventListener("scroll",onScroll,{passive:true});
+
+/* ---- menu mobile ---- */
+var toggle=document.getElementById("navToggle"), nav=document.getElementById("nav");
+toggle.addEventListener("click",function(){
+  var open=document.body.classList.toggle("nav-open");
+  toggle.setAttribute("aria-expanded",open?"true":"false");
+});
+nav.addEventListener("click",function(e){
+  if(e.target.tagName==="A"){document.body.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");}
+});
+
+/* ---- ancore interne: la sezione viene centrata nella finestra ---- */
+(function(){
+  var HEAD=78;
+  function targetTop(el){
+    var r=el.getBoundingClientRect(), h=r.height, vh=window.innerHeight, top=r.top+window.pageYOffset;
+    if(h < vh-HEAD-24) return top-(vh-h)/2;
+    return top-HEAD-14;
+  }
+  function goTo(el,smooth){
+    window.scrollTo({top:Math.max(0,targetTop(el)),behavior:(smooth&&!reduceMotion)?"smooth":"auto"});
+    /* le immagini caricate in ritardo cambiano l'altezza della pagina: correggiamo */
+    var n=0,fix=setInterval(function(){
+      n++;
+      var y=Math.max(0,targetTop(el));
+      if(Math.abs(y-window.pageYOffset)>10)window.scrollTo({top:y,behavior:"auto"});
+      if(n>5)clearInterval(fix);
+    },280);
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
+    if(!a)return;
+    var id=a.getAttribute("href").slice(1);
+    if(!id)return;
+    var el=document.getElementById(id);
+    if(!el||el.classList.contains("acc"))return;
+    e.preventDefault();
+    if(history.replaceState)history.replaceState(null,"","#"+id);
+    goTo(el,true);
+  });
+  window.addEventListener("load",function(){
+    if(!location.hash)return;
+    var el=document.getElementById(location.hash.slice(1));
+    if(el&&!el.classList.contains("acc"))setTimeout(function(){goTo(el,false);},120);
+  });
+})();
+
+/* ---- reveal ---- */
+var revealEls=[].slice.call(document.querySelectorAll(".reveal"));
+if(reduceMotion||!("IntersectionObserver" in window)){
+  revealEls.forEach(function(el){el.classList.add("is-visible");});
+}else{
+  var io=new IntersectionObserver(function(entries){
+    var shown=0;
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.style.transitionDelay=(shown*90)+"ms";en.target.classList.add("is-visible");shown++;io.unobserve(en.target);}
+    });
+  },{threshold:.1,rootMargin:"0px 0px -6% 0px"});
+  revealEls.forEach(function(el){io.observe(el);});
+}
+
+
+/* ============================================================
+   GALLERIE — swipe, frecce, puntini, rotazione automatica
+   ============================================================ */
+var galleries=[];
+document.querySelectorAll("[data-gallery]").forEach(function(g){
+  var vp=g.querySelector(".gallery__vp"),
+      track=g.querySelector(".gallery__track"),
+      slides=[].slice.call(g.querySelectorAll(".gslide")),
+      dots=[].slice.call(g.querySelectorAll(".gal-dot")),
+      i=0,timer=null,visible=false,hover=false,open=false;
+
+  function render(anim){
+    if(!anim)track.classList.add("no-anim");
+    track.style.transform="translateX("+(-i*100)+"%)";
+    if(!anim)requestAnimationFrame(function(){track.classList.remove("no-anim");});
+    dots.forEach(function(d,k){d.classList.toggle("is-active",k===i);d.setAttribute("aria-current",k===i?"true":"false");});
+    slides.forEach(function(s,k){s.setAttribute("aria-hidden",k===i?"false":"true");});
+  }
+  function go(n){ i=(n+slides.length)%slides.length; render(true); }
+  function tick(){ go(i+1); }
+  function play(){ stop(); if(slides.length<2||reduceMotion)return; if(visible&&!hover&&open)timer=setInterval(tick,5200); }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+
+  g.querySelectorAll(".gal-arrow").forEach(function(b){
+    b.addEventListener("click",function(e){e.stopPropagation();go(i+(b.classList.contains("next")?1:-1));play();});
+  });
+  dots.forEach(function(d,k){d.addEventListener("click",function(){go(k);play();});});
+  vp.addEventListener("mouseenter",function(){hover=true;stop();});
+  vp.addEventListener("mouseleave",function(){hover=false;play();});
+
+  /* swipe / drag */
+  var x0=null,y0=null,locked=null;
+  vp.addEventListener("pointerdown",function(e){x0=e.clientX;y0=e.clientY;locked=null;});
+  vp.addEventListener("pointermove",function(e){
+    if(x0===null)return;
+    var dx=e.clientX-x0,dy=e.clientY-y0;
+    if(locked===null&&(Math.abs(dx)>6||Math.abs(dy)>6))locked=Math.abs(dx)>Math.abs(dy)?"x":"y";
+  });
+  vp.addEventListener("pointerup",function(e){
+    if(x0===null)return;
+    var dx=e.clientX-x0;
+    if(locked==="x"&&Math.abs(dx)>42){ go(i+(dx<0?1:-1)); play(); }
+    x0=null;y0=null;locked=null;
+  });
+  vp.addEventListener("pointercancel",function(){x0=null;y0=null;locked=null;});
+
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){visible=en[0].isIntersecting;play();},{threshold:.35}).observe(vp);
+  }else{ visible=true; }
+
+  function preload(){
+    slides.forEach(function(s){
+      var im=s.querySelector("img");
+      if(im&&!im.complete){ im.removeAttribute("loading"); im.src=im.getAttribute("src"); }
+    });
+  }
+  galleries.push({el:g,setOpen:function(v){open=v;if(v)preload();play();}});
+  render(false);
+});
+function galleriesIn(node,v){
+  galleries.forEach(function(G){ if(node.contains(G.el)) G.setOpen(v); });
+}
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+var accs=[].slice.call(document.querySelectorAll(".acc"));
+function panelOf(a){return a.querySelector(".acc__panel");}
+function setOpen(a,v,instant){
+  var p=panelOf(a),inner=p.firstElementChild,btn=a.querySelector(".acc__head");
+  a.classList.toggle("is-open",v);
+  btn.setAttribute("aria-expanded",v?"true":"false");
+  p.setAttribute("aria-hidden",v?"false":"true");
+  if(instant||reduceMotion){ p.style.height=v?"auto":"0"; galleriesIn(a,v); return; }
+  if(v){
+    p.style.height=inner.offsetHeight+"px";
+    p.addEventListener("transitionend",function h(e){
+      if(e.propertyName!=="height")return;
+      p.style.height="auto"; p.removeEventListener("transitionend",h);
+    });
+  }else{
+    p.style.height=inner.offsetHeight+"px";
+    requestAnimationFrame(function(){requestAnimationFrame(function(){p.style.height="0";});});
+  }
+  galleriesIn(a,v);
+}
+accs.forEach(function(a){
+  a.querySelector(".acc__head").addEventListener("click",function(){
+    /* nessuna chiusura automatica delle altre schede: la pagina si apre
+       verso il basso e il titolo cliccato resta esattamente dov'e' */
+    var before=a.getBoundingClientRect().top;
+    setOpen(a,!a.classList.contains("is-open"));
+    var after=a.getBoundingClientRect().top;
+    if(after!==before)window.scrollBy(0,after-before);
+  });
+});
+/* tutte le schede chiuse all'avvio; si apre solo quella richiamata da un link diretto */
+(function(){
+  if(!location.hash)return;
+  var target=null;
+  try{ target=document.querySelector(".acc"+CSS.escape(location.hash)); }catch(e){ target=document.getElementById(location.hash.slice(1)); }
+  if(!target||!target.classList.contains("acc"))return;
+  setOpen(target,true,true);
+  setTimeout(function(){window.scrollTo({top:target.getBoundingClientRect().top+window.scrollY-84,behavior:"auto"});},60);
+})();
+window.addEventListener("resize",function(){
+  accs.forEach(function(a){ if(a.classList.contains("is-open")) panelOf(a).style.height="auto"; });
+});
+
+/* ============================================================
+   LINGUA IT / EN
+   ============================================================ */
+var EN=window.__EN__||{}, IT={};
+document.querySelectorAll("[data-t]").forEach(function(el){
+  var k=el.getAttribute("data-t"),p=el.getAttribute("data-tp");
+  IT[k]= p ? el.getAttribute(p) : el.innerHTML;
+});
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(function(el){
+    var k=el.getAttribute("data-t"),p=el.getAttribute("data-tp");
+    var v=(lang==="en"?EN[k]:IT[k]);
+    if(v==null)return;
+    if(p)el.setAttribute(p,v); else el.innerHTML=v;
+  });
+  document.querySelectorAll(".lang-btn").forEach(function(b){
+    var on=b.getAttribute("data-lang")===lang;
+    b.classList.toggle("is-active",on);
+    b.setAttribute("aria-pressed",on?"true":"false");
+  });
+  try{localStorage.setItem("site-lang",lang);}catch(e){}
+  accs.forEach(function(a){ if(a.classList.contains("is-open")) panelOf(a).style.height="auto"; });
+}
+document.querySelectorAll(".lang-btn").forEach(function(b){
+  b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});
+});
+var saved="it"; try{saved=localStorage.getItem("site-lang")||"it";}catch(e){}
+if(saved==="en")setLang("en");
+})();
+</script>
+</body>
+</html>
